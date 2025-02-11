@@ -1,0 +1,71 @@
+//@import '../partials/variables';
+
+
+
+//colors
+// base
+$BaseWhite: #FFFFFF;
+$BaseBlack: #0E121B;
+
+//neutrals
+$Neutral0: #FFFFFF;
+$Neutral50: #F5F7FA;
+$Neutral100: #F3F5F8;
+$Neutral200: #E0E4EA;
+$Neutral300: #CACFD8;
+$Neutral400: #99A0AE;
+$Neutral500: #717784;
+$Neutral600: #525866;
+$Neutral700: #2B303B;
+$Neutral800: #232530;
+$Neutral900: #191B25;
+$Neutral950: #0E121B;
+
+//blue
+$Blue50: #EBF1FF;
+$Blue500: #335CFF;
+$Blue700: #2547D0;
+
+//green
+$Green50: #E0FAEC;
+$Green100: #D1FBE9;
+$Green500: #21C16B;
+
+//red
+$Red50: #FFEBEC;
+$Red100: #FFD5D8;
+$Red500: #FB3748;
+
+:root {
+    // base
+    --BaseWhite: #FFFFFF;
+    --BaseBlack: #0E121B;
+    // Neutrals
+    --Neutral0: #FFFFFF;
+    --Neutral50: #F5F7FA;
+    --Neutral100: #F3F5F8;
+    --Neutral200: #E0E4EA;
+    --Neutral300: #CACFD8;
+    --Neutral400: #99A0AE;
+    --Neutral500: #717784;
+    --Neutral600: #525866;
+    --Neutral700: #2B303B;
+    --Neutral800: #232530;
+    --Neutral900: #191B25;
+    --Neutral950: #0E121B;
+  
+    // Blue
+    --Blue50: #EBF1FF;
+    --Blue500: #335CFF;
+    --Blue700: #2547D0;
+  
+    // Green
+    --Green50: #E0FAEC;
+    --Green100: #D1FBE9;
+    --Green500: #21C16B;
+  
+    // Red
+    --Red50: #FFEBEC;
+    --Red100: #FFD5D8;
+    --Red500: #FB3748;
+  }
