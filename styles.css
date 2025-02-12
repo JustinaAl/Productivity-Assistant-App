@@ -1,1 +1,26 @@
-/*# sourceMappingURL=styles.css.map */
+#mainDiv {
+  border: 1px solid black;
+  width: 400px;
+  padding: 16px;
+}
+
+.habitBox {
+  width: 400px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.repetitionBox {
+  display: flex;
+  flex-direction: column;
+}
+.repetitionBox .counter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.repetitionBox .counter button.plus, .repetitionBox .counter button.minus {
+  width: 20px;
+  height: 20px;
+}/*# sourceMappingURL=styles.css.map */

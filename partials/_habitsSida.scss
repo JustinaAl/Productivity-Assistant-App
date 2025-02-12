@@ -1,0 +1,28 @@
+#mainDiv{
+    border: 1px solid black;
+    width: 400px;
+    padding: 16px;
+}
+
+.habitBox{
+    width: 400px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.repetitionBox{
+    display: flex;
+    flex-direction: column;
+
+    .counter{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        button.plus, button.minus{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}
