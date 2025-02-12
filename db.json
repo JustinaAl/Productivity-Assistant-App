@@ -4,14 +4,16 @@
       "id": "7332dc99-7ce7-4e81-a063-6baa504ad54f",
       "userId": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
       "title": "React Performance Optimization",
-      "categories": ["Dev", "React"],
+      "categories": [
+        "Dev",
+        "React"
+      ],
       "deadline": "2024-10-29",
       "text": "Use react-window for long lists\n- Implement infinite scrolling\n\nTODO: Benchmark current application and identify bottlenecks",
       "done": "false",
       "timeEstimation": "120"
     }
   ],
-
   "habits": [
     {
       "id": "7332dc99-7ce7-4e81-a063-6baa504ad34f",
@@ -21,7 +23,6 @@
       "priority": "low"
     }
   ],
-
   "events": [
     {
       "id": "7332dc99-7ce7-4e81-a063-8baa504ad54f",
@@ -31,7 +32,6 @@
       "endDate": "2025-10-29"
     }
   ],
-
   "users": [
     {
       "id": "a138b0ea-faa5-4a75-ae56-921c607ba3af",
@@ -39,6 +39,36 @@
       "username": "alicej",
       "password": "alicePass123",
       "email": "alice.johnson@example.com"
+    },
+    {
+      "id": "513a",
+      "username": "victor",
+      "password": "123456"
+    },
+    {
+      "id": "9130",
+      "username": "justina",
+      "password": "1234567"
+    },
+    {
+      "id": "0ca8",
+      "username": "Lina",
+      "password": "password"
+    },
+    {
+      "id": "9ba7",
+      "username": "laura",
+      "password": "123456l"
+    },
+    {
+      "id": "e534",
+      "username": "adrian",
+      "password": "testing"
+    },
+    {
+      "id": "f60f",
+      "username": "danne",
+      "password": "testing"
     }
   ]
 }
