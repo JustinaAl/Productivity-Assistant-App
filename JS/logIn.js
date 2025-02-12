@@ -75,9 +75,27 @@ const login = async() => {
     const password = passwordInput.value;
     error.classList = "";
     error.classList.add("hidden");
-    // const userData = await getData("http://localhost:5000/users", { username});
-    // if(userData && userData.username === username && userData.password)
+    try{
+        const userData = await getData("http://localhost:5000/users", { username});
+        if(userData[0] && userData[0].username === username && userData[0].password === password){
+            sessionStorage.setItem("userId", userData[0].id)
+            error.classList.remove("hidden")
+            error.innerText = "Login successfull!"
+            error.classList.add("success")
 
+            setTimeout(() => {
+                window.location.href = "startSida.html";
+            }, 2000);
+        } else {
+            error.classList.remove("hidden")
+            error.innerText = "Wrong username or password"
+        }
+    
+    } catch(error) {
+        console.error("Something went wrong" + error);
+    }
+    
+    
 }
 
 
