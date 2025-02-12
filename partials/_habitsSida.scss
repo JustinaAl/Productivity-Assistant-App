@@ -1,0 +1,67 @@
+@import '../partials/variables';
+body{
+    all: unset;
+}
+
+#habitsWrapper{
+    background-color: $BaseBlack;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+#habitsMain{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border-left: 1px solid $Neutral500;
+    border-right: 1px solid $Neutral500;
+    width: 33%;
+    gap: 24px;
+}
+
+h1{
+    color: $Blue50;
+}
+
+p#infoText{
+    color: $Blue50;
+}
+
+#createNew{
+    border: 0;
+    background-color: $Blue500;
+    width: 50%;
+    border-radius: 15px;
+    padding: 16px;
+    color: $Blue50;
+}
+#mainDiv{
+    border: 1px solid black;
+    width: 400px;
+    padding: 16px;
+}
+
+.habitBox{
+    width: 400px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.repetitionBox{
+    display: flex;
+    flex-direction: column;
+
+    .counter{
+        display: flex;
+        align-items: center;
+        gap: 4px;
+
+        button.plus, button.minus{
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

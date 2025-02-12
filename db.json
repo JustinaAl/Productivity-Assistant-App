@@ -18,9 +18,9 @@
     {
       "id": "7332dc99-7ce7-4e81-a063-6baa504ad34f",
       "userId": "a138b0ea-faa5-4a75-ae56-921h607ba3af",
-      "title": "React Performance Optimization",
-      "reps": "1",
-      "priority": "low"
+      "title": "Brush teeth",
+      "reps": "0",
+      "priority": "medium"
     }
   ],
   "events": [
@@ -69,6 +69,11 @@
       "id": "f60f",
       "username": "danne",
       "password": "testing"
+    },
+    {
+      "id": "bd09",
+      "username": "Justina",
+      "password": "Justina"
     }
   ]
 }
