@@ -4,13 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/JS/habits.js" defer></script>
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>Habits</h1>
-    <button id="createNew">Create new habit</button>
-    <p>All your current todos are stored here</p>
+<div id="habitsWrapper">
+    <main id="habitsMain">
+        <h1>Habits</h1>
+        <button id="createNew">+ Create new habit</button>
+        <p id="infoText">All your current todos are stored here</p>
+    </main>
+    <div id="right">
+    </div>
+</div>
 </body>
 </html>
