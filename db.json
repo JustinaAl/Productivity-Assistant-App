@@ -54,6 +54,21 @@
       "id": "0ca8",
       "username": "Lina",
       "password": "password"
+    },
+    {
+      "id": "9ba7",
+      "username": "laura",
+      "password": "123456l"
+    },
+    {
+      "id": "e534",
+      "username": "adrian",
+      "password": "testing"
+    },
+    {
+      "id": "f60f",
+      "username": "danne",
+      "password": "testing"
     }
   ]
 }
