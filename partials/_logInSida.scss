@@ -1,17 +1,74 @@
+@import '../partials/variables';
+
+
 .loginPage{
+    background: $Neutral700;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    gap: 80px;
-    .userAuthContianer{
+    height: 100vh;
+    
+    .loginPageMain{
         display: flex;
         justify-content: center;
-        gap: 80px;
-        div{
+        align-items: center;
+        flex-direction: column;
+        background: $BaseBlack;
+        width: fit-content;
+        padding: 64px 55px;
+        border-radius: 42px;
+
+        .heading{
+            h1{
+                color: $Blue50;
+                font-weight: bold;
+                font-size: 40px;
+            }
+        }
+        .pleaseLogin{
+            color: $BaseWhite;
+            font-weight: lighter;
+            font-size: 16px;
+        }
+        .userAuthContianer{
             display: flex;
             flex-direction: column;
             gap: 10px;
+            width: 100%;
+
+
+            .login{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+
+                
+                input{
+                    width: 100%;
+                    background: $BaseBlack;
+                    border: 1px solid $Neutral500;
+                    border-radius: 8px;
+                    height: 32px;
+                    width: 100%;
+                }
+            }
+
+            label{
+                color: $BaseWhite;
+                font-weight: lighter;
+                font-size: 16px;
+            }
+            .butttons{
+                display: flex;
+                gap: 42px;
+                justify-content: space-between;
+                
+                button{
+                    background: $Blue500;
+                    color: $BaseWhite;
+                    width: 100%;
+                }
+            }
         }
     }
 }

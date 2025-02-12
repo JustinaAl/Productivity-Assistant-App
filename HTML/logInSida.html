@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles.css">
     <script src="../JS/logIn.js" defer></script>
 </head>
-<body>
-    <main class="loginPage">
-        <h1>Välkommen till Productivity Assistance Application</h1>
+<body class="loginPage">
+    <main class="loginPageMain">
+        <div class="heading">
+            <img src="" alt="">
+            <h1>Productivity Assistant Application</h1>
+        </div>
+        <p class="pleaseLogin">Please login to continue</p>
         <section class="userAuthContianer">
             <div class="login">
-                <label for="login">Logga in</label>
-                <input type="text" name="login" id="loginUsername" placeholder="Användarnamn"/>
-                <input type="password" name="login" placeholder="Lösenord"/>
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username"/>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" autocomplete="current-password"/>
             </div>
-            <div class="createUser">
-                <label for="createUser">Skapa användare</label>
-                <input type="text" name="createUser" placeholder="Användarnamn"/>
-                <input type="password" name="createUser" placeholder="Lösenord"/>
+            <div class="buttons">
+                <button id="createUser">Create User</button>
+                <button id="login">Login</button>
             </div>
         </section>
     </main>
