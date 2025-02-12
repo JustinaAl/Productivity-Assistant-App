@@ -1,0 +1,152 @@
+@import '../partials/variables';
+
+* {
+    box-sizing: border-box;
+}
+
+#startSida {
+    background-color: $BaseBlack;
+    display: flex;
+    height: 100vh;
+    box-sizing: border-box;
+
+    h1 {
+        font-weight: bold;
+        color: $Blue50;
+        font-size: 3rem;
+    }
+    h2 {
+        font-weight:100;
+        color: $Blue50;
+    }
+    h3 {
+        font-weight: bold;
+        color: $Blue50;
+    }
+    h4 {
+        font-weight: 400;
+        font-size: 0.8rem;
+        color: $Blue50;
+    }
+
+    #sideNav {
+        height: 100%;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        overflow: hidden;
+        border-right: 1px solid $Neutral700;
+        padding: 30px;
+
+        .navUl {
+            color: $Blue50;
+            font-size: 0.8rem;
+            font-weight: 200;
+            padding: 0;
+            line-height: 20px;
+            margin-left: 13px;
+            margin-bottom: 50px;
+        }
+
+       #todosHabitsEvents {
+          
+
+            #todosNav {
+                #imgH3NavTodos {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            #habitsNav {
+                #imgH3NavHabits {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                }
+            }
+
+            #eventsNav {
+                #imgH3NavEvents {
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    margin-bottom: 20px;
+                }
+            }
+
+       }
+       #logOutBtn {
+            width: 100%;
+            background-color: #0E121B; /* Dark background */
+            color: $Blue50;
+            border: 1px solid $Neutral600;
+            padding: 13px 30px; /* Add space around text */
+            font-weight: bold; /* Bold text */
+            font-size: 16px; /* Adjust font size */
+            text-align: center; /* Center text */
+            border-radius: 8px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to pointer */
+            transition: all 0.3s ease; /* Smooth hover effect */
+       }
+       #logOutBtn:hover {
+        background-color: rgba(51, 92, 255); /* Subtle hover effect */
+    }
+    }
+
+    #startSidaCont {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        #startSidaH1H2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            h2 {
+                margin-top: 0px;
+            }
+        }
+        #startSidaBtnEtc {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            #btnNavigation {
+                margin-top: 10px;
+                display: flex;
+                justify-content: center;
+                gap: 30px;
+                .btnNav {
+                    width: 130px;
+                    background-color: $Blue500;
+                    color: $BaseWhite;
+                    font-size: 15px;
+                    font-weight: 600;
+                    padding: 10px 24px;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease, transform 0.1s ease;
+                }
+                    .btnNav:hover {
+                        background-color: #3049C8; /* Slightly darker blue on hover */
+                    }
+                    
+                    .btnNav:active {
+                        transform: scale(0.95); /* Subtle press effect */
+                    }
+            }
+        }
+    }
+
+}
