@@ -14,7 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
     
-    <script type="module" src="../JS/events.js" defer></script>
+    <script type="module" src="../JS/events.js"></script>
 </head>
 <body class="eventsBody">
     <aside id="sideNav">
@@ -68,7 +68,9 @@
     <main class="eventsMain">
         <section class="upcomingEvents">
             <h2>Upcoming events</h2>
-            <button class="createNewEvent">+ Create New Event</button>
+            <button id="createNewEvent">+ Create New Event</button>
+            <div id="newNoteContainer"></div>
+            <p>All your upcoming events are stored here</p>
             <div id="upcomingEventsContainer"></div>
         </section>
         <section class="pastEvents">

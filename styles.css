@@ -498,12 +498,16 @@ hr {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 25px;
+  width: 400px;
+  padding: 0px 40px;
 }
 .eventsBody .eventsMain section h2 {
   font-size: 32px;
+  margin: 0px;
+  padding: 30px 0px;
 }
 .eventsBody .eventsMain section.upcomingEvents {
   border-right: 1px solid #2B303B;
@@ -511,14 +515,17 @@ hr {
 .eventsBody .eventsMain section.upcomingEvents button {
   all: unset;
   cursor: pointer;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   background: #335CFF;
   color: #FFFFFF;
+  box-sizing: border-box;
   font-size: 14px;
   font-weight: normal;
-  padding: 14px 80px;
+  padding: 14px 10px;
   border-radius: 8px;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
@@ -528,6 +535,10 @@ hr {
 .eventsBody .eventsMain section.upcomingEvents button:active {
   background: #1d38a5;
   transform: scale(0.98);
+}
+.eventsBody .eventsMain section.upcomingEvents p {
+  all: unset;
+  font-size: 12px;
 }
 
 .dates input {

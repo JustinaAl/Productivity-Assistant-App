@@ -1,7 +1,9 @@
-import { getData, postData } from "./logIn";  
+import { getData, postData } from "./services.js";  
 
 const upcomingEventsContainer = document.querySelector("#upcomingEventsContainer");
 const pastEventsContainer = document.querySelector("#pastEventsContainer");
+const createEventBtn = document.querySelector("#createNewEvent")
+const newNoteContainer = document.querySelector("#newNoteContainer");
   
   //FlatPickr
 
@@ -25,5 +27,27 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// sessionStorage.setItem("userId", "a138b0ea-faa5-4a75-at56-921c607ba3af")
+const userId = sessionStorage.getItem("userId");
+
+const createCard = (savefunction) => {
+  doc
+  savefunction && 
+}
+
+//print events
+const allEvents = await getData("http://localhost:5001/events", { userId })
+
+// const upcomingEvents = allEvents.endDate
 
 
+const createEvent = async() => {
+  createEventBtn.classList.add("hide");
+  const newCard = createCard(save);
+  newNoteContainer.append(newCard);
+}
+
+
+console.log(allEvents);
+
+createEventBtn.addEventListener("click", createEvent)

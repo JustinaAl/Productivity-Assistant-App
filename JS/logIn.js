@@ -1,3 +1,4 @@
+import { getData, postData } from "./services.js";  
 
 const usernameInput = document.querySelector("#username");
 const passwordInput = document.querySelector("#password");
@@ -13,20 +14,6 @@ if (localStorage.getItem("createdUser") === "true") {
     localStorage.removeItem("createdUser");
   }
 
-export const getData = async (url, params) => {
-
-    const response = await axios.get(url, { params });
-    
-    return response.data;
-}
-
-
-export const postData = async(url, newData) =>{
-
-    const response = await axios.post(url, newData);
-    return response.data;
-}
-
 const createUser = async() => {
     const username = usernameInput.value;
     const password = passwordInput.value;
@@ -34,7 +21,7 @@ const createUser = async() => {
     error.classList.add("hidden");
 
     if (username){
-        const userData = await getData("http://localhost:5000/users", { username})
+        const userData = await getData("http://localhost:5001/users", { username})
         
         if (!userData || userData.length !== 0){
             error.innerText = "Username already taken"
@@ -46,7 +33,7 @@ const createUser = async() => {
             error.innerText = "Password must be atleast 6 chars long"
             error.classList.remove("hidden")
         } else {
-            const response = await postData("http://localhost:5000/users", {
+            const response = await postData("http://localhost:5001/users", {
                 username,
                 password,
             })
@@ -76,7 +63,7 @@ const login = async() => {
     error.classList = "";
     error.classList.add("hidden");
     try{
-        const userData = await getData("http://localhost:5000/users", { username});
+        const userData = await getData("http://localhost:5001/users", { username});
         if(userData[0] && userData[0].username === username && userData[0].password === password){
             sessionStorage.setItem("userId", userData[0].id)
             error.classList.remove("hidden")
