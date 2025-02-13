@@ -1,4 +1,6 @@
 @import '../partials/variables';
+@import "../partials/mixins";
+
 body{
     all: unset;
 }
@@ -6,7 +8,7 @@ body{
 #habitsWrapper{
     background-color: $BaseBlack;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     height: 100vh;
 }
@@ -15,39 +17,52 @@ body{
     display: flex;
     flex-direction: column;
     padding: 16px;
-    border-left: 1px solid $Neutral500;
-    border-right: 1px solid $Neutral500;
-    width: 33%;
     gap: 24px;
+    width: 100%;
 }
-
-h1{
-    color: $Blue50;
-}
-
-p#infoText{
-    color: $Blue50;
+hr{
+    border: 0.5px solid $Neutral500;
 }
 
 #createNew{
-    border: 0;
-    background-color: $Blue500;
-    width: 50%;
-    border-radius: 15px;
-    padding: 16px;
-    color: $Blue50;
+    @include blueButton();
 }
-#mainDiv{
-    border: 1px solid black;
-    width: 400px;
-    padding: 16px;
+
+#moreInfo{
+    display: flex;
+    padding: 24px;
+
+    #mainDiv{
+        @include holderBox();
+        flex-direction: column;
+        gap: 8px;
+
+        div{
+            display: flex;
+            justify-content: space-between;
+
+            button{
+                @include blueButton();
+            }
+        }
+
+        input{
+            @include inputField();
+        }
+
+        select{
+            @include inputField();
+        }
+    }
 }
 
 .habitBox{
+    @include holderBox();
     width: 400px;
-    border: 1px solid black;
-    display: flex;
     justify-content: space-between;
+
+    button{
+    }
 }
 
 .repetitionBox{
