@@ -17,21 +17,28 @@
         width: fit-content;
         padding: 64px 64px;
         border-radius: 42px;
-        gap: 15px;
 
         .heading{
+            display: flex;
+            align-items: center;
+
+            img{
+                width: 60px;
+                padding-right: 5px;
+            }
             h1{
                 color: $Blue50;
                 font-weight: bold;
-                font-size: 40px;
+                font-size: 36px;
                 margin: 0px;
             }
         }
         .pleaseLogin{
             color: $BaseWhite;
             font-weight: lighter;
-            font-size: 16px;
+            font-size: 16px; 
             margin: 0px;
+            padding-bottom: 50px;
         }
         .userAuthContianer{
             display: flex;
@@ -98,15 +105,20 @@
                     font-weight: normal;
                     padding: 14px;
                     border-radius: 8px;
+                    transition: background-color 0.2s ease, transform 0.1s ease;
 
                     &:hover{
                         cursor: pointer;
+                        background: $Blue700;
                     }
 
                     &:active{
-                        background: $Blue700;
+                        background: darken($Blue700, 10%);
+                        
+                        transform: scale(0.98);
                     }
                 }
+
             }
         }
     }

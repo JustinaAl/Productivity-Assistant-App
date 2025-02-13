@@ -5,12 +5,8 @@ let createHabit = () => {
         let mainDiv = document.createElement("div");
         mainDiv.id = "mainDiv";
         mainDiv.innerHTML = `
-            <div id="title">
-                <label for="habitTitle">Habit title</label>
-                <input type="text" id="habitTitle" required>
-            </div>
-            <div id="priority">
-                <label for="prioritySelection">Priority</label>
+            <input type="text" id="habitTitle" placeholder="Enter habit title here...">
+            <div>
                 <select name="prioritySelection" id="prioritySelection">
                     <option value="" disabled selected>Choose priority</option>
                     <option>low</option>
@@ -19,7 +15,12 @@ let createHabit = () => {
                 </select>
                 <button id="saveHabit">Save</button>
             </div>`;
-        document.body.append(mainDiv);
+
+        let wrapper = document.createElement("div");
+        wrapper.id = "moreInfo";
+        document.body.querySelector("#habitsWrapper").append(wrapper);
+        
+        document.querySelector("#moreInfo").append(mainDiv);
         document.querySelector("#saveHabit").addEventListener("click", addHabit);
     }
 };
@@ -45,7 +46,8 @@ let addHabit = () => {
                 <button class="plus">+</button>
             </div>
         </div>`;
-    document.body.append(habitBox);
+
+    document.querySelector("#habitsMain").append(habitBox);
     document.querySelector("#mainDiv").remove();
 
     let plus = habitBox.querySelector(".plus");
