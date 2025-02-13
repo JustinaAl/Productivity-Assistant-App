@@ -17,13 +17,19 @@
         width: fit-content;
         padding: 64px 64px;
         border-radius: 42px;
-        gap: 15px;
 
         .heading{
+            display: flex;
+            align-items: center;
+
+            img{
+                width: 60px;
+                padding-right: 5px;
+            }
             h1{
                 color: $Blue50;
                 font-weight: bold;
-                font-size: 40px;
+                font-size: 36px;
                 margin: 0px;
             }
         }
@@ -32,6 +38,7 @@
             font-weight: lighter;
             font-size: 16px;
             margin: 0px;
+            padding-bottom: 50px;
         }
         .userAuthContianer{
             display: flex;
