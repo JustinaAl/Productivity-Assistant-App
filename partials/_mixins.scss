@@ -1,2 +1,23 @@
-
+@mixin blueButton{
+    background-color: $Blue500;
+    padding: 16px;
+    border-radius: 16px;
+    border: 0;
+    color: $Blue50;
+    font-size: 20px;
+}
+@mixin inputField{
+    background-color: $Neutral600;
+    padding: 8px;
+    font-size: 20px;
+    color: $Blue50;
+    border-radius: 4px;
+    border: 1px solid #717784;
+}
+@mixin holderBox{
+    display: flex;
+    padding: 16px;
+    height: min-content;
+    background-color: $Neutral700;
+}
 
