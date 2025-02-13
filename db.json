@@ -16,11 +16,25 @@
   ],
   "habits": [
     {
-      "id": "7332dc99-7ce7-4e81-a063-6baa504ad34f",
-      "userId": "a138b0ea-faa5-4a75-ae56-921h607ba3af",
-      "title": "Brush teeth",
-      "reps": "0",
+      "id": "5f7a",
+      "userId": null,
+      "title": "df",
+      "reps": 0,
       "priority": "medium"
+    },
+    {
+      "id": "62c3",
+      "userId": "0d22",
+      "title": "Hej",
+      "reps": 0,
+      "priority": "high"
+    },
+    {
+      "id": "5770",
+      "userId": "0d22",
+      "title": "new",
+      "reps": 0,
+      "priority": "low"
     }
   ],
   "events": [
@@ -71,9 +85,9 @@
       "password": "testing"
     },
     {
-      "id": "bd09",
-      "username": "Justina",
-      "password": "Justina"
+      "id": "0d22",
+      "username": "JustinaP",
+      "password": "justinap"
     }
   ]
 }
