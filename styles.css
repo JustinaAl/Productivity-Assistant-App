@@ -405,6 +405,8 @@ hr {
 
 #moreInfo {
   display: flex;
+  flex-direction: column;
+  gap: 24px;
   padding: 24px;
   border-left: 1px solid #2B303B;
 }
@@ -472,10 +474,17 @@ hr {
   font-weight: 300;
   font-size: 14px;
 }
+.habitBox .deleteBtn, .habitBox .editBtn {
+  font-size: 12px;
+}
 
 .repetitionBox {
   display: flex;
-  flex-direction: column;
+  gap: 24px;
+}
+.repetitionBox .fa-ellipsis-vertical {
+  color: #EBF1FF;
+  font-size: 36px;
 }
 .repetitionBox .counter {
   display: flex;
