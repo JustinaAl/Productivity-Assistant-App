@@ -1,0 +1,100 @@
+
+
+.eventsBody{
+    background: $BaseBlack;
+    color: $BaseWhite;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    
+
+    #sideNav{
+        min-height: 100%;
+    }
+    .eventsMain{
+        display: flex;
+        width: 100%;
+        section{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 25px;
+
+            h2{
+                font-size: 32px;
+            }
+
+            &.upcomingEvents{
+                border-right: 1px solid $Neutral700;
+
+                button{
+                    all: unset;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: $Blue500;
+                    color: $BaseWhite;
+                    font-size: 14px;
+                    font-weight: normal;
+                    padding: 14px 80px;
+                    border-radius: 8px;
+                    transition: background-color 0.2s ease, transform 0.1s ease;
+
+                    &:hover{
+                        background: $Blue700;
+                    }
+
+                    &:active{
+                        background: darken($Blue700, 10%);
+                        
+                        transform: scale(0.98);
+                    }
+                }
+            }
+        }
+
+
+    }
+}
+
+.dates{
+    input{
+        appearance: none;
+        box-sizing: border-box;
+        border: 1px solid $Neutral700;
+        background: transparent;
+        font-size: 1.5rem;
+        padding: 8px;
+        color: $Neutral300;
+        &::placeholder{
+            color: $Neutral500;
+        }
+        &:active{
+            border: 1px solid $Neutral700;
+        }
+    }
+    
+}
+/* Flatpickr custom styles */
+// .flatpickr-input {
+//     width: 150px;
+//     padding: 8px;
+//     font-size: 16px;
+//     border: 2px solid #4CAF50;
+//     border-radius: 5px;
+//     background-color: #f9f9f9;
+//     color: #333;
+// }
+
+// .flatpickr-calendar {
+//     background: white;
+//     border-radius: 5px;
+// }
+
+// .flatpickr-time {
+//     background: #4CAF50;
+//     color: white;
+// }

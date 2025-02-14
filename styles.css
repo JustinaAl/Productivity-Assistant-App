@@ -60,6 +60,60 @@
   color: #EBF1FF;
 }
 
+#sideNav {
+  height: 100%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-right: 1px solid #2B303B;
+  padding: 30px;
+}
+#sideNav .navUl {
+  color: #EBF1FF;
+  font-size: 0.8rem;
+  font-weight: 200;
+  padding: 0;
+  line-height: 20px;
+  margin-left: 13px;
+  margin-bottom: 50px;
+}
+#sideNav #todosHabitsEvents #todosNav #imgH3NavTodos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #todosHabitsEvents #habitsNav #imgH3NavHabits {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #todosHabitsEvents #eventsNav #imgH3NavEvents {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #logOutBtn {
+  width: 100%;
+  background-color: #0E121B; /* Dark background */
+  color: #EBF1FF;
+  border: 1px solid #525866;
+  padding: 13px 30px; /* Add space around text */
+  font-weight: bold; /* Bold text */
+  font-size: 16px; /* Adjust font size */
+  text-align: center; /* Center text */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+#sideNav #logOutBtn:hover {
+  background-color: rgb(51, 92, 255); /* Subtle hover effect */
+}
+
 :root {
   --BaseWhite: #FFFFFF;
   --BaseBlack: #0E121B;
@@ -103,12 +157,19 @@
   width: fit-content;
   padding: 64px 64px;
   border-radius: 42px;
-  gap: 15px;
+}
+.loginPage .loginPageMain .heading {
+  display: flex;
+  align-items: center;
+}
+.loginPage .loginPageMain .heading img {
+  width: 60px;
+  padding-right: 5px;
 }
 .loginPage .loginPageMain .heading h1 {
   color: #EBF1FF;
   font-weight: bold;
-  font-size: 40px;
+  font-size: 36px;
   margin: 0px;
 }
 .loginPage .loginPageMain .pleaseLogin {
@@ -116,6 +177,7 @@
   font-weight: lighter;
   font-size: 16px;
   margin: 0px;
+  padding-bottom: 50px;
 }
 .loginPage .loginPageMain .userAuthContianer {
   display: flex;
@@ -178,17 +240,21 @@
   font-weight: normal;
   padding: 14px;
   border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 .loginPage .loginPageMain .userAuthContianer .buttons button:hover {
   cursor: pointer;
+  background: #2547D0;
 }
 .loginPage .loginPageMain .userAuthContianer .buttons button:active {
-  background: #2547D0;
+  background: #1d38a5;
+  transform: scale(0.98);
 }
 .loginPage .hidden {
   display: none;
 }
 
+<<<<<<< HEAD
 :root {
   --BaseWhite: #FFFFFF;
   --BaseBlack: #0E121B;
@@ -380,28 +446,15 @@ body {
   justify-content: space-between;
   width: 100%;
   min-height: 100vh;
+=======
+* {
+  font-family: "Inter", sans-serif;
+>>>>>>> 84bd4020eb5e5f10440624bc0b1a50d786863a9c
 }
-
-#habitsMain {
-  display: flex;
-  flex-direction: column;
-  padding: 16px;
-  gap: 24px;
-  width: 100%;
-}
-
-hr {
-  border: 0.5px solid #717784;
-}
-
-#createNew {
-  background-color: #335CFF;
-  padding: 16px;
-  border-radius: 16px;
-  border: 0;
+* input::-moz-placeholder {
   color: #EBF1FF;
-  font-size: 20px;
 }
+<<<<<<< HEAD
 
 #moreInfo {
   display: flex;
@@ -584,4 +637,8 @@ hr {
 }
 * h1, * p, * input::placeholder {
   color: #EBF1FF;
+=======
+* h1, * p, * input::placeholder {
+  color: #EBF1FF;
+>>>>>>> 84bd4020eb5e5f10440624bc0b1a50d786863a9c
 }/*# sourceMappingURL=styles.css.map */
