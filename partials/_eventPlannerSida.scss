@@ -57,8 +57,11 @@
 
                     &:active{
                         background: darken($Blue700, 10%);
-                        
                         transform: scale(0.98);
+                    }
+
+                    &.hide{
+                        display: none;
                     }
 
                 }

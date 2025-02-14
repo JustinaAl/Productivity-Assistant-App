@@ -6,8 +6,13 @@ export const getData = async (url, params) => {
 }
 
 
-export const postData = async(url, newData) =>{
+export const postData = async(url, newData) => {
 
     const response = await axios.post(url, newData);
     return response.data;
+}
+
+export const changeData = async(url, newData) => {
+    const response = await axios.put(url, newData);
+    return response.data
 }

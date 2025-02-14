@@ -16,13 +16,6 @@
   ],
   "habits": [
     {
-      "id": "5f7a",
-      "userId": "513a",
-      "title": "df",
-      "reps": 0,
-      "priority": "medium"
-    },
-    {
       "id": "884a",
       "userId": "0d22",
       "title": "new",
@@ -42,13 +35,6 @@
       "title": "hej",
       "reps": 0,
       "priority": ""
-    },
-    {
-      "id": "c2c0",
-      "userId": null,
-      "title": "jb",
-      "reps": 0,
-      "priority": "medium"
     },
     {
       "id": "d241",
