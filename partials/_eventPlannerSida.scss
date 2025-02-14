@@ -18,12 +18,16 @@
             width: 100%;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: flex-start;
             justify-content: flex-start;
             gap: 25px;
+            width: 400px;
+            padding: 0px 40px;
 
             h2{
                 font-size: 32px;
+                margin: 0px;
+                padding: 30px 0px;
             }
 
             &.upcomingEvents{
@@ -32,14 +36,18 @@
                 button{
                     all: unset;
                     cursor: pointer;
+                    align-self: center;
                     display: flex;
                     align-items: center;
                     justify-content: center;
+                    width: 100%;
+                    // max-width: 300px;
                     background: $Blue500;
                     color: $BaseWhite;
+                    box-sizing: border-box;
                     font-size: 14px;
                     font-weight: normal;
-                    padding: 14px 80px;
+                    padding: 14px 10px;
                     border-radius: 8px;
                     transition: background-color 0.2s ease, transform 0.1s ease;
 
@@ -52,6 +60,11 @@
                         
                         transform: scale(0.98);
                     }
+
+                }
+                p{
+                    all: unset;
+                    font-size: 12px;
                 }
             }
         }
