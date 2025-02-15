@@ -23,27 +23,6 @@
       "priority": "medium"
     },
     {
-      "id": "884a",
-      "userId": "0d22",
-      "title": "new",
-      "reps": 0,
-      "priority": "low"
-    },
-    {
-      "id": "d80d",
-      "userId": "0d22",
-      "title": "j",
-      "reps": 0,
-      "priority": "medium"
-    },
-    {
-      "id": "a2ac",
-      "userId": "0d22",
-      "title": "hej",
-      "reps": 0,
-      "priority": ""
-    },
-    {
       "id": "c2c0",
       "userId": null,
       "title": "jb",
@@ -63,6 +42,20 @@
       "title": "",
       "reps": 0,
       "priority": ""
+    },
+    {
+      "id": "61fb",
+      "userId": "0d22",
+      "title": "habit",
+      "reps": 0,
+      "priority": "medium"
+    },
+    {
+      "id": "d0ab",
+      "userId": "0d22",
+      "title": "new",
+      "reps": 0,
+      "priority": "high"
     }
   ],
   "events": [
