@@ -1,4 +1,4 @@
-import { getData, postData, changeData } from "./services.js";  
+import { getData, postData, changeData, deleteData } from "./services.js";  
 
 const upcomingEventsContainer = document.querySelector("#upcomingEventsContainer");
 const pastEventsContainer = document.querySelector("#pastEventsContainer");
@@ -32,8 +32,17 @@ const saveEvent = async(newData, id) => {
   }
 }
 
-const deleteEvent = () => {
+const deleteEvent = async(id) => {
+  if (id){
 
+    if (await deleteData(`http://localhost:5001/events?id=${id}`)){
+      newNoteContainer.innerHTML = ""
+      createEventBtn.classList.remove("hide")
+    }
+  }else {
+    newNoteContainer.innerHTML = "";
+    createEventBtn.classList.remove("hide");
+  }
 }
 
 const createCard = async(id) => {
@@ -97,7 +106,9 @@ const createCard = async(id) => {
       // deleteBtn.classList.add("hide")
   }});
 
-  deleteBtn.addEventListener("click", deleteEvent);
+  deleteBtn.addEventListener("click", async() => {
+    await (id ? deleteEvent(id) : deleteEvent())
+  });
 
   start.addEventListener("input", () => {
     // save.classList.remove("hide");

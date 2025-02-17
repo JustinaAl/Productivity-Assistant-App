@@ -16,3 +16,8 @@ export const changeData = async(url, newData) => {
     const response = await axios.put(url, newData);
     return response.data
 }
+
+export const deleteData = async(url) => {
+    const response = await axios.delete(url);
+
+}
