@@ -72,9 +72,6 @@ hr{
 
     button{
         @include transparentBtn();
-        width: 40px;
-        height: 40px;
-        font-size: 30px;
     }
      p.habitTitle{
         font-weight: 600;
@@ -90,19 +87,69 @@ hr{
     }
 }
 
-.repetitionBox{
+.more{
     display: flex;
-    gap: 24px;
+    flex-direction: column-reverse;
+    align-items: end;
+    gap: 16px;
+
+    .counterWrap{
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        gap: 8px;
+        p{
+            margin: 0;
+            font-size: 14px;
+            width: fit-content;
+        }
+
+        .counter{
+            display: flex;
+            align-items: center;
+            gap: 4px;
+    
+            button{
+                height: fit-content;
+                width: fit-content;
+                padding: 8px;
+
+                i{
+                    font-size: 16px;
+                }
+            }
+        }
+    }
 
     .fa-ellipsis-vertical{
         color: $Blue50;
         font-size: 36px;
+        width: 5px;
     }
 
-    .counter{
+
+    .iconBox{
         display: flex;
-        align-items: center;
-        gap: 4px;
+        flex-direction: column;
+        width: fit-content;
+        align-items: end;
+        min-width: 80px;
+        gap: 8px;
+
+        button{
+            width: 100%;
+            height: fit-content;
+            align-items: center;
+            gap: 8px;
+            display: flex;
+            padding: 8px;
+            
+            p{
+                margin: 0;
+                font-size: 10px;
+            }
+        }
+
     }
 }
 #sideNav {
