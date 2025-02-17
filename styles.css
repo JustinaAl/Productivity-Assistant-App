@@ -97,6 +97,11 @@
   gap: 15px;
   margin-bottom: 20px;
 }
+#sideNav #todosHabitsEvents .link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 #sideNav #logOutBtn {
   width: 100%;
   background-color: #0E121B; /* Dark background */
@@ -625,8 +630,47 @@ hr {
   all: unset;
   font-size: 12px;
 }
-
-.dates input {
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer h2 {
+  margin: 0px;
+  padding: 0px;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer h2:focus {
+  border: none;
+  outline: none;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .dateContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .dateContainer .errorMsg {
+  color: #FB3748;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer {
+  display: flex;
+  gap: 15px;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer .delete {
+  all: unset;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer .delete:hover .deleteIcon {
+  fill: #FB3748;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer .delete:active .deleteIcon {
+  fill: #ffa7ad;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer .delete.hide {
+  display: none;
+}
+.eventsBody .eventsMain .date {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -636,14 +680,15 @@ hr {
   font-size: 1.5rem;
   padding: 8px;
   color: #CACFD8;
+  width: 100%;
 }
-.dates input::-moz-placeholder {
+.eventsBody .eventsMain .date::-moz-placeholder {
   color: #717784;
 }
-.dates input::placeholder {
+.eventsBody .eventsMain .date::placeholder {
   color: #717784;
 }
-.dates input:active {
+.eventsBody .eventsMain .date:active {
   border: 1px solid #2B303B;
 }
 
