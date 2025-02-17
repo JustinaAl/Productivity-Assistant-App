@@ -630,44 +630,44 @@ hr {
   all: unset;
   font-size: 12px;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer {
+.eventsBody .eventsMain section .cardContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer h2 {
+.eventsBody .eventsMain section .cardContainer h2 {
   margin: 0px;
   padding: 0px;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer h2:focus {
+.eventsBody .eventsMain section .cardContainer h2:focus {
   border: none;
   outline: none;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer .dateContainer {
+.eventsBody .eventsMain section .cardContainer .dateContainer {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer .dateContainer .errorMsg {
+.eventsBody .eventsMain section .cardContainer .dateContainer .errorMsg {
   color: #FB3748;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer .buttonContainer {
+.eventsBody .eventsMain section .cardContainer .buttonContainer {
   display: flex;
   gap: 15px;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer .buttonContainer .delete {
+.eventsBody .eventsMain section .cardContainer .buttonContainer .delete {
   all: unset;
   padding: 0px 10px;
   box-sizing: border-box;
   cursor: pointer;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer .buttonContainer .delete:hover .deleteIcon {
+.eventsBody .eventsMain section .cardContainer .buttonContainer .delete:hover .deleteIcon {
   fill: #FB3748;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer .buttonContainer .delete:active .deleteIcon {
+.eventsBody .eventsMain section .cardContainer .buttonContainer .delete:active .deleteIcon {
   fill: #ffa7ad;
 }
-.eventsBody .eventsMain section.upcomingEvents .cardContainer .buttonContainer.hide {
+.eventsBody .eventsMain section .cardContainer .buttonContainer.hide {
   display: none;
 }
 .eventsBody .eventsMain .date {

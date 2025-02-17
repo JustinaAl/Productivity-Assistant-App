@@ -290,10 +290,15 @@ const printEvents = async() => {
     ongoingEventsContainer.classList.add("ongoingEventsContainer");
 
     for (const event of ongoingEvents) {
-      console.log(event.id);
       upcomingEventsContainer.append(await createCard(event));
     }
   };
+
+  if (pastEvents.length > 0){
+    for (const event of pastEvents) {
+      pastEventsContainer.append(await createCard(event));
+    }
+  }
   flatPickr()
 }
 printEvents();

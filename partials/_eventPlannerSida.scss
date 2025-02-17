@@ -73,56 +73,57 @@
                 #newNoteContainer{
                     
                 }
-                .cardContainer{
+                
+            }
+            .cardContainer{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                h2{
+                    margin: 0px;
+                    padding: 0px;
+
+
+                    &:focus{
+                        border: none;
+                        outline: none;
+                    }
+                }
+
+                .dateContainer{
                     display: flex;
                     flex-direction: column;
                     gap: 20px;
 
-                    h2{
-                        margin: 0px;
-                        padding: 0px;
-
-
-                        &:focus{
-                            border: none;
-                            outline: none;
-                        }
+                    .errorMsg{
+                        color: $Red500;
                     }
+                }
 
-                    .dateContainer{
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
+                .buttonContainer{
+                    display: flex;
+                    gap: 15px;
 
-                        .errorMsg{
-                            color: $Red500;
-                        }
-                    }
+                    .delete{
+                        all: unset;
+                        padding: 0px 10px;
+                        box-sizing: border-box;
+                        cursor: pointer;
 
-                    .buttonContainer{
-                        display: flex;
-                        gap: 15px;
-
-                        .delete{
-                            all: unset;
-                            padding: 0px 10px;
-                            box-sizing: border-box;
-                            cursor: pointer;
-
-                            &:hover{
-                                .deleteIcon{
-                                    fill: #FB3748;
-                                }
-                            }
-                            &:active{
-                                .deleteIcon{
-                                    fill: #ffa7ad;
-                                }
+                        &:hover{
+                            .deleteIcon{
+                                fill: #FB3748;
                             }
                         }
-                        &.hide{
-                            display: none;
+                        &:active{
+                            .deleteIcon{
+                                fill: #ffa7ad;
+                            }
                         }
+                    }
+                    &.hide{
+                        display: none;
                     }
                 }
             }
