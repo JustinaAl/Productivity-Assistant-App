@@ -24,6 +24,7 @@ let createHabit = () => {
 
 document.querySelector("#createNew").addEventListener("click", createHabit);
 
+//Pusher habit to db after pressing save
 let pushHabitdb = async () => {
     let userId = sessionStorage.getItem('userId');
     let value = 0;
