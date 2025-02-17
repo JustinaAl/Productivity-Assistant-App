@@ -16,13 +16,6 @@
   ],
   "habits": [
     {
-      "id": "5f7a",
-      "userId": "513a",
-      "title": "df",
-      "reps": 0,
-      "priority": "medium"
-    },
-    {
       "id": "884a",
       "userId": "0d22",
       "title": "new",
@@ -42,13 +35,6 @@
       "title": "hej",
       "reps": 0,
       "priority": ""
-    },
-    {
-      "id": "c2c0",
-      "userId": null,
-      "title": "jb",
-      "reps": 0,
-      "priority": "medium"
     },
     {
       "id": "d241",
@@ -72,6 +58,48 @@
       "title": "React Performance Optimization",
       "startDate": "2025-10-28",
       "endDate": "2025-10-29"
+    },
+    {
+      "id": "2d29",
+      "userId": "513a",
+      "title": "a",
+      "startDate": "2025-02-20 12:00",
+      "endDate": "2025-02-21 12:00"
+    },
+    {
+      "id": "11da",
+      "userId": "513a",
+      "title": "A",
+      "startDate": "2025-02-20 12:00",
+      "endDate": "2025-02-18 12:00"
+    },
+    {
+      "id": "1d16",
+      "userId": "513a",
+      "title": "A",
+      "startDate": "2025-02-20 12:00",
+      "endDate": "2025-02-20 13:00"
+    },
+    {
+      "id": "61a1",
+      "userId": "513a",
+      "title": "A",
+      "startDate": "2025-02-18 12:00",
+      "endDate": "2025-02-19 12:00"
+    },
+    {
+      "id": "c9b1",
+      "userId": "513a",
+      "title": "Go to gym",
+      "startDate": "2025-02-18 12:00",
+      "endDate": "2025-02-18 14:00"
+    },
+    {
+      "id": "d220",
+      "userId": "513a",
+      "title": "Fish",
+      "startDate": "2025-02-19 12:00",
+      "endDate": "2025-02-19 14:00"
     }
   ],
   "users": [

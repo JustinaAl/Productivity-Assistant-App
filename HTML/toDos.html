@@ -63,6 +63,37 @@
     <main class="todosMain">
         <section class="allTodos">
             <h2>Todos</h2>
+
+            <form id="todoForm">
+                <div>
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required>
+                </div>
+                <div>
+                    <label for="deadline">Deadline:</label>
+                    <input type="date" id="deadline" name="deadline" required>
+                </div>
+                <div>
+                    <label for="timeEstimate">Time Estimate (hours):</label>
+                    <input type="number" id="timeEstimate" name="timeEstimate" min="0" step="0.5" required>
+                </div>
+                <div>
+                <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="domestic">Domestic</option>
+                        <option value="work">Work</option>
+                        <option value="leisure">Leisure</option>
+                        <option value="school">School</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" placeholder="Add some notes..."></textarea>
+                </div>
+                <button type="submit">Save</button>
+            </form>
+
             <button class="createNewTodo">+ Create New Todo</button>
             <div id="allTodosContainer"></div>
         </section>
