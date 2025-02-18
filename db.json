@@ -16,25 +16,18 @@
   ],
   "habits": [
     {
-      "id": "884a",
-      "userId": "0d22",
-      "title": "new",
-      "reps": 0,
-      "priority": "low"
-    },
-    {
-      "id": "d80d",
-      "userId": "0d22",
-      "title": "j",
+      "id": "5f7a",
+      "userId": "513a",
+      "title": "df",
       "reps": 0,
       "priority": "medium"
     },
     {
-      "id": "a2ac",
-      "userId": "0d22",
-      "title": "hej",
+      "id": "c2c0",
+      "userId": null,
+      "title": "jb",
       "reps": 0,
-      "priority": ""
+      "priority": "medium"
     },
     {
       "id": "d241",
@@ -49,6 +42,27 @@
       "title": "",
       "reps": 0,
       "priority": ""
+    },
+    {
+      "id": "61fb",
+      "userId": "0d22",
+      "title": "habit",
+      "reps": 0,
+      "priority": "medium"
+    },
+    {
+      "id": "d0ab",
+      "userId": "0d22",
+      "title": "new",
+      "reps": 0,
+      "priority": ""
+    },
+    {
+      "id": "2b5b",
+      "userId": "0ca8",
+      "title": "hejsan",
+      "reps": 0,
+      "priority": "low"
     }
   ],
   "events": [
@@ -100,6 +114,13 @@
       "title": "Fish",
       "startDate": "2025-02-19 12:00",
       "endDate": "2025-02-19 14:00"
+    },
+    {
+      "id": "3397",
+      "userId": null,
+      "title": "Events",
+      "startDate": "2025-02-18 12:00",
+      "endDate": "2025-02-19 12:00"
     }
   ],
   "users": [

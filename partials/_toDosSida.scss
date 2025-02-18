@@ -5,6 +5,24 @@
     box-sizing: border-box;
 }
 
+.date{
+    appearance: none;
+    box-sizing: border-box;
+    border: 1px solid $Neutral700;
+    background: transparent;
+    font-size: 1.5rem;
+    padding: 8px;
+    color: $Neutral300;
+    width: 100%;
+    &::placeholder{
+        color: $Neutral500;
+    }
+    &:active{
+        border: 1px solid $Neutral700;
+    }
+    
+}
+
 .todosBody {
     background-color: $BaseBlack;
     color: $BaseWhite;
@@ -48,7 +66,7 @@
         width: 100%;
         
         /*Button*/
-        .createNewTodo {
+        #createNewTodo {
                     
                     width: calc(100% - 48px);
                     background-color: $Blue500;
@@ -60,9 +78,9 @@
                     border-radius: 8px;
                     cursor: pointer;
                     transition: background-color 0.2s ease, transform 0.1s ease;
-        }   .createNewTodo:hover {
+        }   #createNewTodo:hover {
             background-color: #3049C8; /* Slightly darker blue on hover */
-        }   .createNewTodo:active {
+        }   #createNewTodo:active {
             transform: scale(0.95); /* Subtle press effect */
         }
     
@@ -79,6 +97,24 @@
             display: flex;
             flex-wrap: wrap;
             max-width: 400px;
+
+            #saveBtn {
+                width: auto;
+                    background-color: $Blue500;
+                    color: $BaseWhite;
+                    font-size: 15px;
+                    font-weight: 600;
+                    padding: 10px 24px;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease, transform 0.1s ease;
+        }   #saveBtn:hover {
+            background-color: #3049C8; /* Slightly darker blue on hover */
+        }   #saveBtn:active {
+            transform: scale(0.95); /* Subtle press effect */
+        }
+            
         }
 
         #allTodosContainer{
