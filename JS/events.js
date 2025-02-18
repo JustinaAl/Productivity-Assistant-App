@@ -25,7 +25,7 @@ const userId = sessionStorage.getItem("userId");
 
 const saveEvent = async(newData, id) => {
   if (id){
-    await changeData(`http://localhost:5001/events?id=${id}`, newData)
+    await changeData(`http://localhost:5001/events/${id}`, newData)
   } else{
     const startData = {userId, ...newData}
     await postData("http://localhost:5001/events", startData)
@@ -34,11 +34,7 @@ const saveEvent = async(newData, id) => {
 
 const deleteEvent = async(id) => {
   if (id){
-
-    if (await deleteData(`http://localhost:5001/events?id=${id}`)){
-      newNoteContainer.innerHTML = ""
-      createEventBtn.classList.remove("hide")
-    }
+    await deleteData(`http://localhost:5001/events/${id}`)
   }else {
     newNoteContainer.innerHTML = "";
     createEventBtn.classList.remove("hide");
@@ -56,106 +52,121 @@ const createCard = async(event) => {
   end.name="dateEnd";
   end.classList.add("date");
 
-  flatpickr(start, {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-    time_24hr: true,
-    defaultDate: event.startDate,
-  });
+  const startTitle = document.createElement("p");
+  startTitle.innerText = "Start: ";
+  const endTitle = document.createElement("p");
+  endTitle.innerText = "End: ";
 
-  flatpickr(end, {
-    enableTime: true,
-    dateFormat: "Y-m-d H:i",
-    time_24hr: true,
-    defaultDate: event.endDate,
-  });
-
+  const startContainer = document.createElement("div");
+  startContainer.classList.add("startContainer");
+  startContainer.append(startTitle, start);
   
-  const dateContainer = document.createElement("div");
-  dateContainer.classList.add("dateContainer");
-  const errorMsg = document.createElement("p");
-  errorMsg.classList.add("errorMsg")
-
-  dateContainer.append(start, end, errorMsg)
+  const endContainer = document.createElement("div");
+  endContainer.classList.add("endContainer");
+  endContainer.append(endTitle, end);
 
   const title = document.createElement("h2");
   title.innerText = `${event.title}`;
   title.setAttribute("contentEditable", "true");
 
+
+  const dateContainer = document.createElement("div");
+  dateContainer.classList.add("dateContainer");
+  const errorMsg = document.createElement("p");
+  errorMsg.classList.add("errorMsg")
+  dateContainer.append(title, startContainer, endContainer, errorMsg)
+
   
-  
-  const save = document.createElement("button");
-  save.innerText ="Save";
-  save.classList.add("save");
+
+  flatpickr(start, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    altInput: true, 
+    altInputClass: "date",
+    altFormat: "d M Y - H:i",
+    time_24hr: true,
+    allowInput: true,
+    defaultDate: event.startDate,
+ 
+  });
+
+  flatpickr(end, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    altInput: true, 
+    altInputClass: "date",
+    altFormat: "d M Y - H:i",
+    time_24hr: true,
+    defaultDate: event.endDate,
+  });
+
+
+  // const save = document.createElement("button");
+  // save.innerHTML ='<svg class="saveIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#99A0Ae"><path d="M840-680v480q0 33-23.5 56.5T760-120H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h480l160 160Zm-80 34L646-760H200v560h560v-446ZM480-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM240-560h360v-160H240v160Zm-40-86v446-560 114Z"/></svg>';
+  // save.classList.add("save", "hide");
 
   const deleteBtn = document.createElement("button");
   deleteBtn.innerHTML = '<svg class="deleteIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#99A0AE"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
   deleteBtn.classList.add("delete");
 
   const buttonContainer = document.createElement("div");
-  buttonContainer.classList.add("buttonContainer", "hide");
-  buttonContainer.append(save, deleteBtn);
+  buttonContainer.classList.add("buttonContainer");
+  buttonContainer.append(deleteBtn);
 
-  save.addEventListener('click', async() => {
-    const trimmedTitle = title.innerText.trim();
+  // save.addEventListener('click', async() => {
+  //   const trimmedTitle = title.innerText.trim();
 
-    if (trimmedTitle === "Enter title here..." || trimmedTitle === ""){
-      errorMsg.innerText = "Please enter a title",
-      title.style.color = "#FB3748"
-    } else if(start.value ===""){
-      errorMsg.innerText = "Please enter a start date"
-    }else if(end.value ===""){
-      errorMsg.innerText = "Please enter a end date"
-    }else if(end.value <= start.value){
-      errorMsg.innerText = "End time has to be later than start time"
-    }else{
+  //   if (trimmedTitle === "Enter title here..." || trimmedTitle === ""){
+  //     errorMsg.innerText = "Please enter a title",
+  //     title.style.color = "#FB3748"
+  //   } else if(start.value ===""){
+  //     errorMsg.innerText = "Please enter a start date"
+  //   }else if(end.value ===""){
+  //     errorMsg.innerText = "Please enter a end date"
+  //   }else if(end.value <= start.value){
+  //     errorMsg.innerText = "End time has to be later than start time"
+  //   }else{
 
-      const newData = {
-        title: title.innerText.trim(),
-        startDate: start.value,
-        endDate: end.value
-      };
-      await (id ? saveEvent(newData, id) : saveEvent(newData));
-  }});
+  //     const newData = {
+  //       title: title.innerText.trim(),
+  //       startDate: start.value,
+  //       endDate: end.value
+  //     };
+  //     await saveEvent(newData, id);
+  // }});
 
   deleteBtn.addEventListener("click", async() => {
-    await (id ? deleteEvent(id) : deleteEvent())
+    await deleteEvent(event.id)
   });
 
-  start.addEventListener("input", () => {
-    title.style.color = "#FFFFFF"
-    errorMsg.innerText = "";
-  })
-  end.addEventListener("input", () => {
-    title.style.color = "#FFFFFF"
-    errorMsg.innerText = "";
-  })
-  title.addEventListener("focus", () => {
-    if (title.innerText === "Enter title here...") {
-      title.innerText = "";
-    }
-    title.style.color = "#FFFFFF"
-    errorMsg.innerText = "";
-  });
   
   title.addEventListener("blur", () => {
     if (title.innerText.trim() === "") {
-      title.innerText = "Enter title here...";
-    } else {
+      title.innerText = event.title;
+    } else if (title.innerText.trim() !== event.title){
       title.innerText = title.innerText
       .trim()
       .charAt(0)
       .toUpperCase() + title.innerText.trim().slice(1);
+      
+      saveEvent({title: title.innerText}, event.id);
     }
   });
-  title.addEventListener("input", () => {
-    title.style.color = "#FFFFFF"
-    errorMsg.innerText = "";
-  })
+
+  // title.addEventListener("input", () => {
+  //   title.style.color = "#FFFFFF"
+  //   errorMsg.innerText = "";
+  // })
+
+  const cardBodyContainer = document.createElement("div");
+  cardBodyContainer.classList.add("cardBodyContainer")
+  cardBodyContainer.append(dateContainer, buttonContainer)
   
   const cardContainer = document.createElement("div");
+
+
   cardContainer.classList.add("cardContainer");
-  cardContainer.append(title, dateContainer, buttonContainer)
+  cardContainer.append(cardBodyContainer)
   return cardContainer;
 }
 const createNewCard = async() => {
@@ -177,6 +188,26 @@ const createNewCard = async() => {
 
   dateContainer.append(start, end, errorMsg)
 
+  flatpickr(start, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    altInput: true, 
+    altFormat: "d M Y - H:i",
+    time_24hr: true,
+    minDate: "today",
+    defaultDate: event.startDate,
+  });
+
+  flatpickr(end, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    altInput: true, 
+    altFormat: "d M Y - H:i",
+    time_24hr: true,
+    minDate: "today",
+    defaultDate: event.endDate,
+  });
+
   const title = document.createElement("h2");
   title.innerText = "Enter title here...";
   title.setAttribute("contentEditable", "true");
@@ -185,7 +216,7 @@ const createNewCard = async() => {
   
   const save = document.createElement("button");
   save.innerText ="Save";
-  save.classList.add("save");
+  save.classList.add("saveBtn");
 
   const deleteBtn = document.createElement("button");
   deleteBtn.innerHTML = '<svg class="deleteIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#99A0AE"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
@@ -268,7 +299,7 @@ const printEvents = async() => {
   const pastEvents = [];
   const upcomingEvents = [];
   const ongoingEvents = [];
-  flatPickr();
+  // flatPickr();
 
   allEvents.forEach(event => {
     if (isPast(parseISO(event.startDate)) && isFuture(parseISO(event.endDate))){
@@ -286,7 +317,7 @@ const printEvents = async() => {
     ongoingTitle.classList.add("ongoingTitle");
     ongoingTitle.innerText = ("Ongoing events");
     const ongoingEventsContainer = document.createElement("div");
-    ongoingEventsContainer.classList.add("ongoingEventsContainer");
+    ongoingEventsContainer.classList.add("ongoingEventsContainer", "events");
     ongoingEventsContainer.append(ongoingTitle);
 
     createEventBtn.insertAdjacentElement("afterend", ongoingEventsContainer);
@@ -318,7 +349,7 @@ const createEvent = async() => {
   createEventBtn.classList.add("hide");
   const newCard = await createNewCard();
   newNoteContainer.append(newCard);
-  flatPickr();
+  //flatPickr();
 }
 
 
