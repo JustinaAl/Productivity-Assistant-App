@@ -16,39 +16,60 @@
   ],
   "habits": [
     {
-      "id": "884a",
-      "userId": "0d22",
-      "title": "new",
-      "reps": 0,
-      "priority": "low"
-    },
-    {
-      "id": "d80d",
-      "userId": "0d22",
-      "title": "j",
+      "id": "5f7a",
+      "userId": "513a",
+      "title": "df",
       "reps": 0,
       "priority": "medium"
-    },
-    {
-      "id": "a2ac",
-      "userId": "0d22",
-      "title": "hej",
-      "reps": 0,
-      "priority": ""
     },
     {
       "id": "d241",
       "userId": "0d22",
       "title": "ghjk",
-      "reps": 0,
+      "reps": "3",
       "priority": "medium"
     },
     {
       "id": "99bc",
       "userId": "0d22",
-      "title": "",
+      "title": "prio",
+      "reps": "2",
+      "priority": "low"
+    },
+    {
+      "id": "61fb",
+      "userId": "0d22",
+      "title": "habit",
+      "reps": "1",
+      "priority": "medium"
+    },
+    {
+      "id": "d0ab",
+      "userId": "0d22",
+      "title": "new",
       "reps": 0,
-      "priority": ""
+      "priority": "high"
+    },
+    {
+      "id": "6a41",
+      "userId": null,
+      "title": "Hej",
+      "reps": 0,
+      "priority": "low"
+    },
+    {
+      "id": "b38f",
+      "userId": null,
+      "title": "hhh",
+      "reps": "3",
+      "priority": "high"
+    },
+    {
+      "id": "8801",
+      "userId": null,
+      "title": "h222",
+      "reps": 0,
+      "priority": "low"
     }
   ],
   "events": [
