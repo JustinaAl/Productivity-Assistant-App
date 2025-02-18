@@ -385,6 +385,9 @@
 body {
   all: unset;
 }
+body h1 {
+  color: #EBF1FF;
+}
 
 #habitsWrapper {
   background-color: #0E121B;
@@ -400,6 +403,13 @@ body {
   padding: 16px;
   gap: 24px;
   width: 100%;
+}
+#habitsMain #allHabits {
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 16px;
 }
 
 hr {
@@ -474,9 +484,6 @@ hr {
   border-radius: 4px;
   border: 1px solid #717784;
   color: #EBF1FF;
-  width: 40px;
-  height: 40px;
-  font-size: 30px;
 }
 .habitBox p.habitTitle {
   font-weight: 600;
@@ -490,18 +497,65 @@ hr {
   font-size: 12px;
 }
 
-.repetitionBox {
+.more {
   display: flex;
-  gap: 24px;
+  flex-direction: column-reverse;
+  align-items: end;
+  gap: 16px;
 }
-.repetitionBox .fa-ellipsis-vertical {
-  color: #EBF1FF;
-  font-size: 36px;
+.more .counterWrap {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 8px;
 }
-.repetitionBox .counter {
+.more .counterWrap p {
+  margin: 0;
+  font-size: 14px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.more .counterWrap .counter {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+.more .counterWrap .counter button {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px;
+}
+.more .counterWrap .counter button i {
+  font-size: 16px;
+}
+.more .fa-ellipsis-vertical {
+  color: #EBF1FF;
+  font-size: 36px;
+  width: 5px;
+}
+.more .iconBox {
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: end;
+  min-width: 80px;
+  gap: 8px;
+}
+.more .iconBox button {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+  padding: 8px;
+}
+.more .iconBox button p {
+  margin: 0;
+  font-size: 10px;
 }
 
 #sideNav {
@@ -562,6 +616,11 @@ hr {
   color: #EBF1FF;
 }
 
+.controls {
+  display: flex;
+  gap: 24px;
+}
+
 .eventsBody {
   background: #0E121B;
   color: #FFFFFF;
@@ -580,12 +639,16 @@ hr {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   gap: 25px;
+  width: 400px;
+  padding: 0px 40px;
 }
 .eventsBody .eventsMain section h2 {
   font-size: 32px;
+  margin: 0px;
+  padding: 30px 0px;
 }
 .eventsBody .eventsMain section.upcomingEvents {
   border-right: 1px solid #2B303B;
@@ -593,14 +656,17 @@ hr {
 .eventsBody .eventsMain section.upcomingEvents button {
   all: unset;
   cursor: pointer;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
   background: #335CFF;
   color: #FFFFFF;
+  box-sizing: border-box;
   font-size: 14px;
   font-weight: normal;
-  padding: 14px 80px;
+  padding: 14px 10px;
   border-radius: 8px;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
@@ -610,6 +676,10 @@ hr {
 .eventsBody .eventsMain section.upcomingEvents button:active {
   background: #1d38a5;
   transform: scale(0.98);
+}
+.eventsBody .eventsMain section.upcomingEvents p {
+  all: unset;
+  font-size: 12px;
 }
 
 .dates input {
