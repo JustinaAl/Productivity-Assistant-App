@@ -205,20 +205,37 @@ let loadPage = async () => {
     filteredHabits = await filterPage();
   }
 
-  //Sorts visible page
   let valueInStorage = sessionStorage.getItem("sorting");
 
   if(valueInStorage){
     filteredHabits.forEach(item=>{
       item.reps = Number(item.reps)
     })
-    
-  if (valueInStorage === "rLowHigh") {
-    filteredHabits.sort((a, b) => a.reps - b.reps);
-  } else if (valueInStorage === "rHighLow") {
-    filteredHabits.sort((a, b) => b.reps - a.reps);
+  
+    let setOrder = async() =>{
+      filteredHabits.forEach(element => {
+        if(element.priority === "low"){
+          element.priority = 0;
+        }else if(element.priority === "medium"){
+          element.priority = 1;
+        }else if(element.priority === "high")
+          element.priority = 2;
+      });
     }
+    
+  if (valueInStorage === "pLowHigh") {
+    setOrder();
+    filteredHabits.sort((a, b) => a.priority - b.priority);
+  } else if (valueInStorage === "pHighLow") {
+    setOrder();
+    filteredHabits.sort((a, b) => b.priority - a.priority);
+  }else if (valueInStorage === "rLowHigh") {
+    filteredHabits.sort((a, b) => b.reps - a.reps);
+  }else if (valueInStorage === "rHighLow") {
+    filteredHabits.sort((a, b) => a.reps - b.reps);
   }
+  }
+
   document.querySelector("#allHabits").innerHTML = '';
   filteredHabits.forEach(element => {
     let habitBox = createHabitBox(element);

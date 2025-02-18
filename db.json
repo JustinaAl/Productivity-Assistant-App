@@ -12,6 +12,20 @@
       "text": "Use react-window for long lists\n- Implement infinite scrolling\n\nTODO: Benchmark current application and identify bottlenecks",
       "done": "false",
       "timeEstimation": "120"
+    },
+    {
+      "status": "done",
+      "id": "1"
+    },
+    {
+      "id": "1",
+      "userId": "0ca8",
+      "title": "Test Todo",
+      "deadline": "2025-02-18",
+      "timeEstimate": 2,
+      "category": "work",
+      "description": "This is a manually added todo.",
+      "status": "not done"
     }
   ],
   "habits": [
@@ -23,31 +37,24 @@
       "priority": "medium"
     },
     {
-      "id": "c2c0",
-      "userId": null,
-      "title": "jb",
-      "reps": 0,
-      "priority": "medium"
-    },
-    {
       "id": "d241",
       "userId": "0d22",
       "title": "ghjk",
-      "reps": 0,
+      "reps": "3",
       "priority": "medium"
     },
     {
       "id": "99bc",
       "userId": "0d22",
-      "title": "",
-      "reps": 0,
-      "priority": ""
+      "title": "prio",
+      "reps": "2",
+      "priority": "low"
     },
     {
       "id": "61fb",
       "userId": "0d22",
       "title": "habit",
-      "reps": 0,
+      "reps": "1",
       "priority": "medium"
     },
     {
@@ -55,14 +62,7 @@
       "userId": "0d22",
       "title": "new",
       "reps": 0,
-      "priority": ""
-    },
-    {
-      "id": "2b5b",
-      "userId": "0ca8",
-      "title": "hejsan",
-      "reps": 0,
-      "priority": "low"
+      "priority": "high"
     }
   ],
   "events": [
@@ -74,34 +74,6 @@
       "endDate": "2025-10-29"
     },
     {
-      "id": "2d29",
-      "userId": "513a",
-      "title": "a",
-      "startDate": "2025-02-20 12:00",
-      "endDate": "2025-02-21 12:00"
-    },
-    {
-      "id": "11da",
-      "userId": "513a",
-      "title": "A",
-      "startDate": "2025-02-20 12:00",
-      "endDate": "2025-02-18 12:00"
-    },
-    {
-      "id": "1d16",
-      "userId": "513a",
-      "title": "A",
-      "startDate": "2025-02-20 12:00",
-      "endDate": "2025-02-20 13:00"
-    },
-    {
-      "id": "61a1",
-      "userId": "513a",
-      "title": "A",
-      "startDate": "2025-02-18 12:00",
-      "endDate": "2025-02-19 12:00"
-    },
-    {
       "id": "c9b1",
       "userId": "513a",
       "title": "Go to gym",
@@ -111,16 +83,9 @@
     {
       "id": "d220",
       "userId": "513a",
-      "title": "Fish",
+      "title": "Fishing",
       "startDate": "2025-02-19 12:00",
       "endDate": "2025-02-19 14:00"
-    },
-    {
-      "id": "3397",
-      "userId": null,
-      "title": "Events",
-      "startDate": "2025-02-18 12:00",
-      "endDate": "2025-02-19 12:00"
     }
   ],
   "users": [
@@ -165,6 +130,11 @@
       "id": "0d22",
       "username": "JustinaP",
       "password": "justinap"
+    },
+    {
+      "id": "7883",
+      "username": "victor3",
+      "password": "§12123"
     }
   ]
 }
