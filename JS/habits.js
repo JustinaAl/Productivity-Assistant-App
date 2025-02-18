@@ -1,4 +1,3 @@
-//Creates a box for creating new habit
 let createHabit = () => {
   if (document.body.querySelector("#mainDiv")) {
     return;
@@ -72,26 +71,39 @@ let createHabitBox = (habit) => {
 };
 
 //Counts repetitions
-let countRepetitions = (habitBox, value) => {
+let countRepetitions = async(habitBox, value, habitId) => {
   let plus = habitBox.querySelector(".plus");
   let minus = habitBox.querySelector(".minus");
-  let currentValue = habitBox.querySelector(".value");
 
-  let increaseValue = () => {
-    value += 1;
-    currentValue.textContent = `${value}`;
+  let increaseValue = async() => {
+    let data = await axios.get(`http://localhost:5001/habits/${habitId}`);
+    let valueNumber = (+data.data.reps);
+    valueNumber += 1;
+
+    await axios.patch(`http://localhost:5001/habits/${habitId}`,{
+        reps: `${valueNumber}`
+    })
+    
   };
 
-  let decreaseValue = () => {
+  let decreaseValue = async() => {
     if (value > 0) {
-      value -= 1;
-      currentValue.textContent = `${value}`;
+        let data = await axios.get(`http://localhost:5001/habits/${habitId}`);
+        let valueNumber = (+data.data.reps);
+        valueNumber -=1;
+
+    await axios.patch(`http://localhost:5001/habits/${habitId}`,{
+        reps: `${valueNumber}`
+    })
     }
   };
 
   plus.addEventListener("click", increaseValue);
   minus.addEventListener("click", decreaseValue);
+
+  
 };
+
 
 //More info
 let openMoreInfo = async(habitBox, element) => {
@@ -100,6 +112,7 @@ let openMoreInfo = async(habitBox, element) => {
   i.addEventListener("click", () => {
     document.querySelector("#moreInfo").append(habitBox);
     i.remove();
+    document.querySelector("#moreInfo .counterWrap").remove();
 
     let deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = `<i class="fa-regular fa-trash-can"></i><p>Delete</p>`;
@@ -185,16 +198,105 @@ let editHabit = async (habitId, habitBox) => {
 
 //Load page
 let loadPage = async () => {
+  sort();
   let filteredHabits = await getHabits();
+  
+  if(sessionStorage.getItem("selectedPriorites")){
+    filteredHabits = await filterPage();
+  }
 
-  filteredHabits.forEach((element) => {
+  //Sorts visible page
+  let valueInStorage = sessionStorage.getItem("sorting");
+
+  if(valueInStorage){
+    filteredHabits.forEach(item=>{
+      item.reps = Number(item.reps)
+    })
+    
+  if (valueInStorage === "rLowHigh") {
+    filteredHabits.sort((a, b) => a.reps - b.reps);
+  } else if (valueInStorage === "rHighLow") {
+    filteredHabits.sort((a, b) => b.reps - a.reps);
+    }
+  }
+  document.querySelector("#allHabits").innerHTML = '';
+  filteredHabits.forEach(element => {
     let habitBox = createHabitBox(element);
-    document.querySelector("#habitsMain").append(habitBox);
+    document.querySelector("#allHabits").append(habitBox);
 
     let value = element.reps;
-    countRepetitions(habitBox, value);
+    let habitId = element.id;
+    countRepetitions(habitBox, value, habitId);
     openMoreInfo(habitBox, element);
   });
 };
 
+let filterPage =async()=>{
+  let checked = sessionStorage.getItem("selectedPriorites");
+  let filteredHabits = await getHabits();
+  if(checked){
+    let checkedArray = checked.split(',');
+
+    let allCheckboxes= document.querySelectorAll("input[type='checkbox']");
+
+    allCheckboxes.forEach(checkbox=>{
+      if (checkedArray.includes(checkbox.value)) {
+        checkbox.checked = true;
+      }
+    })
+
+    if(document.querySelectorAll("input[type='checkbox']:checked").length>0){
+      filteredHabits = filteredHabits.filter(habit => checkedArray.includes(habit.priority));
+    }
+  }
+  return filteredHabits;
+}
+
+//Pusher filtering details to local storage
+let filter = () =>{
+    let selectedPriorities = [];
+    let high = document.querySelector("#highCheckbox");
+    let medium = document.querySelector("#mediumCheckbox");
+    let low = document.querySelector("#lowCheckbox");
+  
+    if (high.checked){
+      selectedPriorities.push("high");
+    }
+    if (medium.checked){
+      selectedPriorities.push("medium");
+    }
+    if (low.checked){
+      selectedPriorities.push("low");
+    }
+  
+    sessionStorage.setItem('selectedPriorites', `${selectedPriorities}`);
+    
+    loadPage();
+}
+
+let sort = async()=>{
+  //pushes or updates value to db after pressing button apply
+  let selectedRadio = document.querySelector('input[type="radio"][name="sort"]:checked');
+  
+  if (selectedRadio) {
+    sessionStorage.setItem("sorting", selectedRadio.value);
+  }
+
+  //checks in button if value is is storage
+  let allRadios = document.querySelectorAll('input[type="radio"][name="sort"]');
+  let valueInStorage = sessionStorage.getItem("sorting");
+
+  allRadios.forEach(radio=>{
+    if (valueInStorage === radio.value) {
+      radio.checked = true;
+    }else{
+      radio.checked = false;
+    }
+  });
+}
+
+document.querySelector("#filterButton").addEventListener("click",filter);
+document.querySelector("#applySorting").addEventListener("click", loadPage);
 loadPage();
+
+

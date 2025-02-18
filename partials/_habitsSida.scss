@@ -9,6 +9,9 @@
 
 body{
     all: unset;
+    h1{
+        color: $Blue50;
+    }
 }
 
 #habitsWrapper{
@@ -25,6 +28,13 @@ body{
     padding: 16px;
     gap: 24px;
     width: 100%;
+
+    #allHabits{
+        display: flex;
+        flex-direction: column;
+        height: fit-content;
+        gap: 16px;
+    }
 }
 hr{
     border: 0.5px solid $Neutral500;
@@ -62,6 +72,7 @@ hr{
         select{
             @include inputField();
         }
+
     }
 }
 
@@ -223,4 +234,9 @@ h3 {
     font-weight: bold;
     color: $Blue50;
 }
+}
+
+.controls{
+    display: flex;
+    gap: 24px;
 }
