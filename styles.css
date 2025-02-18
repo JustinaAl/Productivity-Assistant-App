@@ -646,19 +646,23 @@ hr {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 25px;
+  gap: 30px;
   width: 400px;
   padding: 0px 40px;
 }
 .eventsBody .eventsMain section h2 {
   font-size: 32px;
   margin: 0px;
-  padding: 30px 0px;
+  padding: 0px;
 }
-.eventsBody .eventsMain section.upcomingEvents {
+.eventsBody .eventsMain section.upcomingEvents, .eventsBody .eventsMain section.pastEvents {
   border-right: 1px solid #2B303B;
 }
-.eventsBody .eventsMain section.upcomingEvents button {
+.eventsBody .eventsMain section.upcomingEvents .startContainer, .eventsBody .eventsMain section.upcomingEvents .endContainer, .eventsBody .eventsMain section.pastEvents .startContainer, .eventsBody .eventsMain section.pastEvents .endContainer {
+  display: flex;
+  align-items: baseline;
+}
+.eventsBody .eventsMain section.upcomingEvents button, .eventsBody .eventsMain section.pastEvents button {
   all: unset;
   cursor: pointer;
   align-self: center;
@@ -675,61 +679,28 @@ hr {
   border-radius: 8px;
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
-.eventsBody .eventsMain section.upcomingEvents button:hover {
+.eventsBody .eventsMain section.upcomingEvents button:hover, .eventsBody .eventsMain section.pastEvents button:hover {
   background: #2547D0;
 }
-.eventsBody .eventsMain section.upcomingEvents button:active {
+.eventsBody .eventsMain section.upcomingEvents button:active, .eventsBody .eventsMain section.pastEvents button:active {
   background: #1d38a5;
   transform: scale(0.98);
 }
-.eventsBody .eventsMain section.upcomingEvents button.hide {
+.eventsBody .eventsMain section.upcomingEvents button.hide, .eventsBody .eventsMain section.pastEvents button.hide {
   display: none;
 }
-.eventsBody .eventsMain section.upcomingEvents p {
+.eventsBody .eventsMain section.upcomingEvents p, .eventsBody .eventsMain section.pastEvents p {
   all: unset;
   font-size: 12px;
+  padding-right: 10px;
 }
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer h2, .eventsBody .eventsMain section.pastEvents #newNoteContainer .cardContainer h2 {
+  padding-top: 30px;
 }
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer h2 {
-  margin: 0px;
-  padding: 0px;
+.eventsBody .eventsMain section.pastEvents .pastTitle {
+  padding-top: 30px;
 }
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer h2:focus {
-  border: none;
-  outline: none;
-}
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .dateContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .dateContainer .errorMsg {
-  color: #FB3748;
-}
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer {
-  display: flex;
-  gap: 15px;
-}
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer .delete {
-  all: unset;
-  padding: 0px 10px;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer .delete:hover .deleteIcon {
-  fill: #FB3748;
-}
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer .delete:active .deleteIcon {
-  fill: #ffa7ad;
-}
-.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer .buttonContainer .delete.hide {
-  display: none;
-}
-.eventsBody .eventsMain .date {
+.eventsBody .eventsMain section .date {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -741,17 +712,127 @@ hr {
   color: #CACFD8;
   width: 100%;
 }
-.eventsBody .eventsMain .date::-moz-placeholder {
+.eventsBody .eventsMain section .date::-moz-placeholder {
   color: #717784;
 }
-.eventsBody .eventsMain .date::placeholder {
+.eventsBody .eventsMain section .date::placeholder {
   color: #717784;
 }
-.eventsBody .eventsMain .date:active {
+.eventsBody .eventsMain section .date:active {
   border: 1px solid #2B303B;
 }
+.eventsBody .eventsMain section .events {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.eventsBody .eventsMain section .events .cardContainer {
+  gap: 8px;
+}
+.eventsBody .eventsMain section .events .cardContainer h2 {
+  font-size: 18px;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer {
+  gap: 4px;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer input.date {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100%;
+  padding: 4px;
+  padding-left: 6px;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer input.date::-moz-placeholder {
+  color: #717784;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer input.date::placeholder {
+  color: #717784;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer input.date:active {
+  border: 1px solid #2B303B;
+}
+.eventsBody .eventsMain .cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  border-radius: 6px;
+}
+.eventsBody .eventsMain .cardContainer h2 {
+  margin: 0px;
+  padding: 0px;
+}
+.eventsBody .eventsMain .cardContainer h2:focus {
+  border: none;
+  outline: none;
+}
+.eventsBody .eventsMain .cardContainer .dateContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.eventsBody .eventsMain .cardContainer .dateContainer h2 {
+  padding-bottom: 20px;
+}
+.eventsBody .eventsMain .cardContainer .dateContainer p {
+  width: 45px;
+}
+.eventsBody .eventsMain .cardContainer .dateContainer .errorMsg {
+  color: #FB3748;
+  width: auto;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer {
+  display: flex;
+  gap: 15px;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete, .eventsBody .eventsMain .cardContainer .buttonContainer .save {
+  all: unset;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete:hover .deleteIcon, .eventsBody .eventsMain .cardContainer .buttonContainer .save:hover .deleteIcon {
+  fill: #FB3748;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete:hover .saveIcon, .eventsBody .eventsMain .cardContainer .buttonContainer .save:hover .saveIcon {
+  fill: #21C16B;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete:active .deleteIcon, .eventsBody .eventsMain .cardContainer .buttonContainer .save:active .deleteIcon {
+  fill: #ffa7ad;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete:active .saveIcon, .eventsBody .eventsMain .cardContainer .buttonContainer .save:active .saveIcon {
+  fill: #D1FBE9;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-right: 0px;
+  border-radius: 6px;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer:hover {
+  background: #191B25;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer:hover .buttonContainer {
+  display: flex;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer {
+  gap: 0px;
+  display: none;
+  flex-direction: row;
+  align-self: flex-end;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .delete, .eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .save {
+  padding: 10px;
+  padding-bottom: 0px;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .save.hide {
+  display: none;
+}
 
-/* Flatpickr custom styles */
 :root {
   --BaseWhite: #FFFFFF;
   --BaseBlack: #0E121B;

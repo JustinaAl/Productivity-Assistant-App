@@ -1,4 +1,5 @@
 import { getData, postData, changeData, deleteData } from "./services.js";  
+const { isPast, isFuture, parseISO } = window.dateFns;
 
 const upcomingEventsContainer = document.querySelector("#upcomingEventsContainer");
 const pastEventsContainer = document.querySelector("#pastEventsContainer");
@@ -24,28 +25,152 @@ const userId = sessionStorage.getItem("userId");
 
 const saveEvent = async(newData, id) => {
   if (id){
-    await changeData(`http://localhost:5001/events?id=${id}`, newData)
+    await changeData(`http://localhost:5001/events/${id}`, newData)
   } else{
     const startData = {userId, ...newData}
-    console.log(startData);
     await postData("http://localhost:5001/events", startData)
   }
 }
 
 const deleteEvent = async(id) => {
   if (id){
-
-    if (await deleteData(`http://localhost:5001/events?id=${id}`)){
-      newNoteContainer.innerHTML = ""
-      createEventBtn.classList.remove("hide")
-    }
+    await deleteData(`http://localhost:5001/events/${id}`)
   }else {
     newNoteContainer.innerHTML = "";
     createEventBtn.classList.remove("hide");
   }
 }
 
-const createCard = async(id) => {
+const createCard = async(event) => {
+  
+  const start = document.createElement("input");
+  const end = document.createElement("input");
+  start.type="text";
+  end.type="text";
+  start.name="dateStart";
+  start.classList.add("date");
+  end.name="dateEnd";
+  end.classList.add("date");
+
+  const startTitle = document.createElement("p");
+  startTitle.innerText = "Start: ";
+  const endTitle = document.createElement("p");
+  endTitle.innerText = "End: ";
+
+  const startContainer = document.createElement("div");
+  startContainer.classList.add("startContainer");
+  startContainer.append(startTitle, start);
+  
+  const endContainer = document.createElement("div");
+  endContainer.classList.add("endContainer");
+  endContainer.append(endTitle, end);
+
+  const title = document.createElement("h2");
+  title.innerText = `${event.title}`;
+  title.setAttribute("contentEditable", "true");
+
+
+  const dateContainer = document.createElement("div");
+  dateContainer.classList.add("dateContainer");
+  const errorMsg = document.createElement("p");
+  errorMsg.classList.add("errorMsg")
+  dateContainer.append(title, startContainer, endContainer, errorMsg)
+
+  
+
+  const startPicker = flatpickr(start, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    altInput: true, 
+    altInputClass: "date",
+    altFormat: "d M Y - H:i",
+    time_24hr: true,
+    allowInput: true,
+    defaultDate: event.startDate,
+    maxDate: event.endDate,
+    onClose: function(selectedDates, dateStr, instance) {
+      if (!dateStr.trim()) {
+        instance.setDate(event.startDate); 
+      }
+      else if (dateStr !== event.startDate) {
+        saveEvent({ startDate: dateStr }, event.id);
+      }
+    }
+  });
+
+  const endPicker = flatpickr(end, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    altInput: true, 
+    altInputClass: "date",
+    altFormat: "d M Y - H:i",
+    time_24hr: true,
+    defaultDate: event.endDate,
+    minDate: event.startDate,
+    onChange: function(selectedDates, dateStr, instance) {
+      startPicker.set("maxDate", dateStr);
+    },
+    onClose: function(selectedDates, dateStr, instance) {
+      if (!dateStr.trim()) {
+        instance.setDate(event.endDate); 
+      }
+      else if (dateStr !== event.endDate) {
+        saveEvent({ endDate: dateStr }, event.id);
+      }
+    }
+  });
+
+
+  const deleteBtn = document.createElement("button");
+  deleteBtn.innerHTML = '<svg class="deleteIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#99A0AE"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
+  deleteBtn.classList.add("delete");
+
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("buttonContainer");
+  buttonContainer.append(deleteBtn);
+
+
+
+  deleteBtn.addEventListener("click", async() => {
+    await deleteEvent(event.id)
+  });
+
+  // start.addEventListener("blur", () => {
+  //   if (!start.value.trim()) {
+  //     start.value = event.startDate;
+  //   } else if (start.value !== event.startDate){
+
+  //     saveEvent({startDate: start.value}, event.id);
+  //   }
+  // });
+
+  
+  title.addEventListener("blur", () => {
+    if (title.innerText.trim() === "") {
+      title.innerText = event.title;
+    } else if (title.innerText.trim() !== event.title){
+      title.innerText = title.innerText
+      .trim()
+      .charAt(0)
+      .toUpperCase() + title.innerText.trim().slice(1);
+      
+      saveEvent({title: title.innerText}, event.id);
+    }
+  });
+
+  
+  const cardBodyContainer = document.createElement("div");
+  cardBodyContainer.classList.add("cardBodyContainer")
+  cardBodyContainer.append(dateContainer, buttonContainer)
+  
+  const cardContainer = document.createElement("div");
+
+
+  cardContainer.classList.add("cardContainer");
+  cardContainer.append(cardBodyContainer)
+  return cardContainer;
+}
+const createNewCard = async() => {
   
   const start = document.createElement("input");
   const end = document.createElement("input");
@@ -64,6 +189,30 @@ const createCard = async(id) => {
 
   dateContainer.append(start, end, errorMsg)
 
+  const startPicker = flatpickr(start, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    altInput: true, 
+    altFormat: "d M Y - H:i",
+    time_24hr: true,
+    minDate: "today",
+    onChange: function(selectedDates, dateStr, instance) {
+      endPicker.set("minDate", dateStr);
+    }
+  });
+
+  const endPicker =  flatpickr(end, {
+    enableTime: true,
+    dateFormat: "Y-m-d H:i",
+    altInput: true, 
+    altFormat: "d M Y - H:i",
+    time_24hr: true,
+    minDate: "today",
+    onChange: function(selectedDates, dateStr, instance) {
+      startPicker.set("maxDate", dateStr);
+    }
+  });
+
   const title = document.createElement("h2");
   title.innerText = "Enter title here...";
   title.setAttribute("contentEditable", "true");
@@ -72,7 +221,7 @@ const createCard = async(id) => {
   
   const save = document.createElement("button");
   save.innerText ="Save";
-  save.classList.add("save");
+  save.classList.add("saveBtn");
 
   const deleteBtn = document.createElement("button");
   deleteBtn.innerHTML = '<svg class="deleteIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#99A0AE"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
@@ -101,24 +250,18 @@ const createCard = async(id) => {
         startDate: start.value,
         endDate: end.value
       };
-      await (id ? saveEvent(newData, id) : saveEvent(newData));
-      // save.classList.add("hide")
-      // deleteBtn.classList.add("hide")
+      await saveEvent(newData);
   }});
 
   deleteBtn.addEventListener("click", async() => {
-    await (id ? deleteEvent(id) : deleteEvent())
+    await deleteEvent()
   });
 
   start.addEventListener("input", () => {
-    // save.classList.remove("hide");
-    // deleteBtn.classList.remove("hide");
     title.style.color = "#FFFFFF"
     errorMsg.innerText = "";
   })
   end.addEventListener("input", () => {
-    // save.classList.remove("hide");
-    // deleteBtn.classList.remove("hide");
     title.style.color = "#FFFFFF"
     errorMsg.innerText = "";
   })
@@ -141,15 +284,13 @@ const createCard = async(id) => {
     }
   });
   title.addEventListener("input", () => {
-    // save.classList.remove("hide");
-    // deleteBtn.classList.remove("hide");
     title.style.color = "#FFFFFF"
     errorMsg.innerText = "";
   })
 
   
 
-  // savefunction && 
+
   
   const cardContainer = document.createElement("div");
   cardContainer.classList.add("cardContainer");
@@ -158,17 +299,62 @@ const createCard = async(id) => {
 }
 
 //print events
-const allEvents = await getData("http://localhost:5001/events", { userId })
-console.log(allEvents);
+const printEvents = async() => {
+  const allEvents = await getData("http://localhost:5001/events", { userId })
+  const pastEvents = [];
+  const upcomingEvents = [];
+  const ongoingEvents = [];
+  // flatPickr();
 
-// const upcomingEvents = allEvents.endDate
+  allEvents.forEach(event => {
+    if (isPast(parseISO(event.startDate)) && isFuture(parseISO(event.endDate))){
+      ongoingEvents.push(event)
+    }else if (isPast(parseISO(event.endDate))){
+      pastEvents.push(event)
+    } else if (isFuture(parseISO(event.startDate))){
+      upcomingEvents.push(event)
+    }
+  
+  });
+
+  if (ongoingEvents.length > 0){
+    const ongoingTitle = document.createElement("h2");
+    ongoingTitle.classList.add("ongoingTitle");
+    ongoingTitle.innerText = ("Ongoing events");
+    const ongoingEventsContainer = document.createElement("div");
+    ongoingEventsContainer.classList.add("ongoingEventsContainer", "events");
+    ongoingEventsContainer.append(ongoingTitle);
+
+    createEventBtn.insertAdjacentElement("afterend", ongoingEventsContainer);
+
+
+    for (const event of ongoingEvents) {
+      ongoingEventsContainer.append(await createCard(event))
+    }
+  };
+
+  
+  if (pastEvents.length > 0){
+    for (const event of pastEvents) {
+      pastEventsContainer.append(await createCard(event));
+    }
+  }
+
+  if (upcomingEvents.length > 0){
+    for (const event of upcomingEvents) {
+      upcomingEventsContainer.append(await createCard(event));
+    }
+  }
+}
+printEvents();
+
 
 
 const createEvent = async() => {
   createEventBtn.classList.add("hide");
-  const newCard = await createCard();
+  const newCard = await createNewCard();
   newNoteContainer.append(newCard);
-  flatPickr();
+  //flatPickr();
 }
 
 
