@@ -1,5 +1,5 @@
 import { getData, postData, changeData, deleteData } from "./services.js";  
-const { isPast, isFuture, parseISO } = window.dateFns;
+const { isPast, isFuture, compareAsc, parseISO } = window.dateFns;
 
 const upcomingEventsContainer = document.querySelector("#upcomingEventsContainer");
 const pastEventsContainer = document.querySelector("#pastEventsContainer");
@@ -301,9 +301,9 @@ const createNewCard = async() => {
 //print events
 const printEvents = async() => {
   const allEvents = await getData("http://localhost:5001/events", { userId })
-  const pastEvents = [];
-  const upcomingEvents = [];
-  const ongoingEvents = [];
+  let pastEvents = [];
+  let upcomingEvents = [];
+  let ongoingEvents = [];
   // flatPickr();
 
   allEvents.forEach(event => {
@@ -317,6 +317,24 @@ const printEvents = async() => {
   
   });
 
+
+  pastEvents = pastEvents.sort((a, b) => 
+    compareAsc(parseISO(a.startDate), parseISO(b.startDate))
+  );
+
+
+
+  upcomingEvents = upcomingEvents.sort((a, b) => 
+    compareAsc(parseISO(a.startDate), parseISO(b.startDate))
+  );
+
+  console.log(ongoingEvents);
+
+  ongoingEvents = ongoingEvents.sort((a, b) => 
+    compareAsc(parseISO(a.startDate), parseISO(b.startDate))
+  );
+  console.log(ongoingEvents);
+  
   if (ongoingEvents.length > 0){
     const ongoingTitle = document.createElement("h2");
     ongoingTitle.classList.add("ongoingTitle");
