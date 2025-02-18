@@ -20,18 +20,23 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: flex-start;
-            gap: 25px;
+            gap: 30px;
             width: 400px;
             padding: 0px 40px;
 
             h2{
                 font-size: 32px;
                 margin: 0px;
-                padding: 30px 0px;
+                padding: 0px;
             }
 
-            &.upcomingEvents{
+            &.upcomingEvents, &.pastEvents{
                 border-right: 1px solid $Neutral700;
+
+                .startContainer, .endContainer{
+                    display: flex;
+                    align-items: baseline;
+                }
 
                 button{
                     all: unset;
@@ -68,103 +73,181 @@
                 p{
                     all: unset;
                     font-size: 12px;
+                    padding-right: 10px;
                 }
 
                 #newNoteContainer{
                     .cardContainer{
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-
                         h2{
-                            margin: 0px;
-                            padding: 0px;
-
-
-                            &:focus{
-                                border: none;
-                                outline: none;
-                            }
+                            padding-top: 30px;
                         }
+                    }
+                }
+                
+            }
 
-                        .dateContainer{
-                            display: flex;
-                            flex-direction: column;
-                            gap: 20px;
+            &.pastEvents{
+                .pastTitle{
+                    padding-top: 30px;
+                }
+            }
 
-                            .errorMsg{
-                                color: $Red500;
+            .date{
+                appearance: none;
+                box-sizing: border-box;
+                border: 1px solid $Neutral700;
+                background: transparent;
+                font-size: 1.5rem;
+                padding: 8px;
+                color: $Neutral300;
+                width: 100%;
+                &::placeholder{
+                    color: $Neutral500;
+                }
+                &:active{
+                    border: 1px solid $Neutral700;
+                }
+                
+            }
+
+            .events{
+                display: flex;
+                flex-direction: column;
+                gap: 16px;
+                width: 100%;
+
+                .cardContainer{
+                    gap: 8px;
+                    h2{
+                        font-size: 18px;
+                    }
+                    .dateContainer{
+
+                        gap: 4px;
+
+                        input.date{
+                           
+                            border: none;
+                            background: transparent;
+                            font-size: 14px;
+                            width: 100%;
+                            padding: 4px;
+                            padding-left: 6px;
+
+                            &::placeholder{
+                                color: $Neutral500;
                             }
-                        }
-
-                        .buttonContainer{
-                            display: flex;
-                            gap: 15px;
-
-                            .delete{
-                                all: unset;
-                                padding: 0px 10px;
-                                box-sizing: border-box;
-                                cursor: pointer;
-
-                                &:hover{
-                                    .deleteIcon{
-                                        fill: #FB3748;
-                                    }
-                                }
-                                &:active{
-                                    .deleteIcon{
-                                        fill: #ffa7ad;
-                                    }
-                                }
-                                &.hide{
-                                    display: none;
-                                }
+                            &:active{
+                                border: 1px solid $Neutral700;
                             }
                         }
                     }
                 }
             }
         }
-
-        .date{
-            appearance: none;
-            box-sizing: border-box;
-            border: 1px solid $Neutral700;
-            background: transparent;
-            font-size: 1.5rem;
-            padding: 8px;
-            color: $Neutral300;
+        .cardContainer{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
             width: 100%;
-            &::placeholder{
-                color: $Neutral500;
+            border-radius: 6px;
+
+            h2{
+                margin: 0px;
+                padding: 0px;
+
+
+                &:focus{
+                    border: none;
+                    outline: none;
+                }
             }
-            &:active{
-                border: 1px solid $Neutral700;
+
+            .dateContainer{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                h2{
+                    padding-bottom: 20px;
+                }
+
+                p{
+                    width: 45px;
+                }
+
+                .errorMsg{
+                    color: $Red500;
+                    width: auto;
+                }
             }
-            
+
+            .buttonContainer{
+                display: flex;
+                gap: 15px;
+
+                .delete, .save{
+                    all: unset;
+                    padding: 0px 20px;
+                    box-sizing: border-box;
+                    cursor: pointer;
+
+                    &:hover{
+                        .deleteIcon{
+                            fill: #FB3748;
+                        }
+                        .saveIcon{
+                            fill: #21C16B;
+                        }
+                    }
+                    &:active{
+                        .deleteIcon{
+                            fill: #ffa7ad;
+                        }
+                        .saveIcon{
+                            fill: #D1FBE9;
+                        }
+                    }
+                }
+            }
+
+            .cardBodyContainer{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                padding-right: 0px;
+                border-radius: 6px;
+
+
+                &:hover{
+                    background: $Neutral900;
+
+                    .buttonContainer{
+                        display: flex;
+                    }
+                }
+ 
+                .buttonContainer{
+                    gap: 0px;
+                    display: none;
+                    flex-direction: row;
+                    align-self: flex-end;
+
+                    .delete, .save{
+                        padding: 10px;
+                        padding-bottom: 0px;
+                    }
+
+                    .save.hide{
+                        display: none;
+                    }
+                }
+                
+            }
         }
+        
     }
+    
 }
 
-
-/* Flatpickr custom styles */
-// .flatpickr-input {
-//     width: 150px;
-//     padding: 8px;
-//     font-size: 16px;
-//     border: 2px solid #4CAF50;
-//     border-radius: 5px;
-//     background-color: #f9f9f9;
-//     color: #333;
-// }
-
-// .flatpickr-calendar {
-//     background: white;
-//     border-radius: 5px;
-// }
-
-// .flatpickr-time {
-//     background: #4CAF50;
-//     color: white;
-// }
