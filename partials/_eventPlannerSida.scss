@@ -57,8 +57,11 @@
 
                     &:active{
                         background: darken($Blue700, 10%);
-                        
                         transform: scale(0.98);
+                    }
+
+                    &.hide{
+                        display: none;
                     }
 
                 }
@@ -66,31 +69,85 @@
                     all: unset;
                     font-size: 12px;
                 }
+
+                #newNoteContainer{
+                    .cardContainer{
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+
+                        h2{
+                            margin: 0px;
+                            padding: 0px;
+
+
+                            &:focus{
+                                border: none;
+                                outline: none;
+                            }
+                        }
+
+                        .dateContainer{
+                            display: flex;
+                            flex-direction: column;
+                            gap: 20px;
+
+                            .errorMsg{
+                                color: $Red500;
+                            }
+                        }
+
+                        .buttonContainer{
+                            display: flex;
+                            gap: 15px;
+
+                            .delete{
+                                all: unset;
+                                padding: 0px 10px;
+                                box-sizing: border-box;
+                                cursor: pointer;
+
+                                &:hover{
+                                    .deleteIcon{
+                                        fill: #FB3748;
+                                    }
+                                }
+                                &:active{
+                                    .deleteIcon{
+                                        fill: #ffa7ad;
+                                    }
+                                }
+                                &.hide{
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
 
-
-    }
-}
-
-.dates{
-    input{
-        appearance: none;
-        box-sizing: border-box;
-        border: 1px solid $Neutral700;
-        background: transparent;
-        font-size: 1.5rem;
-        padding: 8px;
-        color: $Neutral300;
-        &::placeholder{
-            color: $Neutral500;
-        }
-        &:active{
+        .date{
+            appearance: none;
+            box-sizing: border-box;
             border: 1px solid $Neutral700;
+            background: transparent;
+            font-size: 1.5rem;
+            padding: 8px;
+            color: $Neutral300;
+            width: 100%;
+            &::placeholder{
+                color: $Neutral500;
+            }
+            &:active{
+                border: 1px solid $Neutral700;
+            }
+            
         }
     }
-    
 }
+
+
 /* Flatpickr custom styles */
 // .flatpickr-input {
 //     width: 150px;
