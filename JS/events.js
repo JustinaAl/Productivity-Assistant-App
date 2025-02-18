@@ -78,7 +78,7 @@ const createCard = async(event) => {
 
   
 
-  flatpickr(start, {
+  const startPicker = flatpickr(start, {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     altInput: true, 
@@ -87,10 +87,18 @@ const createCard = async(event) => {
     time_24hr: true,
     allowInput: true,
     defaultDate: event.startDate,
- 
+    maxDate: event.endDate,
+    onClose: function(selectedDates, dateStr, instance) {
+      if (!dateStr.trim()) {
+        instance.setDate(event.startDate); 
+      }
+      else if (dateStr !== event.startDate) {
+        saveEvent({ startDate: dateStr }, event.id);
+      }
+    }
   });
 
-  flatpickr(end, {
+  const endPicker = flatpickr(end, {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     altInput: true, 
@@ -98,12 +106,20 @@ const createCard = async(event) => {
     altFormat: "d M Y - H:i",
     time_24hr: true,
     defaultDate: event.endDate,
+    minDate: event.startDate,
+    onChange: function(selectedDates, dateStr, instance) {
+      startPicker.set("maxDate", dateStr);
+    },
+    onClose: function(selectedDates, dateStr, instance) {
+      if (!dateStr.trim()) {
+        instance.setDate(event.endDate); 
+      }
+      else if (dateStr !== event.endDate) {
+        saveEvent({ endDate: dateStr }, event.id);
+      }
+    }
   });
 
-
-  // const save = document.createElement("button");
-  // save.innerHTML ='<svg class="saveIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#99A0Ae"><path d="M840-680v480q0 33-23.5 56.5T760-120H200q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h480l160 160Zm-80 34L646-760H200v560h560v-446ZM480-240q50 0 85-35t35-85q0-50-35-85t-85-35q-50 0-85 35t-35 85q0 50 35 85t85 35ZM240-560h360v-160H240v160Zm-40-86v446-560 114Z"/></svg>';
-  // save.classList.add("save", "hide");
 
   const deleteBtn = document.createElement("button");
   deleteBtn.innerHTML = '<svg class="deleteIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#99A0AE"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
@@ -113,31 +129,20 @@ const createCard = async(event) => {
   buttonContainer.classList.add("buttonContainer");
   buttonContainer.append(deleteBtn);
 
-  // save.addEventListener('click', async() => {
-  //   const trimmedTitle = title.innerText.trim();
 
-  //   if (trimmedTitle === "Enter title here..." || trimmedTitle === ""){
-  //     errorMsg.innerText = "Please enter a title",
-  //     title.style.color = "#FB3748"
-  //   } else if(start.value ===""){
-  //     errorMsg.innerText = "Please enter a start date"
-  //   }else if(end.value ===""){
-  //     errorMsg.innerText = "Please enter a end date"
-  //   }else if(end.value <= start.value){
-  //     errorMsg.innerText = "End time has to be later than start time"
-  //   }else{
-
-  //     const newData = {
-  //       title: title.innerText.trim(),
-  //       startDate: start.value,
-  //       endDate: end.value
-  //     };
-  //     await saveEvent(newData, id);
-  // }});
 
   deleteBtn.addEventListener("click", async() => {
     await deleteEvent(event.id)
   });
+
+  // start.addEventListener("blur", () => {
+  //   if (!start.value.trim()) {
+  //     start.value = event.startDate;
+  //   } else if (start.value !== event.startDate){
+
+  //     saveEvent({startDate: start.value}, event.id);
+  //   }
+  // });
 
   
   title.addEventListener("blur", () => {
@@ -153,11 +158,7 @@ const createCard = async(event) => {
     }
   });
 
-  // title.addEventListener("input", () => {
-  //   title.style.color = "#FFFFFF"
-  //   errorMsg.innerText = "";
-  // })
-
+  
   const cardBodyContainer = document.createElement("div");
   cardBodyContainer.classList.add("cardBodyContainer")
   cardBodyContainer.append(dateContainer, buttonContainer)
@@ -188,24 +189,28 @@ const createNewCard = async() => {
 
   dateContainer.append(start, end, errorMsg)
 
-  flatpickr(start, {
+  const startPicker = flatpickr(start, {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     altInput: true, 
     altFormat: "d M Y - H:i",
     time_24hr: true,
     minDate: "today",
-    defaultDate: event.startDate,
+    onChange: function(selectedDates, dateStr, instance) {
+      endPicker.set("minDate", dateStr);
+    }
   });
 
-  flatpickr(end, {
+  const endPicker =  flatpickr(end, {
     enableTime: true,
     dateFormat: "Y-m-d H:i",
     altInput: true, 
     altFormat: "d M Y - H:i",
     time_24hr: true,
     minDate: "today",
-    defaultDate: event.endDate,
+    onChange: function(selectedDates, dateStr, instance) {
+      startPicker.set("maxDate", dateStr);
+    }
   });
 
   const title = document.createElement("h2");

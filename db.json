@@ -81,13 +81,6 @@
       "endDate": "2025-10-29"
     },
     {
-      "id": "1d16",
-      "userId": "513a",
-      "title": "A",
-      "startDate": "2025-02-20 12:00",
-      "endDate": "2025-02-20 13:00"
-    },
-    {
       "id": "c9b1",
       "userId": "513a",
       "title": "Go to gym",
@@ -97,44 +90,44 @@
     {
       "id": "d220",
       "userId": "513a",
-      "title": "Fish",
+      "title": "Fishing",
       "startDate": "2025-02-19 12:00",
       "endDate": "2025-02-19 14:00"
     },
     {
       "id": "b5c0",
       "userId": "513a",
-      "title": "Past",
+      "title": "Laundry",
       "startDate": "2025-02-17 10:00",
       "endDate": "2025-02-17 11:00"
     },
     {
       "id": "81d8",
       "userId": "513a",
-      "title": "Past",
-      "startDate": "2025-02-17 10:00",
-      "endDate": "2025-02-17 11:00"
+      "title": "Pick kids up from daycare",
+      "startDate": "2025-02-19 10:00",
+      "endDate": "2025-02-19 11:00"
     },
     {
       "id": "e176",
       "userId": "513a",
-      "title": "Past2",
+      "title": "Play videogames",
       "startDate": "2025-02-17 09:00",
-      "endDate": "2025-02-17 11:00"
+      "endDate": "2025-02-19 11:00"
     },
     {
       "id": "ffc3",
       "userId": "513a",
-      "title": "Ongoing",
+      "title": "Working",
       "startDate": "2025-02-17 09:00",
       "endDate": "2025-02-20 12:00"
     },
     {
       "id": "3995",
       "userId": "513a",
-      "title": "Title",
+      "title": "Lunch",
       "startDate": "2025-02-18 12:00",
-      "endDate": "2025-02-26 12:00"
+      "endDate": "2025-02-18 13:00"
     },
     {
       "id": "d124",
@@ -147,8 +140,15 @@
       "id": "2804",
       "userId": "513a",
       "title": "Meeting",
-      "startDate": "2025-02-18 08:00",
+      "startDate": "2025-02-21 11:00",
       "endDate": "2025-02-21 12:00"
+    },
+    {
+      "id": "6bc4",
+      "userId": "513a",
+      "title": "Football practise",
+      "startDate": "2025-02-18 20:00",
+      "endDate": "2025-02-18 21:00"
     }
   ],
   "users": [

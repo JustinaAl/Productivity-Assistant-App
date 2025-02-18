@@ -781,6 +781,7 @@ hr {
 }
 .eventsBody .eventsMain .cardContainer .dateContainer .errorMsg {
   color: #FB3748;
+  width: auto;
 }
 .eventsBody .eventsMain .cardContainer .buttonContainer {
   display: flex;
