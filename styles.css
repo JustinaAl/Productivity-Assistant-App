@@ -587,14 +587,14 @@ hr {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: 25px;
+  gap: 30px;
   width: 400px;
   padding: 0px 40px;
 }
 .eventsBody .eventsMain section h2 {
   font-size: 32px;
   margin: 0px;
-  padding: 30px 0px;
+  padding: 0px;
 }
 .eventsBody .eventsMain section.upcomingEvents {
   border-right: 1px solid #2B303B;
@@ -629,6 +629,12 @@ hr {
 .eventsBody .eventsMain section.upcomingEvents p {
   all: unset;
   font-size: 12px;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer h2 {
+  padding-top: 30px;
+}
+.eventsBody .eventsMain section.pastEvents .pastTitle {
+  padding: 30px 0px;
 }
 .eventsBody .eventsMain section .cardContainer {
   display: flex;

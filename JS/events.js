@@ -70,7 +70,7 @@ const createCard = async(event) => {
     defaultDate: event.endDate,
   });
 
-  console.log(event.endDate);
+  
   const dateContainer = document.createElement("div");
   dateContainer.classList.add("dateContainer");
   const errorMsg = document.createElement("p");
@@ -268,6 +268,7 @@ const printEvents = async() => {
   const pastEvents = [];
   const upcomingEvents = [];
   const ongoingEvents = [];
+  flatPickr();
 
   allEvents.forEach(event => {
     if (isPast(parseISO(event.startDate)) && isFuture(parseISO(event.endDate))){
@@ -284,22 +285,30 @@ const printEvents = async() => {
     const ongoingTitle = document.createElement("h2");
     ongoingTitle.classList.add("ongoingTitle");
     ongoingTitle.innerText = ("Ongoing events");
-    upcomingEventsContainer.append(ongoingTitle)
-
     const ongoingEventsContainer = document.createElement("div");
     ongoingEventsContainer.classList.add("ongoingEventsContainer");
+    ongoingEventsContainer.append(ongoingTitle);
+
+    createEventBtn.insertAdjacentElement("afterend", ongoingEventsContainer);
+
 
     for (const event of ongoingEvents) {
-      upcomingEventsContainer.append(await createCard(event));
+      ongoingEventsContainer.append(await createCard(event))
     }
   };
 
+  
   if (pastEvents.length > 0){
     for (const event of pastEvents) {
       pastEventsContainer.append(await createCard(event));
     }
   }
-  flatPickr()
+
+  if (upcomingEvents.length > 0){
+    for (const event of upcomingEvents) {
+      upcomingEventsContainer.append(await createCard(event));
+    }
+  }
 }
 printEvents();
 
