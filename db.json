@@ -16,25 +16,18 @@
   ],
   "habits": [
     {
-      "id": "884a",
-      "userId": "0d22",
-      "title": "new",
-      "reps": 0,
-      "priority": "low"
-    },
-    {
-      "id": "d80d",
-      "userId": "0d22",
-      "title": "j",
+      "id": "5f7a",
+      "userId": "513a",
+      "title": "df",
       "reps": 0,
       "priority": "medium"
     },
     {
-      "id": "a2ac",
-      "userId": "0d22",
-      "title": "hej",
+      "id": "c2c0",
+      "userId": null,
+      "title": "jb",
       "reps": 0,
-      "priority": ""
+      "priority": "medium"
     },
     {
       "id": "d241",
@@ -47,6 +40,20 @@
       "id": "99bc",
       "userId": "0d22",
       "title": "",
+      "reps": 0,
+      "priority": ""
+    },
+    {
+      "id": "61fb",
+      "userId": "0d22",
+      "title": "habit",
+      "reps": 0,
+      "priority": "medium"
+    },
+    {
+      "id": "d0ab",
+      "userId": "0d22",
+      "title": "new",
       "reps": 0,
       "priority": ""
     },
