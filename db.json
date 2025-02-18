@@ -12,6 +12,20 @@
       "text": "Use react-window for long lists\n- Implement infinite scrolling\n\nTODO: Benchmark current application and identify bottlenecks",
       "done": "false",
       "timeEstimation": "120"
+    },
+    {
+      "status": "done",
+      "id": "1"
+    },
+    {
+      "id": "1",
+      "userId": "0ca8",
+      "title": "Test Todo",
+      "deadline": "2025-02-18",
+      "timeEstimate": 2,
+      "category": "work",
+      "description": "This is a manually added todo.",
+      "status": "not done"
     }
   ],
   "habits": [

@@ -13,7 +13,7 @@ export const postData = async(url, newData) => {
 }
 
 export const changeData = async(url, newData) => {
-    const response = await axios.put(url, newData);
+    const response = await axios.patch(url, newData);
     return response.data
 }
 
