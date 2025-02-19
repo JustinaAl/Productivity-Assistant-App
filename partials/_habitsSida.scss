@@ -96,6 +96,22 @@ hr{
      .deleteBtn, .editBtn{
         font-size: 12px;
     }
+
+    .rep{
+        display: flex;
+        align-content: center;
+        gap: 5px;
+
+        
+        button{
+            width: fit-content;
+            padding: 0 5px;
+            border: none;
+        }
+        i{
+            font-size:  12px;
+        }
+    }
 }
 
 .more{
@@ -118,17 +134,16 @@ hr{
         .counter{
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 4px;
     
             button{
                 height: fit-content;
-                width: fit-content;
+                width: 40px;
                 padding: 8px;
-
-                i{
-                    font-size: 16px;
-                }
             }
+
+        
         }
     }
 
