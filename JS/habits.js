@@ -49,6 +49,13 @@ let getHabits = async () => {
 
 //Create a habit box for posting to the page
 let createHabitBox = (habit) => {
+  if (habit.priority == "0") {
+   habit.priority = "low" ;   
+  }else if (habit.priority == "1") {
+    habit.priority = "medium" ;   
+   }else if (habit.priority == "2") {
+    habit.priority = "high" ;   
+   }
   let habitBox = document.createElement("div");
   habitBox.classList.add("habitBox");
   habitBox.innerHTML = `
@@ -230,9 +237,9 @@ let loadPage = async () => {
     setOrder();
     filteredHabits.sort((a, b) => b.priority - a.priority);
   }else if (valueInStorage === "rLowHigh") {
-    filteredHabits.sort((a, b) => b.reps - a.reps);
-  }else if (valueInStorage === "rHighLow") {
     filteredHabits.sort((a, b) => a.reps - b.reps);
+  }else if (valueInStorage === "rHighLow") {
+    filteredHabits.sort((a, b) => b.reps - a.reps);
   }
   }
 
