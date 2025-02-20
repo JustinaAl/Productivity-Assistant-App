@@ -123,48 +123,6 @@
       "endDate": "2025-02-19 09:50"
     },
     {
-<<<<<<< HEAD
-      "id": "a010",
-      "userId": "513a",
-      "title": "Do dishes",
-      "startDate": "2025-02-18 12:00",
-      "endDate": "2025-02-18 13:00"
-    },
-    {
-      "id": "380f",
-      "userId": "513a",
-      "title": "Pick kids up from daycare",
-      "startDate": "2025-02-26 08:00",
-      "endDate": "2025-02-27 11:00"
-    },
-    {
-      "id": "7083",
-      "userId": "513a",
-      "title": "Meeting",
-      "startDate": "2025-02-20 10:00",
-      "endDate": "2025-02-21 12:00"
-    },
-    {
-      "id": "e33d",
-      "userId": "513a",
-      "title": "Football practise",
-      "startDate": "2025-02-21 18:00",
-      "endDate": "2025-02-21 19:00"
-    },
-    {
-      "id": "1014",
-      "userId": "513a",
-      "title": "Tewe",
-      "startDate": "2025-02-20 12:00",
-      "endDate": "2025-02-20 13:00"
-    },
-    {
-      "id": "6281",
-      "userId": "7883",
-      "title": "Fishing",
-      "startDate": "2025-02-21 12:00",
-      "endDate": "2025-02-22 12:00"
-=======
       "id": "c77e",
       "userId": "0d22",
       "title": "Event 22/02",
@@ -177,7 +135,6 @@
       "title": "Event 24/02",
       "startDate": "2025-02-24 12:00",
       "endDate": "2025-02-24 12:00"
->>>>>>> ebd8f17465934b9b80e772651ae3809410109372
     }
   ],
   "users": [

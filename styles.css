@@ -397,7 +397,6 @@
   --Red500: #FB3748;
 }
 
-<<<<<<< HEAD
 * {
   box-sizing: border-box;
 }
@@ -557,8 +556,6 @@
   --Red500: #FB3748;
 }
 
-=======
->>>>>>> ebd8f17465934b9b80e772651ae3809410109372
 .filters, .sort {
   background-color: transparent;
   border-radius: 4px;
