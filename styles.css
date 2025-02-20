@@ -397,6 +397,7 @@
   --Red500: #FB3748;
 }
 
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
 }
@@ -556,6 +557,8 @@
   --Red500: #FB3748;
 }
 
+=======
+>>>>>>> ebd8f17465934b9b80e772651ae3809410109372
 .filters, .sort {
   background-color: transparent;
   border-radius: 4px;
@@ -764,33 +767,6 @@ hr {
   border-right: 1px solid #2B303B;
   padding: 30px;
 }
-#sideNav .navUl {
-  color: #EBF1FF;
-  font-size: 0.8rem;
-  font-weight: 200;
-  padding: 0;
-  line-height: 20px;
-  margin-left: 13px;
-  margin-bottom: 50px;
-}
-#sideNav #todosHabitsEvents #todosNav #imgH3NavTodos {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-#sideNav #todosHabitsEvents #habitsNav #imgH3NavHabits {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-#sideNav #todosHabitsEvents #eventsNav #imgH3NavEvents {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
 #sideNav #logOutBtn {
   width: 100%;
   background-color: #0E121B; /* Dark background */
@@ -810,6 +786,9 @@ hr {
 #sideNav h3 {
   font-weight: bold;
   color: #EBF1FF;
+}
+#sideNav a {
+  text-decoration: none;
 }
 
 .controls {
