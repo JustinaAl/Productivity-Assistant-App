@@ -7,6 +7,11 @@
     color: $Blue50;
 }
 
+.filters, .sort{
+    @include transparentBtn();
+    padding: 8px;
+}
+
 body{
     all: unset;
     h1{
@@ -42,39 +47,14 @@ hr{
 
 #createNew{
     @include blueButton();
+    max-width: 400px;
 }
-
-#moreInfo{
+.informationBox{
     display: flex;
     flex-direction: column;
-    gap: 24px;
-    padding: 24px;
-    border-left: 1px solid #2B303B;;
-
-    #mainDiv{
-        @include holderBox();
-        flex-direction: column;
-        gap: 8px;
-
-        div{
-            display: flex;
-            justify-content: space-between;
-
-            button{
-                @include blueButton();
-            }
-        }
-
-        input{
-            @include inputField();
-        }
-
-        select{
-            @include inputField();
-        }
-
-    }
+    gap: 8px
 }
+
 
 .habitBox{
     @include holderBox();
@@ -95,6 +75,56 @@ hr{
 
      .deleteBtn, .editBtn{
         font-size: 12px;
+    }
+
+    .rep{
+        display: flex;
+        align-content: center;
+        gap: 5px;
+
+        
+        button{
+            width: fit-content;
+            padding: 0 5px;
+            border: none;
+        }
+        i{
+            font-size:  12px;
+        }
+    }
+}
+
+#mainDiv{
+    @include holderBox();
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    #habitTitle{
+        background-color: transparent;
+        border: none;
+        font-size: 20px;
+        color: $Blue50;
+    }
+
+    #habitTitle:focus{
+        outline: none;
+    }
+
+    button{
+        @include blueButton();
+        padding: 2px 8px;
+        border-radius: 8px;
+    }
+
+    #prioritySelection{
+        @include transparentBtn();
+        padding: 6px;
+    }
+
+    option{
+        background-color: #0E121B;
     }
 }
 
@@ -118,17 +148,16 @@ hr{
         .counter{
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 4px;
     
             button{
                 height: fit-content;
-                width: fit-content;
+                width: 40px;
                 padding: 8px;
-
-                i{
-                    font-size: 16px;
-                }
             }
+
+        
         }
     }
 
