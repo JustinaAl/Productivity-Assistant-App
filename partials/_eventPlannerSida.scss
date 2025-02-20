@@ -4,18 +4,28 @@
     background: $BaseBlack;
     color: $BaseWhite;
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    min-height: 100vh;
+    height: auto;
     
 
     #sideNav{
-        min-height: 100%;
+        min-height: 100vh;
+        // justify-content: flex-start;
+        border: none;
+        
+        .todosHabitsEvents{
+            flex: 1;
+        }
+        .sideNavBtn{
+            position: sticky;
+            bottom: 0;
+
+        }
     }
     .eventsMain{
         display: flex;
         width: 100%;
         section{
-            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: flex-start;
@@ -32,6 +42,7 @@
 
             &.upcomingEvents, &.pastEvents{
                 border-right: 1px solid $Neutral700;
+                border-left: 1px solid $Neutral700;
 
                 .startContainer, .endContainer{
                     display: flex;
@@ -87,8 +98,21 @@
             }
 
             &.pastEvents{
+                user-select: none;
                 .pastTitle{
                     padding-top: 30px;
+                    opacity: 40%;
+                }
+                #pastEventsContainer{
+                    opacity: 40%;
+                    pointer-events: none;
+                    .cardBodyContainer:hover {
+                       background: transparent;
+
+                       .buttonContainer{
+                        display: none;
+                       }
+                    }
                 }
             }
 
@@ -122,8 +146,7 @@
                         font-size: 18px;
                     }
                     .dateContainer{
-
-                        gap: 4px;
+                        gap: 2px;
 
                         input.date{
                            
@@ -144,6 +167,8 @@
                     }
                 }
             }
+
+            
         }
         .cardContainer{
             display: flex;
@@ -167,9 +192,10 @@
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+                width: 100%;
 
                 h2{
-                    padding-bottom: 20px;
+                    padding-bottom: 5px;
                 }
 
                 p{
@@ -219,35 +245,97 @@
                 padding-right: 0px;
                 border-radius: 6px;
 
-
-                &:hover{
-                    background: $Neutral900;
-
-                    .buttonContainer{
-                        display: flex;
-                    }
-                }
- 
+                
+                
                 .buttonContainer{
                     gap: 0px;
-                    display: none;
+                    
                     flex-direction: row;
                     align-self: flex-end;
 
+                    .saveCancel{
+                        display: none;
+                    }
+                    
                     .delete, .save{
                         padding: 10px;
                         padding-bottom: 0px;
                     }
-
-                    .save.hide{
+                    
+                    .delete{
                         display: none;
                     }
+
                 }
                 
+                &.adjusting{
+                    flex-direction: column;
+
+                    .dateContainer{
+                        input.date{
+                            width: auto;
+                        }
+                    }
+
+                    .buttonContainer{
+                        display: flex;
+                        justify-content: space-between;
+                        width: 100%;
+                        cursor: pointer;
+
+                        .saveCancel{
+                            display: flex;
+                            gap: 20px;
+
+                            button{
+                                width: 70px;
+                                padding: 8px 30px;
+                                border-radius: 6px;
+                                transition: all 0.3s ease; 
+
+
+                                &:active{
+                                    transform: scale(0.95);
+                                }
+                            }
+                            .cancelBtn{
+                                background-color: transparent;
+                                border: 1px solid #525866;
+
+                                &:hover {
+                                    background-color: rgba(51, 92, 255);
+                                    border: none;
+                                }
+                            }
+                            .saveBtn{
+                                &:hover {
+                                background-color: #1c9b57;
+                                border: none;
+                                }
+                            }
+                            
+                        }
+                        .delete{
+                            display: flex;
+                            padding: 15px;
+                        }
+                    }
+
+                }
+
+                &:hover{
+                    background: $Neutral900;
+
+                    .delete{
+                        display: flex;
+                    }
+                }
+
             }
         }
         
     }
+
     
 }
 
