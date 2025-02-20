@@ -11,7 +11,7 @@ const userId = sessionStorage.getItem("userId");
 
 if (!userId) {
     alert("No user logged in");
-    window.location.href = "./logInSida.html"; 
+    window.location.href = "./index.html"; 
 } else {
     console.log(`User: ${userId}`);
 }
