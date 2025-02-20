@@ -403,6 +403,8 @@ const printEvents = async() => {
     for (const event of upcomingEvents) {
       upcomingEventsContainer.append(await createCard(event));
     }
+  } else {
+    document.querySelector("#events-texs").innerText= "You got no upcoming events, enjoy your free time!";
   }
 }
 printEvents();
