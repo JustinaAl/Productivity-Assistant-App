@@ -1,0 +1,882 @@
+:root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
+  --Neutral0: #FFFFFF;
+  --Neutral50: #F5F7FA;
+  --Neutral100: #F3F5F8;
+  --Neutral200: #E0E4EA;
+  --Neutral300: #CACFD8;
+  --Neutral400: #99A0AE;
+  --Neutral500: #717784;
+  --Neutral600: #525866;
+  --Neutral700: #2B303B;
+  --Neutral800: #232530;
+  --Neutral900: #191B25;
+  --Neutral950: #0E121B;
+  --Blue50: #EBF1FF;
+  --Blue500: #335CFF;
+  --Blue700: #2547D0;
+  --Green50: #E0FAEC;
+  --Green100: #D1FBE9;
+  --Green500: #21C16B;
+  --Red50: #FFEBEC;
+  --Red100: #FFD5D8;
+  --Red500: #FB3748;
+}
+
+:root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
+  --Neutral0: #FFFFFF;
+  --Neutral50: #F5F7FA;
+  --Neutral100: #F3F5F8;
+  --Neutral200: #E0E4EA;
+  --Neutral300: #CACFD8;
+  --Neutral400: #99A0AE;
+  --Neutral500: #717784;
+  --Neutral600: #525866;
+  --Neutral700: #2B303B;
+  --Neutral800: #232530;
+  --Neutral900: #191B25;
+  --Neutral950: #0E121B;
+  --Blue50: #EBF1FF;
+  --Blue500: #335CFF;
+  --Blue700: #2547D0;
+  --Green50: #E0FAEC;
+  --Green100: #D1FBE9;
+  --Green500: #21C16B;
+  --Red50: #FFEBEC;
+  --Red100: #FFD5D8;
+  --Red500: #FB3748;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+* input::-moz-placeholder {
+  color: #EBF1FF;
+}
+* h1, * p, * input::placeholder {
+  color: #EBF1FF;
+}
+
+#sideNav {
+  height: 100%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-right: 1px solid #2B303B;
+  padding: 30px;
+}
+#sideNav .navUl {
+  color: #EBF1FF;
+  font-size: 0.8rem;
+  font-weight: 200;
+  padding: 0;
+  line-height: 20px;
+  margin-left: 13px;
+  margin-bottom: 50px;
+}
+#sideNav #todosHabitsEvents #todosNav #imgH3NavTodos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #todosHabitsEvents #habitsNav #imgH3NavHabits {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #todosHabitsEvents #eventsNav #imgH3NavEvents {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #todosHabitsEvents .link {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+#sideNav #logOutBtn {
+  width: 100%;
+  background-color: #0E121B; /* Dark background */
+  color: #EBF1FF;
+  border: 1px solid #525866;
+  padding: 13px 30px; /* Add space around text */
+  font-weight: bold; /* Bold text */
+  font-size: 16px; /* Adjust font size */
+  text-align: center; /* Center text */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+#sideNav #logOutBtn:hover {
+  background-color: rgb(51, 92, 255); /* Subtle hover effect */
+}
+
+:root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
+  --Neutral0: #FFFFFF;
+  --Neutral50: #F5F7FA;
+  --Neutral100: #F3F5F8;
+  --Neutral200: #E0E4EA;
+  --Neutral300: #CACFD8;
+  --Neutral400: #99A0AE;
+  --Neutral500: #717784;
+  --Neutral600: #525866;
+  --Neutral700: #2B303B;
+  --Neutral800: #232530;
+  --Neutral900: #191B25;
+  --Neutral950: #0E121B;
+  --Blue50: #EBF1FF;
+  --Blue500: #335CFF;
+  --Blue700: #2547D0;
+  --Green50: #E0FAEC;
+  --Green100: #D1FBE9;
+  --Green500: #21C16B;
+  --Red50: #FFEBEC;
+  --Red100: #FFD5D8;
+  --Red500: #FB3748;
+}
+
+.loginPage {
+  background: #2B303B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.loginPage .loginPageMain {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #0E121B;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 64px 64px;
+  border-radius: 42px;
+}
+.loginPage .loginPageMain .heading {
+  display: flex;
+  align-items: center;
+}
+.loginPage .loginPageMain .heading img {
+  width: 60px;
+  padding-right: 5px;
+}
+.loginPage .loginPageMain .heading h1 {
+  color: #EBF1FF;
+  font-weight: bold;
+  font-size: 36px;
+  margin: 0px;
+}
+.loginPage .loginPageMain .pleaseLogin {
+  color: #FFFFFF;
+  font-weight: lighter;
+  font-size: 16px;
+  margin: 0px;
+  padding-bottom: 50px;
+}
+.loginPage .loginPageMain .userAuthContianer {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  width: 100%;
+  padding-top: 15px;
+}
+.loginPage .loginPageMain .userAuthContianer .login {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 38px;
+}
+.loginPage .loginPageMain .userAuthContianer .login div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+.loginPage .loginPageMain .userAuthContianer .login div input {
+  all: unset;
+  box-sizing: border-box;
+  width: 100%;
+  background: #0E121B;
+  border: 1px solid #717784;
+  border-radius: 8px;
+  width: 100%;
+  color: #FFFFFF;
+  padding: 16px;
+}
+.loginPage .loginPageMain .userAuthContianer .login div #error {
+  margin: 0px;
+  color: #FB3748;
+  font-weight: lighter;
+  font-size: 14px;
+}
+.loginPage .loginPageMain .userAuthContianer .login div #error.success {
+  color: #21C16B;
+}
+.loginPage .loginPageMain .userAuthContianer label {
+  color: #FFFFFF;
+  font-weight: lighter;
+  font-size: 18px;
+}
+.loginPage .loginPageMain .userAuthContianer .buttons {
+  display: flex;
+  gap: 42px;
+  justify-content: space-between;
+}
+.loginPage .loginPageMain .userAuthContianer .buttons button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #335CFF;
+  color: #FFFFFF;
+  width: 100%;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 14px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.loginPage .loginPageMain .userAuthContianer .buttons button:hover {
+  cursor: pointer;
+  background: #2547D0;
+}
+.loginPage .loginPageMain .userAuthContianer .buttons button:active {
+  background: #1d38a5;
+  transform: scale(0.98);
+}
+.loginPage .hidden {
+  display: none;
+}
+
+:root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
+  --Neutral0: #FFFFFF;
+  --Neutral50: #F5F7FA;
+  --Neutral100: #F3F5F8;
+  --Neutral200: #E0E4EA;
+  --Neutral300: #CACFD8;
+  --Neutral400: #99A0AE;
+  --Neutral500: #717784;
+  --Neutral600: #525866;
+  --Neutral700: #2B303B;
+  --Neutral800: #232530;
+  --Neutral900: #191B25;
+  --Neutral950: #0E121B;
+  --Blue50: #EBF1FF;
+  --Blue500: #335CFF;
+  --Blue700: #2547D0;
+  --Green50: #E0FAEC;
+  --Green100: #D1FBE9;
+  --Green500: #21C16B;
+  --Red50: #FFEBEC;
+  --Red100: #FFD5D8;
+  --Red500: #FB3748;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#startSida {
+  background-color: #0E121B;
+  display: flex;
+  height: 100vh;
+  box-sizing: border-box;
+}
+#startSida h1 {
+  font-weight: bold;
+  color: #EBF1FF;
+  font-size: 3rem;
+}
+#startSida h2 {
+  font-weight: 100;
+  color: #EBF1FF;
+}
+#startSida h3 {
+  font-weight: bold;
+  color: #EBF1FF;
+}
+#startSida h4 {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #EBF1FF;
+}
+#startSida #startSidaCont {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#startSida #startSidaCont #startSidaH1H2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+#startSida #startSidaCont #startSidaH1H2 h2 {
+  margin-top: 0px;
+  padding: 0 30px;
+}
+#startSida #startSidaCont #startSidaBtnEtc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#startSida #startSidaCont #startSidaBtnEtc #btnNavigation {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+#startSida #startSidaCont #startSidaBtnEtc #btnNavigation .btnNav {
+  width: 130px;
+  background-color: #335CFF;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+#startSida #startSidaCont #startSidaBtnEtc #btnNavigation .btnNav:hover {
+  background-color: #3049C8; /* Slightly darker blue on hover */
+}
+#startSida #startSidaCont #startSidaBtnEtc #btnNavigation .btnNav:active {
+  transform: scale(0.95); /* Subtle press effect */
+}
+
+:root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
+  --Neutral0: #FFFFFF;
+  --Neutral50: #F5F7FA;
+  --Neutral100: #F3F5F8;
+  --Neutral200: #E0E4EA;
+  --Neutral300: #CACFD8;
+  --Neutral400: #99A0AE;
+  --Neutral500: #717784;
+  --Neutral600: #525866;
+  --Neutral700: #2B303B;
+  --Neutral800: #232530;
+  --Neutral900: #191B25;
+  --Neutral950: #0E121B;
+  --Blue50: #EBF1FF;
+  --Blue500: #335CFF;
+  --Blue700: #2547D0;
+  --Green50: #E0FAEC;
+  --Green100: #D1FBE9;
+  --Green500: #21C16B;
+  --Red50: #FFEBEC;
+  --Red100: #FFD5D8;
+  --Red500: #FB3748;
+}
+
+body {
+  all: unset;
+}
+body h1 {
+  color: #EBF1FF;
+}
+
+#habitsWrapper {
+  background-color: #0E121B;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 100vh;
+}
+
+#habitsMain {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  gap: 24px;
+  width: 100%;
+}
+#habitsMain #allHabits {
+  display: flex;
+  flex-direction: column;
+  height: -moz-fit-content;
+  height: fit-content;
+  gap: 16px;
+}
+
+hr {
+  border: 0.5px solid #717784;
+}
+
+#createNew {
+  background-color: #335CFF;
+  padding: 16px;
+  border-radius: 16px;
+  border: 0;
+  color: #EBF1FF;
+  font-size: 20px;
+}
+
+#moreInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+  border-left: 1px solid #2B303B;
+}
+#moreInfo #mainDiv {
+  display: flex;
+  padding: 16px;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: #2B303B;
+  flex-direction: column;
+  gap: 8px;
+}
+#moreInfo #mainDiv div {
+  display: flex;
+  justify-content: space-between;
+}
+#moreInfo #mainDiv div button {
+  background-color: #335CFF;
+  padding: 16px;
+  border-radius: 16px;
+  border: 0;
+  color: #EBF1FF;
+  font-size: 20px;
+}
+#moreInfo #mainDiv input {
+  background-color: #525866;
+  padding: 8px;
+  font-size: 20px;
+  color: #EBF1FF;
+  border-radius: 4px;
+  border: 1px solid #717784;
+}
+#moreInfo #mainDiv select {
+  background-color: #525866;
+  padding: 8px;
+  font-size: 20px;
+  color: #EBF1FF;
+  border-radius: 4px;
+  border: 1px solid #717784;
+}
+
+.habitBox {
+  display: flex;
+  padding: 16px;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: #2B303B;
+  width: 400px;
+  justify-content: space-between;
+}
+.habitBox button {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #717784;
+  color: #EBF1FF;
+}
+.habitBox p.habitTitle {
+  font-weight: 600;
+}
+.habitBox p.priority {
+  color: #99A0AE;
+  font-weight: 300;
+  font-size: 14px;
+}
+.habitBox .deleteBtn, .habitBox .editBtn {
+  font-size: 12px;
+}
+.habitBox .rep {
+  display: flex;
+  align-content: center;
+  gap: 5px;
+}
+.habitBox .rep button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0 5px;
+  border: none;
+}
+.habitBox .rep i {
+  font-size: 12px;
+}
+
+.more {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+  gap: 16px;
+}
+.more .counterWrap {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  gap: 8px;
+}
+.more .counterWrap p {
+  margin: 0;
+  font-size: 14px;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.more .counterWrap .counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+.more .counterWrap .counter button {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 40px;
+  padding: 8px;
+}
+.more .fa-ellipsis-vertical {
+  color: #EBF1FF;
+  font-size: 36px;
+  width: 5px;
+}
+.more .iconBox {
+  display: flex;
+  flex-direction: column;
+  width: -moz-fit-content;
+  width: fit-content;
+  align-items: end;
+  min-width: 80px;
+  gap: 8px;
+}
+.more .iconBox button {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+  padding: 8px;
+}
+.more .iconBox button p {
+  margin: 0;
+  font-size: 10px;
+}
+
+#sideNav {
+  height: 100%;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  border-right: 1px solid #2B303B;
+  padding: 30px;
+}
+#sideNav .navUl {
+  color: #EBF1FF;
+  font-size: 0.8rem;
+  font-weight: 200;
+  padding: 0;
+  line-height: 20px;
+  margin-left: 13px;
+  margin-bottom: 50px;
+}
+#sideNav #todosHabitsEvents #todosNav #imgH3NavTodos {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #todosHabitsEvents #habitsNav #imgH3NavHabits {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #todosHabitsEvents #eventsNav #imgH3NavEvents {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+#sideNav #logOutBtn {
+  width: 100%;
+  background-color: #0E121B; /* Dark background */
+  color: #EBF1FF;
+  border: 1px solid #525866;
+  padding: 13px 30px; /* Add space around text */
+  font-weight: bold; /* Bold text */
+  font-size: 16px; /* Adjust font size */
+  text-align: center; /* Center text */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+#sideNav #logOutBtn:hover {
+  background-color: rgb(51, 92, 255); /* Subtle hover effect */
+}
+#sideNav h3 {
+  font-weight: bold;
+  color: #EBF1FF;
+}
+
+.controls {
+  display: flex;
+  gap: 24px;
+}
+
+.eventsBody {
+  background: #0E121B;
+  color: #FFFFFF;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+.eventsBody #sideNav {
+  min-height: 100%;
+}
+.eventsBody .eventsMain {
+  display: flex;
+  width: 100%;
+}
+.eventsBody .eventsMain section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 30px;
+  width: 400px;
+  padding: 0px 40px;
+}
+.eventsBody .eventsMain section h2 {
+  font-size: 32px;
+  margin: 0px;
+  padding: 0px;
+}
+.eventsBody .eventsMain section.upcomingEvents, .eventsBody .eventsMain section.pastEvents {
+  border-right: 1px solid #2B303B;
+}
+.eventsBody .eventsMain section.upcomingEvents .startContainer, .eventsBody .eventsMain section.upcomingEvents .endContainer, .eventsBody .eventsMain section.pastEvents .startContainer, .eventsBody .eventsMain section.pastEvents .endContainer {
+  display: flex;
+  align-items: baseline;
+}
+.eventsBody .eventsMain section.upcomingEvents button, .eventsBody .eventsMain section.pastEvents button {
+  all: unset;
+  cursor: pointer;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background: #335CFF;
+  color: #FFFFFF;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 14px 10px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.eventsBody .eventsMain section.upcomingEvents button:hover, .eventsBody .eventsMain section.pastEvents button:hover {
+  background: #2547D0;
+}
+.eventsBody .eventsMain section.upcomingEvents button:active, .eventsBody .eventsMain section.pastEvents button:active {
+  background: #1d38a5;
+  transform: scale(0.98);
+}
+.eventsBody .eventsMain section.upcomingEvents button.hide, .eventsBody .eventsMain section.pastEvents button.hide {
+  display: none;
+}
+.eventsBody .eventsMain section.upcomingEvents p, .eventsBody .eventsMain section.pastEvents p {
+  all: unset;
+  font-size: 12px;
+  padding-right: 10px;
+}
+.eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer h2, .eventsBody .eventsMain section.pastEvents #newNoteContainer .cardContainer h2 {
+  padding-top: 30px;
+}
+.eventsBody .eventsMain section.pastEvents .pastTitle {
+  padding-top: 30px;
+}
+.eventsBody .eventsMain section .date {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  box-sizing: border-box;
+  border: 1px solid #2B303B;
+  background: transparent;
+  font-size: 1.5rem;
+  padding: 8px;
+  color: #CACFD8;
+  width: 100%;
+}
+.eventsBody .eventsMain section .date::-moz-placeholder {
+  color: #717784;
+}
+.eventsBody .eventsMain section .date::placeholder {
+  color: #717784;
+}
+.eventsBody .eventsMain section .date:active {
+  border: 1px solid #2B303B;
+}
+.eventsBody .eventsMain section .events {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+.eventsBody .eventsMain section .events .cardContainer {
+  gap: 8px;
+}
+.eventsBody .eventsMain section .events .cardContainer h2 {
+  font-size: 18px;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer {
+  gap: 4px;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer input.date {
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  width: 100%;
+  padding: 4px;
+  padding-left: 6px;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer input.date::-moz-placeholder {
+  color: #717784;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer input.date::placeholder {
+  color: #717784;
+}
+.eventsBody .eventsMain section .events .cardContainer .dateContainer input.date:active {
+  border: 1px solid #2B303B;
+}
+.eventsBody .eventsMain .cardContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  border-radius: 6px;
+}
+.eventsBody .eventsMain .cardContainer h2 {
+  margin: 0px;
+  padding: 0px;
+}
+.eventsBody .eventsMain .cardContainer h2:focus {
+  border: none;
+  outline: none;
+}
+.eventsBody .eventsMain .cardContainer .dateContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.eventsBody .eventsMain .cardContainer .dateContainer h2 {
+  padding-bottom: 20px;
+}
+.eventsBody .eventsMain .cardContainer .dateContainer p {
+  width: 45px;
+}
+.eventsBody .eventsMain .cardContainer .dateContainer .errorMsg {
+  color: #FB3748;
+  width: auto;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer {
+  display: flex;
+  gap: 15px;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete, .eventsBody .eventsMain .cardContainer .buttonContainer .save {
+  all: unset;
+  padding: 0px 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete:hover .deleteIcon, .eventsBody .eventsMain .cardContainer .buttonContainer .save:hover .deleteIcon {
+  fill: #FB3748;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete:hover .saveIcon, .eventsBody .eventsMain .cardContainer .buttonContainer .save:hover .saveIcon {
+  fill: #21C16B;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete:active .deleteIcon, .eventsBody .eventsMain .cardContainer .buttonContainer .save:active .deleteIcon {
+  fill: #ffa7ad;
+}
+.eventsBody .eventsMain .cardContainer .buttonContainer .delete:active .saveIcon, .eventsBody .eventsMain .cardContainer .buttonContainer .save:active .saveIcon {
+  fill: #D1FBE9;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  padding-right: 0px;
+  border-radius: 6px;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer:hover {
+  background: #191B25;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer:hover .buttonContainer {
+  display: flex;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer {
+  gap: 0px;
+  display: none;
+  flex-direction: row;
+  align-self: flex-end;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .delete, .eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .save {
+  padding: 10px;
+  padding-bottom: 0px;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .save.hide {
+  display: none;
+}
+
+:root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
+  --Neutral0: #FFFFFF;
+  --Neutral50: #F5F7FA;
+  --Neutral100: #F3F5F8;
+  --Neutral200: #E0E4EA;
+  --Neutral300: #CACFD8;
+  --Neutral400: #99A0AE;
+  --Neutral500: #717784;
+  --Neutral600: #525866;
+  --Neutral700: #2B303B;
+  --Neutral800: #232530;
+  --Neutral900: #191B25;
+  --Neutral950: #0E121B;
+  --Blue50: #EBF1FF;
+  --Blue500: #335CFF;
+  --Blue700: #2547D0;
+  --Green50: #E0FAEC;
+  --Green100: #D1FBE9;
+  --Green500: #21C16B;
+  --Red50: #FFEBEC;
+  --Red100: #FFD5D8;
+  --Red500: #FB3748;
+}
+
+* {
+  font-family: "Inter", sans-serif;
+}
+* input::-moz-placeholder {
+  color: #EBF1FF;
+}
+* h1, * p, * input::placeholder {
+  color: #EBF1FF;
+}/*# sourceMappingURL=styles.css.map */
