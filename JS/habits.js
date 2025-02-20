@@ -1,3 +1,10 @@
+let userId = sessionStorage.getItem("userId");
+
+let getHabitData = async() =>{
+  let data = await axios.get("http://localhost:5001/habits", { params: { userId } });
+  return data.data;
+};
+
 let createHabit = () => {
   if (document.body.querySelector("#mainDiv")) {
     return;
@@ -8,7 +15,7 @@ let createHabit = () => {
             <input type="text" id="habitTitle" placeholder="Enter habit title here...">
             <div>
                 <select name="prioritySelection" id="prioritySelection">
-                    <option value="" disabled selected>Choose priority</option>
+                    <option value=" " disabled selected>Choose priority</option>
                     <option>low</option>
                     <option>medium</option>
                     <option>high</option>
@@ -16,35 +23,32 @@ let createHabit = () => {
                 <button id="saveHabit">Save</button>
             </div>`;
 
-    document.querySelector("#moreInfo").append(mainDiv);
+    document.querySelector("#createNew").after(mainDiv);
     document.querySelector("#saveHabit").addEventListener("click", pushHabitdb);
   }
 };
 
-//Button create new habit
 document.querySelector("#createNew").addEventListener("click", createHabit);
 
-//Pushes habit to db after pressing save
 let pushHabitdb = async () => {
-  let userId = sessionStorage.getItem("userId");
   let value = 0;
   let title = document.querySelector("#habitTitle").value;
   let chosenPriority = document.querySelector("#prioritySelection").value;
-
-  await axios.post("http://localhost:5001/habits", {
-    userId,
-    title,
-    reps: value,
-    priority: chosenPriority,
-  });
-};
-
-//Finds habits in db and filters by user id
-let getHabits = async () => {
-  let userId = sessionStorage.getItem("userId");
-  let habits = await axios.get("http://localhost:5001/habits");
-  let filteredHabits = habits.data.filter((habit) => habit.userId === userId);
-  return filteredHabits;
+  console.log(title);
+  if(title.length>2){
+    if(chosenPriority === " "){
+      alert("You need to choose a priority");
+    }else{
+      await axios.post("http://localhost:5001/habits", {
+        userId,
+        title,
+        reps: value,
+        priority: chosenPriority,
+      });
+    }
+  }else{
+    alert("The title is too short");
+  }
 };
 
 //Create a habit box for posting to the page
@@ -125,9 +129,8 @@ let openMoreInfo = async (habitBox, element) => {
   let i = habitBox.querySelector(".iconBox i");
   let iconBox = habitBox.querySelector(".iconBox");
   i.addEventListener("click", () => {
-    document.querySelector("#moreInfo").append(habitBox);
+    habitBox.querySelector('.counterWrap').remove();
     i.remove();
-    document.querySelector("#moreInfo .counterWrap").remove();
 
     let deleteBtn = document.createElement("button");
     deleteBtn.innerHTML = `<i class="fa-regular fa-trash-can"></i><p>Delete</p>`;
@@ -158,10 +161,14 @@ let openMoreInfo = async (habitBox, element) => {
         let updatedTitle = habitBox.querySelector("input").value;
         let updatedPriority = habitBox.querySelector("select").value;
         try {
-          await axios.patch(`http://localhost:5001/habits/${element.id}`, {
-            title: updatedTitle,
-            priority: updatedPriority,
-          });
+          if(updatedTitle.length>2){
+            await axios.patch(`http://localhost:5001/habits/${element.id}`, {
+              title: updatedTitle,
+              priority: updatedPriority,
+            });
+          }else{
+            alert("The title is too short");
+          }
         } catch (error) {
           console.log("", error);
         }
@@ -212,7 +219,7 @@ let editHabit = async (habitId, habitBox) => {
 //Load page
 let loadPage = async () => {
   sort();
-  let filteredHabits = await getHabits();
+  let filteredHabits = await getHabitData()
 
   if (sessionStorage.getItem("selectedPriorites")) {
     filteredHabits = await filterPage();
@@ -262,7 +269,7 @@ let loadPage = async () => {
 
 let filterPage = async () => {
   let checked = sessionStorage.getItem("selectedPriorites");
-  let filteredHabits = await getHabits();
+  let filteredHabits = await getHabitData();
   if (checked) {
     let checkedArray = checked.split(",");
 
