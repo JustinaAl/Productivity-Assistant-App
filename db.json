@@ -16,73 +16,24 @@
   ],
   "habits": [
     {
-      "id": "5f7a",
-      "userId": "513a",
-      "title": "df",
-      "reps": "0",
-      "priority": "medium"
-    },
-    {
-      "id": "d241",
-      "userId": "0d22",
-      "title": "ghjk",
-      "reps": "0",
-      "priority": "medium"
-    },
-    {
       "id": "99bc",
       "userId": "0d22",
-      "title": "prio",
+      "title": "Habit_1",
       "reps": "2",
       "priority": "low"
     },
     {
       "id": "61fb",
       "userId": "0d22",
-      "title": "habit",
+      "title": "Habit_2",
       "reps": "1",
       "priority": "medium"
     },
     {
       "id": "d0ab",
       "userId": "0d22",
-      "title": "new",
-      "reps": 0,
-      "priority": "high"
-    },
-    {
-      "id": "b38f",
-      "userId": null,
-      "title": "hhh",
+      "title": "Habit_3",
       "reps": "3",
-      "priority": "high"
-    },
-    {
-      "id": "8801",
-      "userId": null,
-      "title": "h222",
-      "reps": "1",
-      "priority": "medium"
-    },
-    {
-      "id": "fffe",
-      "userId": null,
-      "title": "neee",
-      "reps": 0,
-      "priority": "low"
-    },
-    {
-      "id": "7fba",
-      "userId": null,
-      "title": "jvbl",
-      "reps": 0,
-      "priority": "medium"
-    },
-    {
-      "id": "cfa3",
-      "userId": null,
-      "title": "xghj",
-      "reps": "2",
       "priority": "high"
     }
   ],
@@ -174,8 +125,8 @@
     {
       "id": "7c57",
       "userId": "0d22",
-      "title": "One more",
-      "startDate": "2025-02-27 12:00",
+      "title": "Event 23/02",
+      "startDate": "2025-02-23 12:00",
       "endDate": "2025-02-28 12:00"
     },
     {
@@ -184,6 +135,20 @@
       "title": "Done",
       "startDate": "2025-02-19 09:49",
       "endDate": "2025-02-19 09:50"
+    },
+    {
+      "id": "c77e",
+      "userId": "0d22",
+      "title": "Event 22/02",
+      "startDate": "2025-02-22 12:00",
+      "endDate": "2025-02-24 12:00"
+    },
+    {
+      "id": "368a",
+      "userId": "0d22",
+      "title": "Event 24/02",
+      "startDate": "2025-02-24 12:00",
+      "endDate": "2025-02-24 12:00"
     }
   ],
   "users": [

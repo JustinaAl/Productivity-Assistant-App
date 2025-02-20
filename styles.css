@@ -388,6 +388,14 @@
   --Red500: #FB3748;
 }
 
+.filters, .sort {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #717784;
+  color: #EBF1FF;
+  padding: 8px;
+}
+
 body {
   all: unset;
 }
@@ -429,51 +437,13 @@ hr {
   border: 0;
   color: #EBF1FF;
   font-size: 20px;
+  max-width: 400px;
 }
 
-#moreInfo {
+.informationBox {
   display: flex;
-  flex-direction: column;
-  gap: 24px;
-  padding: 24px;
-  border-left: 1px solid #2B303B;
-}
-#moreInfo #mainDiv {
-  display: flex;
-  padding: 16px;
-  height: -moz-min-content;
-  height: min-content;
-  background-color: #2B303B;
   flex-direction: column;
   gap: 8px;
-}
-#moreInfo #mainDiv div {
-  display: flex;
-  justify-content: space-between;
-}
-#moreInfo #mainDiv div button {
-  background-color: #335CFF;
-  padding: 16px;
-  border-radius: 16px;
-  border: 0;
-  color: #EBF1FF;
-  font-size: 20px;
-}
-#moreInfo #mainDiv input {
-  background-color: #525866;
-  padding: 8px;
-  font-size: 20px;
-  color: #EBF1FF;
-  border-radius: 4px;
-  border: 1px solid #717784;
-}
-#moreInfo #mainDiv select {
-  background-color: #525866;
-  padding: 8px;
-  font-size: 20px;
-  color: #EBF1FF;
-  border-radius: 4px;
-  border: 1px solid #717784;
 }
 
 .habitBox {
@@ -515,6 +485,47 @@ hr {
 }
 .habitBox .rep i {
   font-size: 12px;
+}
+
+#mainDiv {
+  display: flex;
+  padding: 16px;
+  height: -moz-min-content;
+  height: min-content;
+  background-color: #2B303B;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#mainDiv #habitTitle {
+  background-color: transparent;
+  border: none;
+  font-size: 20px;
+  color: #EBF1FF;
+}
+#mainDiv #habitTitle:focus {
+  outline: none;
+}
+#mainDiv button {
+  background-color: #335CFF;
+  padding: 16px;
+  border-radius: 16px;
+  border: 0;
+  color: #EBF1FF;
+  font-size: 20px;
+  padding: 2px 8px;
+  border-radius: 8px;
+}
+#mainDiv #prioritySelection {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #717784;
+  color: #EBF1FF;
+  padding: 6px;
+}
+#mainDiv option {
+  background-color: #0E121B;
 }
 
 .more {
@@ -585,33 +596,6 @@ hr {
   border-right: 1px solid #2B303B;
   padding: 30px;
 }
-#sideNav .navUl {
-  color: #EBF1FF;
-  font-size: 0.8rem;
-  font-weight: 200;
-  padding: 0;
-  line-height: 20px;
-  margin-left: 13px;
-  margin-bottom: 50px;
-}
-#sideNav #todosHabitsEvents #todosNav #imgH3NavTodos {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-#sideNav #todosHabitsEvents #habitsNav #imgH3NavHabits {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
-#sideNav #todosHabitsEvents #eventsNav #imgH3NavEvents {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 20px;
-}
 #sideNav #logOutBtn {
   width: 100%;
   background-color: #0E121B; /* Dark background */
@@ -631,6 +615,9 @@ hr {
 #sideNav h3 {
   font-weight: bold;
   color: #EBF1FF;
+}
+#sideNav a {
+  text-decoration: none;
 }
 
 .controls {
