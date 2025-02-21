@@ -14,10 +14,6 @@
       "timeEstimation": "120"
     },
     {
-      "status": "done",
-      "id": "1"
-    },
-    {
       "id": "1",
       "userId": "0ca8",
       "title": "Test Todo",
@@ -25,7 +21,7 @@
       "timeEstimate": 2,
       "category": "work",
       "description": "This is a manually added todo.",
-      "status": "not done"
+      "status": "done"
     }
   ],
   "habits": [
@@ -98,6 +94,13 @@
       "title": "xghj",
       "reps": "2",
       "priority": "high"
+    },
+    {
+      "id": "e6ae",
+      "userId": "0ca8",
+      "title": "wefw",
+      "reps": "2",
+      "priority": "medium"
     }
   ],
   "events": [
