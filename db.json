@@ -21,7 +21,65 @@
       "timeEstimate": 2,
       "category": "work",
       "description": "This is a manually added todo.",
+      "status": "not done"
+    },
+    {
+      "id": "5c69",
+      "title": "Testing",
+      "deadline": "2025-02-22",
+      "timeEstimate": "1",
+      "category": "work",
+      "description": "this is a description"
+    },
+    {
+      "id": "d5ea",
+      "user": "0ca8",
+      "title": "Testar med en ny todo",
+      "deadline": "2025-02-23",
+      "timeEstimate": "2",
+      "category": "school",
+      "description": "testar en liten beskrivning",
+      "status": "not done"
+    },
+    {
+      "id": "28b3",
+      "userId": "0ca8",
+      "title": "Linas första todo?",
+      "deadline": "2025-02-24",
+      "timeEstimate": "2",
+      "category": "school",
+      "description": "hoppas detta fungerar",
       "status": "done"
+    },
+    {
+      "id": "da05",
+      "userId": "0ca8",
+      "title": "Hejsanhoppsanlillebror",
+      "deadline": "2025-02-26 12:00",
+      "timeEstimate": "2.5",
+      "category": "other",
+      "description": "sdfsdf",
+      "status": "not done"
+    },
+    {
+      "id": "967a",
+      "userId": "0ca8",
+      "title": "Sdfsdf",
+      "deadline": "2025-02-28 12:00",
+      "timeEstimate": "3",
+      "category": "",
+      "description": "",
+      "status": "done"
+    },
+    {
+      "id": "2cb6",
+      "userId": "0ca8",
+      "title": "Hejjjjjjj",
+      "deadline": "2025-02-24 12:00",
+      "timeEstimate": "2",
+      "category": "work",
+      "description": "dasda",
+      "status": "not done"
     }
   ],
   "habits": [
