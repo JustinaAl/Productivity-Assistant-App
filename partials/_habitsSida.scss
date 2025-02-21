@@ -202,47 +202,6 @@ hr{
     border-right: 1px solid $Neutral700;
     padding: 30px;
 
-    .navUl {
-        color: $Blue50;
-        font-size: 0.8rem;
-        font-weight: 200;
-        padding: 0;
-        line-height: 20px;
-        margin-left: 13px;
-        margin-bottom: 50px;
-    }
-
-   #todosHabitsEvents {
-      
-
-        #todosNav {
-            #imgH3NavTodos {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                margin-bottom: 20px;
-            }
-        }
-
-        #habitsNav {
-            #imgH3NavHabits {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                margin-bottom: 20px;
-            }
-        }
-
-        #eventsNav {
-            #imgH3NavEvents {
-                display: flex;
-                align-items: center;
-                gap: 15px;
-                margin-bottom: 20px;
-            }
-        }
-
-   }
    #logOutBtn {
         width: 100%;
         background-color: #0E121B; /* Dark background */
@@ -263,9 +222,14 @@ h3 {
     font-weight: bold;
     color: $Blue50;
 }
+
+a{
+    text-decoration: none;
+}
 }
 
 .controls{
     display: flex;
     gap: 24px;
 }
+
