@@ -14,10 +14,6 @@
       "timeEstimation": "120"
     },
     {
-      "status": "done",
-      "id": "1"
-    },
-    {
       "id": "1",
       "userId": "0ca8",
       "title": "Test Todo",
@@ -25,49 +21,28 @@
       "timeEstimate": 2,
       "category": "work",
       "description": "This is a manually added todo.",
-      "status": "not done"
+      "status": "done"
     }
   ],
   "habits": [
     {
-      "id": "5f7a",
-      "userId": "513a",
-      "title": "df",
-      "reps": "0",
-      "priority": "medium"
-    },
-    {
-      "id": "d241",
-      "userId": "0d22",
-      "title": "ghjk",
-      "reps": "0",
-      "priority": "medium"
-    },
-    {
       "id": "99bc",
       "userId": "0d22",
-      "title": "prio",
+      "title": "Habit_1",
       "reps": "2",
       "priority": "low"
     },
     {
       "id": "61fb",
       "userId": "0d22",
-      "title": "habit",
+      "title": "Habit_2",
       "reps": "1",
       "priority": "medium"
     },
     {
       "id": "d0ab",
       "userId": "0d22",
-      "title": "new",
-      "reps": 0,
-      "priority": "high"
-    },
-    {
-      "id": "b38f",
-      "userId": null,
-      "title": "hhh",
+      "title": "Habit_3",
       "reps": "3",
       "priority": "high"
     },
@@ -98,6 +73,13 @@
       "title": "xghj",
       "reps": "2",
       "priority": "high"
+    },
+    {
+      "id": "e6ae",
+      "userId": "0ca8",
+      "title": "wefw",
+      "reps": "2",
+      "priority": "medium"
     }
   ],
   "events": [
@@ -112,8 +94,6 @@
       "id": "d220",
       "userId": "513a",
       "title": "Fishing",
-      "startDate": "2025-02-19 12:00",
-      "endDate": "2025-02-19 14:00",
       "startDate": "2025-02-26 12:00",
       "endDate": "2025-02-28 14:00"
     },
@@ -162,8 +142,8 @@
     {
       "id": "7c57",
       "userId": "0d22",
-      "title": "One more",
-      "startDate": "2025-02-27 12:00",
+      "title": "Event 23/02",
+      "startDate": "2025-02-23 12:00",
       "endDate": "2025-02-28 12:00"
     },
     {
@@ -174,46 +154,18 @@
       "endDate": "2025-02-19 09:50"
     },
     {
-      "id": "a010",
-      "userId": "513a",
-      "title": "Do dishes",
-      "startDate": "2025-02-18 12:00",
-      "endDate": "2025-02-18 13:00"
+      "id": "c77e",
+      "userId": "0d22",
+      "title": "Event 22/02",
+      "startDate": "2025-02-22 12:00",
+      "endDate": "2025-02-24 12:00"
     },
     {
-      "id": "380f",
-      "userId": "513a",
-      "title": "Pick kids up from daycare",
-      "startDate": "2025-02-26 08:00",
-      "endDate": "2025-02-27 11:00"
-    },
-    {
-      "id": "7083",
-      "userId": "513a",
-      "title": "Meeting",
-      "startDate": "2025-02-20 10:00",
-      "endDate": "2025-02-21 12:00"
-    },
-    {
-      "id": "e33d",
-      "userId": "513a",
-      "title": "Football practise",
-      "startDate": "2025-02-21 18:00",
-      "endDate": "2025-02-21 19:00"
-    },
-    {
-      "id": "1014",
-      "userId": "513a",
-      "title": "Tewe",
-      "startDate": "2025-02-20 12:00",
-      "endDate": "2025-02-20 13:00"
-    },
-    {
-      "id": "6281",
-      "userId": "7883",
-      "title": "Fishing",
-      "startDate": "2025-02-21 12:00",
-      "endDate": "2025-02-22 12:00"
+      "id": "368a",
+      "userId": "0d22",
+      "title": "Event 24/02",
+      "startDate": "2025-02-24 12:00",
+      "endDate": "2025-02-24 12:00"
     }
   ],
   "users": [

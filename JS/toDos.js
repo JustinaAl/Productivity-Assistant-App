@@ -11,7 +11,7 @@ const userId = sessionStorage.getItem("userId");
 
 if (!userId) {
     alert("No user logged in");
-    window.location.href = "./logInSida.html"; 
+    window.location.href = "./index.html"; 
 } else {
     console.log(`User: ${userId}`);
 }
@@ -64,19 +64,21 @@ const loadTodos = async () => {
                 statusCheckbox.disabled = true;
                 statusCheckbox.checked = newStatus === 'done';
 
-                try {
                 await changeData(`http://localhost:5001/todos/${todo.id}`, { status: newStatus });
-                console.log(`Todo '${todo.title}' marked as: ${newStatus}`);
 
-                setTimeout(() => {
-                    loadTodos();
-                }, 300);
-                } catch (error) {
-                    console.error('Error updating status:', error);
-                    statusCheckbox.checked = !statusCheckbox.checked;
-                } finally {
-                    statusCheckbox.disabled = false;
-                }
+                // try {
+                // await changeData(`http://localhost:5001/todos/${todo.id}`, { status: newStatus });
+                // console.log(`Todo '${todo.title}' marked as: ${newStatus}`);
+
+                // setTimeout(() => {
+                //     loadTodos();
+                // }, 300);
+                // } catch (error) {
+                //     console.error('Error updating status:', error);
+                //     statusCheckbox.checked = !statusCheckbox.checked;
+                // } finally {
+                //     statusCheckbox.disabled = false;
+                // }
             });
 
             const todoContent = document.createElement('div');
