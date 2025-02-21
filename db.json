@@ -14,10 +14,6 @@
       "timeEstimation": "120"
     },
     {
-      "status": "done",
-      "id": "1"
-    },
-    {
       "id": "1",
       "userId": "0ca8",
       "title": "Test Todo",
@@ -25,7 +21,7 @@
       "timeEstimate": 2,
       "category": "work",
       "description": "This is a manually added todo.",
-      "status": "not done"
+      "status": "done"
     }
   ],
   "habits": [
@@ -49,6 +45,41 @@
       "title": "Habit_3",
       "reps": "3",
       "priority": "high"
+    },
+    {
+      "id": "8801",
+      "userId": null,
+      "title": "h222",
+      "reps": "1",
+      "priority": "medium"
+    },
+    {
+      "id": "fffe",
+      "userId": null,
+      "title": "neee",
+      "reps": 0,
+      "priority": "low"
+    },
+    {
+      "id": "7fba",
+      "userId": null,
+      "title": "jvbl",
+      "reps": 0,
+      "priority": "medium"
+    },
+    {
+      "id": "cfa3",
+      "userId": null,
+      "title": "xghj",
+      "reps": "2",
+      "priority": "high"
+    },
+    {
+      "id": "e6ae",
+      "userId": "0ca8",
+      "title": "wefw",
+      "reps": "2",
+      "priority": "medium"
     }
   ],
   "events": [
