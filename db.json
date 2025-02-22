@@ -21,7 +21,7 @@
       "timeEstimate": 2,
       "category": "work",
       "description": "This is a manually added todo.",
-      "status": "not done"
+      "status": "done"
     },
     {
       "id": "5c69",
@@ -45,9 +45,9 @@
       "id": "28b3",
       "userId": "0ca8",
       "title": "Linas första todo?",
-      "deadline": "2025-02-24",
-      "timeEstimate": "2",
-      "category": "school",
+      "deadline": "2025-02-24 00:00",
+      "timeEstimate": "3",
+      "category": "leisure",
       "description": "hoppas detta fungerar",
       "status": "done"
     },
@@ -80,6 +80,26 @@
       "category": "work",
       "description": "dasda",
       "status": "not done"
+    },
+    {
+      "id": "aab5",
+      "userId": "0ca8",
+      "title": "Linas",
+      "deadline": "2025-02-24 12:00",
+      "timeEstimate": "",
+      "category": "",
+      "description": "",
+      "status": "not done"
+    },
+    {
+      "id": "83fc",
+      "userId": "0ca8",
+      "title": "Testing againnnnnnnn",
+      "deadline": "2025-02-25 12:00",
+      "timeEstimate": "10",
+      "category": "school",
+      "description": "TESTING",
+      "status": "not done"
     }
   ],
   "habits": [
@@ -109,13 +129,13 @@
       "userId": null,
       "title": "h222",
       "reps": "1",
-      "priority": "medium"
+      "priority": "low"
     },
     {
       "id": "fffe",
       "userId": null,
       "title": "neee",
-      "reps": 0,
+      "reps": "5",
       "priority": "low"
     },
     {
@@ -224,6 +244,13 @@
       "title": "Event 24/02",
       "startDate": "2025-02-24 12:00",
       "endDate": "2025-02-24 12:00"
+    },
+    {
+      "id": "08bb",
+      "userId": "0ca8",
+      "title": "Craft Fare",
+      "startDate": "2025-02-23 12:00",
+      "endDate": "2025-02-23 23:00"
     }
   ],
   "users": [
