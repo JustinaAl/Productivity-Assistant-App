@@ -1,8 +1,14 @@
 import { getData, postData, changeData, deleteData } from "./services.js";
 
+// Stores the ID of the todo being edited
+let editingTodoId = null; 
+
 // main components
 //save all todos into this div:
 const allTodosContainer = document.querySelector('#allTodosContainer');
+
+//done todos in this div:
+const doneTodosContainer = document.querySelector('#doneTodosContainer');
 
 //Load todo form button:
 const createTodoBtn = document.querySelector('#createNewTodo');
@@ -55,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
    flatPickr();
 });
 
-const createTodo = async () => {
+const createOrUpdateTodo = async () => {
     if (!userId) {
         alert('No user logged in');
         return;
@@ -70,12 +76,22 @@ const createTodo = async () => {
         description: descriptionInput.value,
         status: "not done"
     };
-    console.log("New Todo:", newData);
-    const savedTodo = await postData('http://localhost:5001/todos', newData);
+
+    if (editingTodoId) {
+        //if editing, update existing todo
+        console.log('Updating Todo:', newData);
+        await changeData(`http://localhost:5001/todos/${editingTodoId}`, newData);
+    } else {
+        console.log("New Todo:", newData);
+        const savedTodo = await postData('http://localhost:5001/todos', newData);
+    }
+    editingTodoId = null;
+    saveBtn.innerText = "Save";
     loadTodos();
     flatPickr();
+
     console.log('Saved todo response:', savedTodo);
-    if (savedTodo) {
+    if (!editingTodoId &&savedTodo) {
     displayTodo(savedTodo);
     } else {
         console.error('Error: Saved todo is undefined')
@@ -129,7 +145,7 @@ const displayTodo = (todo) => {
 //SAVE todo
 saveBtn.addEventListener('click', async (event) => {
     event.preventDefault();
-    await createTodo();
+    await createOrUpdateTodo();
 });
 
 //load todos
@@ -146,6 +162,24 @@ const loadTodos = async () => {
         userTodos.forEach(todo => {
             const todoCard = document.createElement('div');
             todoCard.classList.add('todoCard');
+
+            const todoContent = document.createElement('div');
+            todoContent.innerHTML = `
+                <h3 class="todoTitle">${todo.title}</h3>
+                <p><strong>Deadline:</strong> ${todo.deadline || 'No deadline'}</p>
+                <p><strong>Time Estimate:</strong> ${todo.timeEstimate} hours</p>
+                <p><strong>Category:</strong> ${todo.category}</p>
+                <p>${todo.description || 'No description'}</p>
+                <button class='deleteTodoBtn' data-id="${todo.id}">Delete</button>
+                <button class='editTodoBtn' data-id="${todo.id}">Edit</button>
+            `;
+
+            const editTodoBtn = todoContent.querySelector('.editTodoBtn');
+
+            //edit functionality
+            editTodoBtn.addEventListener('click', () => {
+                editTodo(todo);
+            });
 
             // Checkbox for status
             const statusCheckbox = document.createElement('input');
@@ -177,16 +211,6 @@ const loadTodos = async () => {
                 // }
             });
 
-            const todoContent = document.createElement('div');
-            todoContent.innerHTML = `
-                <h3 class="todoTitle">${todo.title}</h3>
-                <p><strong>Deadline:</strong> ${todo.deadline || 'No deadline'}</p>
-                <p><strong>Time Estimate:</strong> ${todo.timeEstimate} hours</p>
-                <p><strong>Category:</strong> ${todo.category}</p>
-                <p>${todo.description || 'No description'}</p>
-                <button class='deleteTodoBtn' data-id="${todo.id}">Delete</button>
-            `;
-
             //DELETEBTN
             const deleteBtn = todoContent.querySelector('.deleteTodoBtn');
             deleteBtn.addEventListener('click', async () => {
@@ -195,10 +219,16 @@ const loadTodos = async () => {
                 await loadTodos();
                 flatPickr();
             });
-
-            todoCard.appendChild(statusCheckbox);
             todoCard.appendChild(todoContent);
-            allTodosContainer.appendChild(todoCard);
+            todoCard.appendChild(statusCheckbox);
+
+            if (todo.status !== "done") {
+                allTodosContainer.appendChild(todoCard);
+
+            } else if (todo.status === "done"){
+                doneTodosContainer.appendChild(todoCard)
+            }
+
         });
         flatPickr();
     } catch (error) {
@@ -207,6 +237,27 @@ const loadTodos = async () => {
 };
 // Load todos when page loads
 document.addEventListener("DOMContentLoaded", loadTodos);
+
+//edit todo function
+const editTodo = (todo) => {
+    //store id of the todo being edited
+    editingTodoId = todo.id;
+
+    //load the todo details into the form
+    titleInput.innerText = todo.title;
+    deadlineInput.value = todo.deadline;
+    timeEstimateInput.value = todo.timeEstimate;
+    categoryInput.value = todo.category;
+    descriptionInput.value = todo.description;
+
+    //show the form for editing
+    todoForm.style.display = "block";
+
+    //change the save button text to indicate editing mode
+    saveBtn.innerText = 'Update Todo';
+
+    flatPickr();
+};
 
 //show form with button click
 createTodoBtn.addEventListener("click", function () {
