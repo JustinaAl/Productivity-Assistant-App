@@ -66,7 +66,7 @@
     </aside>
     <main class="todosMain">
         <section class="allTodos">
-            <h2>Todos</h2>
+            <h2>Current Todos</h2>
 
             <form id="todoForm" style="display: none;">
                 <div>
@@ -96,6 +96,29 @@
             </form>
 
             <button id="createNewTodo">+ Create New Todo</button>
+            <div class="filterAndSort">
+                <div class="filterDiv">
+                    <label for="categoryFilter" style="display: none;">Filter:</label>
+                    <select id="categoryFilter">
+                        <option value="" disabled selected>Filter</option>
+                        <option value="all">All</option>
+                        <option value="domestic">Domestic</option>
+                        <option value="work">Work</option>
+                        <option value="leisure">Leisure</option>
+                        <option value="school">School</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="sortDiv">
+                    <label for="sort" style="display: none;">Sort:</label>
+                    <select id="sort">
+                        <option value="" disabled selected>Sort</option>
+                        <option value="deadline">Deadline - closest</option>
+                        <option value="timeEstimateShortest">Time Estimate - shortest</option>
+                        <option value="timeEstimateLongest">Time Estimate - longest</option>
+                    </select>
+                </div>
+            </div>
             <div id="allTodosContainer"></div>
         </section>
         <section class="doneTodos">
