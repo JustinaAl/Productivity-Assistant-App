@@ -251,6 +251,20 @@
       "title": "Craft Fare",
       "startDate": "2025-02-23 12:00",
       "endDate": "2025-02-23 23:00"
+    },
+    {
+      "id": "09a5",
+      "userId": "513a",
+      "title": "Bowling",
+      "startDate": "2025-02-25 12:00",
+      "endDate": "2025-02-26 12:00"
+    },
+    {
+      "id": "5479",
+      "userId": "513a",
+      "title": "Lunch",
+      "startDate": "2025-02-24 12:00",
+      "endDate": "2025-02-24 13:00"
     }
   ],
   "users": [
