@@ -62,7 +62,8 @@
 
 #sideNav {
   height: 100%;
-  width: 300px;
+  min-height: 100vh;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -85,8 +86,28 @@
   font-weight: 200;
   padding: 0;
   line-height: 20px;
+  margin: 0px;
   margin-left: 13px;
-  margin-bottom: 50px;
+}
+#sideNav #todosHabitsEvents {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+#sideNav #todosHabitsEvents section {
+  padding: 10px;
+}
+#sideNav #todosHabitsEvents section .navList {
+  padding-bottom: 4px;
+}
+#sideNav #todosHabitsEvents .active {
+  border-radius: 15px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+  background: #232530;
+  width: 100%;
+  height: auto;
 }
 #sideNav #todosHabitsEvents #todosNav #imgH3NavTodos {
   display: flex;
@@ -821,7 +842,7 @@ hr {
   align-items: flex-start;
   justify-content: flex-start;
   gap: 30px;
-  width: 400px;
+  min-width: 415px;
   padding: 0px 40px;
 }
 .eventsBody .eventsMain section h2 {
