@@ -231,5 +231,12 @@ a{
 .controls{
     display: flex;
     gap: 24px;
+
+    ul{
+        background-color: #3f4458;
+        border: none;  
+        color: $Blue50;
+        padding: 6px 12px 0 12px;
+    }
 }
 

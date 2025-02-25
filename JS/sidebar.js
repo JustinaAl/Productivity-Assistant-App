@@ -21,12 +21,11 @@ logOutBtn.addEventListener('click', () => {
 let getHabits = async()=>{
     let userId= sessionStorage.getItem("userId")
     let data = await axios.get("http://localhost:5001/habits", { params: { userId }});
-    let allHabits = data.data;
-    allHabits.forEach((habit) => {
+    data.data.forEach((habit) => {
         habit.reps = Number(habit.reps);
       });
 
-    let sort = allHabits.sort((a, b) => b.reps - a.reps);
+    let sort = data.data.sort((a, b) => b.reps - a.reps);
     let lastThree = sort.slice(0,3);  
     
     return lastThree;
@@ -54,24 +53,23 @@ let todaysDate =()=> {
 
     month = month < 10 ? '0' + month : month;
     day = day < 10 ? '0' + day : day;
+    
+    return `${year}${month}${day}`;
+};
 
-    return `${year}-${month}-${day}`;
-}
 
 let getEvents = async()=>{
     let userId= sessionStorage.getItem("userId")
     let today = todaysDate();
-    let todayToNr = today.replace(/-/g, '')
 
     let data = await axios.get("http://localhost:5001/events", { params: { userId }});
-    let allEvents = data.data;
 
-    allEvents.forEach(element => {
+    data.data.forEach(element => {
     let toNumber = element.startDate.replace(/[-\s:]/g, '').slice(0, -4);
     element.startDate = Number(toNumber);    
     });
 
-    let upcomingEvents = allEvents.filter(element => element.startDate >= Number(todayToNr));
+    let upcomingEvents = data.data.filter(element => element.startDate >= Number(today));
     let sort = upcomingEvents.sort((a, b) => a.startDate - b.startDate);
     let lastThree = sort.slice(0,3);
 
@@ -92,3 +90,11 @@ let printOutEvents = async() => {
     });
 }
 printOutEvents();
+
+//ToDos
+let getToDos = async() => {
+    let userId= sessionStorage.getItem("userId")
+    let data = await axios.get("http://localhost:5001/todos", { params: { userId }});
+
+
+}

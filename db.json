@@ -100,6 +100,26 @@
       "category": "school",
       "description": "TESTING",
       "status": "not done"
+    },
+    {
+      "id": "3690",
+      "userId": "0d22",
+      "title": "Work",
+      "deadline": "2025-03-11 12:00",
+      "timeEstimate": "2",
+      "category": "work",
+      "description": "Work",
+      "status": "not done"
+    },
+    {
+      "id": "6569",
+      "userId": "0d22",
+      "title": "Water the plants",
+      "deadline": "2025-03-19 12:00",
+      "timeEstimate": "1",
+      "category": "domestic",
+      "description": "",
+      "status": "not done"
     }
   ],
   "habits": [
