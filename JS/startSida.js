@@ -19,6 +19,10 @@ document.querySelector("#todosBtnNav").addEventListener('click', () => {
 
 const user =  await getData(`http://localhost:5001/users/${userId}`);
 
+if (user && user.username) {
+    sessionStorage.setItem("username", user.username);  // Store username
+}
+
 let startSidaH1 = document.querySelector("#startSidaH1");
 startSidaH1.innerText = `Hi, ${user.username}!`;
 
