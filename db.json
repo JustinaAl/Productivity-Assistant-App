@@ -122,6 +122,16 @@
       "category": "other",
       "description": "",
       "status": "not done"
+    },
+    {
+      "id": "40de",
+      "userId": "0d22",
+      "title": "Done",
+      "deadline": "2025-02-25 14:15",
+      "timeEstimate": "0.5",
+      "category": "leisure",
+      "description": "",
+      "status": "done"
     }
   ],
   "habits": [
