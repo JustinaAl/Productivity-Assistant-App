@@ -2,69 +2,91 @@ import { getData, postData, changeData, deleteData } from "./services.js";
 
 // Stores the ID of the todo being edited
 let editingTodoId = null; 
+let allTodos = [];
 
-// main components
-//save all todos into this div:
+//Global Variables:
 const allTodosContainer = document.querySelector('#allTodosContainer');
-
-//done todos in this div:
 const doneTodosContainer = document.querySelector('#doneTodosContainer');
-
-//Load todo form button:
 const createTodoBtn = document.querySelector('#createNewTodo');
-
-//the todo form
 const todoForm = document.querySelector('#todoForm');
-
-//save button that saves the todo to the user and print it onto dom
 const saveBtn = document.querySelector('#saveBtn');
-/////////////////////////////////////////////
-//title input 
+const categoryFilter = document.querySelector('#categoryFilter');
+const sortSelect = document.querySelector('#sort');
+
+//input fields:
 const titleInput = document.querySelector('#todoTitle');
-
-//date deadline
 const deadlineInput = document.querySelector('#deadline');
-
-//time estimate
 const timeEstimateInput = document.querySelector('#timeEstimate');
-
-//category
 const categoryInput = document.querySelector('#category');
-
-//description
 const descriptionInput = document.querySelector('#description');
+
 
 //Get user id from session storage
 const userId = sessionStorage.getItem("userId");
+let username = sessionStorage.getItem("username");
 
 if (!userId) {
     alert("No user logged in");
     window.location.href = "./index.html"; 
+} 
+
+if (!username && userId) {
+  
+    (async () => {
+        const user = await getData(`http://localhost:5001/users/${userId}`);
+        if (user && user.username) {
+            sessionStorage.setItem("username", user.username);
+            username = user.username; // Update the local variable
+            console.log(`Fetched Username: ${username}, User ID: ${userId}`);
+        }
+    })();
 } else {
-    console.log(`User: ${userId}`);
+    console.log(`Username: ${username}, User ID: ${userId}`);
 }
 
-  //FlatPickr
-  const flatPickr = () => {
-    flatpickr(".date", { 
-      enableTime: true, 
-      altInput: true,
-      altFormat: "j M Y - H:i",
-      minDate: "today",
-      dateFormat: "Y-m-d H:i",
-      time_24hr: true
-    });
-  }
+// FlatPickr function 
+let flatPickrInstance = null; 
 
-//flatpickr
-document.addEventListener("DOMContentLoaded", () => {
-   flatPickr();
-});
+const initFlatPickr = () => {
+    if (flatPickrInstance) {
+        flatPickrInstance.destroy(); // Ensure previous instance is removed
+    }
+
+    flatPickrInstance = flatpickr("#deadline", {
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        theme: "dark",
+        allowInput: true,
+        onOpen: function (selectedDates, dateStr, instance) {
+            if (instance.input.value === "") {
+                instance.input.placeholder = ""; // Remove placeholder when opened
+            }
+        },
+        onClose: function (selectedDates, dateStr, instance) {
+            if (instance.input.value === "") {
+                instance.input.placeholder = "Deadline"; // Restore placeholder if empty
+            }
+        }
+    });
+};
+
+// Initialize Flatpickr only once when page loads
+document.addEventListener("DOMContentLoaded", initFlatPickr);
 
 const createOrUpdateTodo = async () => {
     if (!userId) {
         alert('No user logged in');
         return;
+    }
+
+    if (
+        titleInput.innerText.trim() === "" ||
+        deadlineInput.value.trim() === "" ||
+        timeEstimateInput.value.trim() === "" ||
+        categoryInput.value.trim() === "" ||
+        descriptionInput.value.trim() === ""
+    ) {
+        return; 
     }
 
     const newData = {
@@ -88,7 +110,6 @@ const createOrUpdateTodo = async () => {
     editingTodoId = null;
     saveBtn.innerText = "Save";
     loadTodos();
-    flatPickr();
 
     console.log('Saved todo response:', savedTodo);
     if (!editingTodoId &&savedTodo) {
@@ -196,19 +217,6 @@ const loadTodos = async () => {
 
                 await changeData(`http://localhost:5001/todos/${todo.id}`, { status: newStatus });
 
-                // try {
-                // await changeData(`http://localhost:5001/todos/${todo.id}`, { status: newStatus });
-                // console.log(`Todo '${todo.title}' marked as: ${newStatus}`);
-
-                // setTimeout(() => {
-                //     loadTodos();
-                // }, 300);
-                // } catch (error) {
-                //     console.error('Error updating status:', error);
-                //     statusCheckbox.checked = !statusCheckbox.checked;
-                // } finally {
-                //     statusCheckbox.disabled = false;
-                // }
             });
 
             //DELETEBTN
@@ -217,7 +225,7 @@ const loadTodos = async () => {
                 await deleteData(`http://localhost:5001/todos/${todo.id}`);
                 console.log(`Todo '${todo.title}' deleted`);
                 await loadTodos();
-                flatPickr();
+               
             });
             todoCard.appendChild(todoContent);
             todoCard.appendChild(statusCheckbox);
@@ -230,7 +238,7 @@ const loadTodos = async () => {
             }
 
         });
-        flatPickr();
+  
     } catch (error) {
         console.error('Error loading todos:', error);
     }
@@ -256,53 +264,30 @@ const editTodo = (todo) => {
     //change the save button text to indicate editing mode
     saveBtn.innerText = 'Update Todo';
 
-    flatPickr();
 };
 
 //show form with button click
 createTodoBtn.addEventListener("click", function () {
+
+      // Clear the form fields
+      titleInput.innerText = "";
+      deadlineInput.value = "";
+      timeEstimateInput.value = "";
+      categoryInput.value = "";
+      descriptionInput.value = "";
+  
+      // Reset editing mode
+      editingTodoId = null;
+      saveBtn.innerText = "Save";
+
     todoForm.style.display = "block";
 
     todoTitle.innerText = "Title";
     todoTitle.style.color = "#999"; 
 
-         flatPickr("#deadline", {
-         dateFormat: "Y-m-d",
-         minDate: "today",
-         theme: "dark",
-         allowInput: true,
-         onOpen: function(selectedDates, dateStr, instance) {
-             if (instance.input.value === "") {
-                 instance.input.placeholder = ""; // Remove placeholder when opened
-            }
-         },
-         onClose: function(selectedDates, dateStr, instance) {
-             if (instance.input.value === "") {
-                 instance.input.placeholder = "Deadline"; // Restore placeholder if empty
-             }
-        }
-    });
+    initFlatPickr();
+     });
 
-    // setTimeout(() => {
-    //     flatpickr("#deadline", {
-    //         dateFormat: "Y-m-d",
-    //         minDate: "today",
-    //         theme: "dark",
-    //         allowInput: true,
-    //         onOpen: function(selectedDates, dateStr, instance) {
-    //             if (instance.input.value === "") {
-    //                 instance.input.placeholder = ""; // Remove placeholder when opened
-    //             }
-    //         },
-    //         onClose: function(selectedDates, dateStr, instance) {
-    //             if (instance.input.value === "") {
-    //                 instance.input.placeholder = "Deadline"; // Restore placeholder if empty
-    //             }
-    //         }
-    //     });
-    // }, 10);
-
-});
     
 // Make the title editable and reset if empty
 todoTitle.addEventListener("focus", () => {
@@ -326,8 +311,14 @@ todoTitle.addEventListener("blur", () => {
 saveBtn.addEventListener("click", function (event) {
     const categorySelect = document.querySelector("#category");
 
-    if (categorySelect.value === "") {
-        alert("Please select a category before saving.");
-        event.preventDefault(); // Prevents form submission
+    if (
+        titleInput.innerText.trim() === "" ||
+        deadlineInput.value.trim() === "" ||
+        timeEstimateInput.value.trim() === "" ||
+        categoryInput.value.trim() === "" ||
+        descriptionInput.value.trim() === ""
+    ) {
+        alert("Please fill out all fields before saving.");
+        return; 
     }
 });
