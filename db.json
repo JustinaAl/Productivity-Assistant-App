@@ -24,24 +24,6 @@
       "status": "done"
     },
     {
-      "id": "5c69",
-      "title": "Testing",
-      "deadline": "2025-02-22",
-      "timeEstimate": "1",
-      "category": "work",
-      "description": "this is a description"
-    },
-    {
-      "id": "d5ea",
-      "user": "0ca8",
-      "title": "Testar med en ny todo",
-      "deadline": "2025-02-23",
-      "timeEstimate": "2",
-      "category": "school",
-      "description": "testar en liten beskrivning",
-      "status": "not done"
-    },
-    {
       "id": "28b3",
       "userId": "0ca8",
       "title": "Linas första todo?",
@@ -105,7 +87,7 @@
       "id": "3690",
       "userId": "0d22",
       "title": "Work",
-      "deadline": "2025-03-11 12:00",
+      "deadline": "2025-03-19 12:00",
       "timeEstimate": "2",
       "category": "work",
       "description": "Work",
@@ -115,21 +97,34 @@
       "id": "6569",
       "userId": "0d22",
       "title": "Water the plants",
-      "deadline": "2025-03-19 12:00",
+      "deadline": "2025-03-20 12:00",
       "timeEstimate": "1",
       "category": "domestic",
+      "description": "",
+      "status": "not done"
+    },
+    {
+      "id": "a936",
+      "userId": "0d22",
+      "title": "Study",
+      "deadline": "2025-03-27 12:00",
+      "timeEstimate": "4",
+      "category": "school",
+      "description": "",
+      "status": "not done"
+    },
+    {
+      "id": "2bf6",
+      "userId": "0d22",
+      "title": "Feed cats",
+      "deadline": "2025-03-25 12:00",
+      "timeEstimate": "0.5",
+      "category": "other",
       "description": "",
       "status": "not done"
     }
   ],
   "habits": [
-    {
-      "id": "99bc",
-      "userId": "0d22",
-      "title": "Habit_1",
-      "reps": "2",
-      "priority": "low"
-    },
     {
       "id": "61fb",
       "userId": "0d22",
@@ -145,16 +140,9 @@
       "priority": "high"
     },
     {
-      "id": "8801",
-      "userId": null,
-      "title": "h222",
-      "reps": "1",
-      "priority": "low"
-    },
-    {
       "id": "fffe",
       "userId": null,
-      "title": "neee",
+      "title": "Water plants",
       "reps": "5",
       "priority": "low"
     },
@@ -168,15 +156,22 @@
     {
       "id": "cfa3",
       "userId": null,
-      "title": "xghj",
+      "title": "Brush hair",
       "reps": "2",
-      "priority": "high"
+      "priority": "low"
     },
     {
       "id": "e6ae",
       "userId": "0ca8",
       "title": "wefw",
       "reps": "2",
+      "priority": "medium"
+    },
+    {
+      "id": "c28b",
+      "userId": "0d22",
+      "title": "Brush hair",
+      "reps": 0,
       "priority": "medium"
     }
   ],
@@ -285,6 +280,27 @@
       "title": "Lunch",
       "startDate": "2025-02-24 12:00",
       "endDate": "2025-02-24 13:00"
+    },
+    {
+      "id": "be26",
+      "userId": "0d22",
+      "title": "Party",
+      "startDate": "2025-03-26 12:00",
+      "endDate": "2025-03-27 12:00"
+    },
+    {
+      "id": "ce8b",
+      "userId": "0d22",
+      "title": "Lopp",
+      "startDate": "2025-03-30 12:00",
+      "endDate": "2025-03-30 17:00"
+    },
+    {
+      "id": "0df0",
+      "userId": "0d22",
+      "title": "Konsert",
+      "startDate": "2025-03-24 12:00",
+      "endDate": "2025-03-24 17:00"
     }
   ],
   "users": [

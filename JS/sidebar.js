@@ -96,5 +96,21 @@ let getToDos = async() => {
     let userId= sessionStorage.getItem("userId")
     let data = await axios.get("http://localhost:5001/todos", { params: { userId }});
 
-
+    let lastThree = data.data.reverse().slice(0,3);
+    return lastThree;
 }
+//Print ToDos
+let printOutToDos = async() => {
+    let lastThree = await getToDos();
+    let ul = document.querySelector("#navUlTodos");
+    let index = 0;
+    
+    lastThree.forEach((element) => {
+        let li = document.createElement("li");
+        li.textContent = element.title;
+        index+=1;
+        ul.append(li);
+    });
+}
+
+printOutToDos();

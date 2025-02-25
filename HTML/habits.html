@@ -18,9 +18,9 @@
 </head>
 <body>
 <div id="habitsWrapper">
-    <div id="sideNav">
+    <aside id="sideNav">
         <div id="todosHabitsEvents">
-            <div id="todosNav">
+            <section id="todosNav">
                 <div class="imgH3Nav" id="imgH3NavTodos">
                     <a class="link" href="/HTML/toDos.html">
                         <img src="/assets/img/todo.png" alt="todo" width="45" height="45">
@@ -29,14 +29,11 @@
                 </div>
                 <div class="navList" id="navListTodos">
                     <ul class="navUl" id="navUlTodos">
-                        <li>List</li>
-                        <li>List Item Two</li>
-                        <li>List Item Three</li>
                     </ul>
                 </div>
-            </div>
+            </section>
 
-            <div id="habitsNav">
+            <section id="habitsNav">
                 <div class="imgH3Nav" id="imgH3NavHabits">
                     <a class="link" href="/HTML/habits.html">
                         <img src="/assets/img/habit.png" alt="habit" width="45" height="45">
@@ -47,9 +44,9 @@
                     <ul class="navUl" id="navUlHabits">
                     </ul>
                 </div>
-            </div>
+            </section>
 
-            <div id="eventsNav">
+            <section id="eventsNav" class="active">
                 <div class="imgH3Nav" id="imgH3NavEvents">
                     <a class="link" href="/HTML/events.html">
                         <img src="/assets/img/event.png" alt="event" width="45" height="45">
@@ -60,12 +57,12 @@
                     <ul class="navUl" id="navUlEvents">
                     </ul>
                 </div>
-            </div>
+            </section>
         </div>
         <div class="sideNavBtn">
             <button id="logOutBtn">Log Out</button>
         </div>
-    </div>
+    </aside>
     <main id="habitsMain">
         <h1>Habits</h1>
         <button id="createNew">+ Create new habit</button>

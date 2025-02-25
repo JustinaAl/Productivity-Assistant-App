@@ -585,6 +585,10 @@
   padding: 8px;
 }
 
+.filters:hover, .sort:hover {
+  background-color: #2c313e;
+}
+
 body {
   all: unset;
 }
@@ -595,7 +599,6 @@ body h1 {
 #habitsWrapper {
   background-color: #0E121B;
   display: flex;
-  justify-content: space-between;
   width: 100%;
   min-height: 100vh;
 }
@@ -603,9 +606,10 @@ body h1 {
 #habitsMain {
   display: flex;
   flex-direction: column;
-  padding: 16px;
+  padding: 32px;
   gap: 24px;
   width: 100%;
+  border-left: 1px solid #2B303B;
 }
 #habitsMain #allHabits {
   display: flex;
@@ -627,6 +631,10 @@ hr {
   color: #EBF1FF;
   font-size: 20px;
   max-width: 400px;
+}
+
+#createNew:hover {
+  background-color: #2547D0;
 }
 
 .informationBox {
@@ -661,6 +669,9 @@ hr {
 .habitBox .deleteBtn, .habitBox .editBtn {
   font-size: 12px;
 }
+.habitBox .deleteBtn:hover {
+  background-color: rgba(255, 0, 0, 0.481);
+}
 .habitBox .rep {
   display: flex;
   align-content: center;
@@ -675,6 +686,32 @@ hr {
 .habitBox .rep i {
   font-size: 12px;
 }
+.habitBox button:hover {
+  background-color: #525866;
+}
+.habitBox button.save {
+  background-color: #335CFF;
+  border: none;
+}
+.habitBox button.save:hover {
+  background-color: #2547D0;
+}
+.habitBox .informationBox input {
+  background-color: transparent;
+  border: none;
+  color: #EBF1FF;
+}
+.habitBox .informationBox select {
+  background-color: transparent;
+  border-radius: 4px;
+  border: 1px solid #717784;
+  color: #EBF1FF;
+  padding: 6px;
+  cursor: pointer;
+}
+.habitBox .informationBox option {
+  background-color: #3f4458;
+}
 
 #mainDiv {
   display: flex;
@@ -685,7 +722,7 @@ hr {
   width: 400px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 16px;
 }
 #mainDiv #habitTitle {
   background-color: transparent;
@@ -706,15 +743,23 @@ hr {
   padding: 2px 8px;
   border-radius: 8px;
 }
+#mainDiv button:hover {
+  background-color: #2547D0;
+}
 #mainDiv #prioritySelection {
   background-color: transparent;
   border-radius: 4px;
   border: 1px solid #717784;
   color: #EBF1FF;
   padding: 6px;
+  cursor: pointer;
 }
 #mainDiv option {
-  background-color: #0E121B;
+  background-color: #3f4458;
+}
+#mainDiv div {
+  display: flex;
+  gap: 16px;
 }
 
 .more {
@@ -761,6 +806,9 @@ hr {
   min-width: 80px;
   gap: 8px;
 }
+.more .iconBox i {
+  cursor: pointer;
+}
 .more .iconBox button {
   width: 100%;
   height: -moz-fit-content;
@@ -782,24 +830,24 @@ hr {
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  border-right: 1px solid #2B303B;
   padding: 30px;
+  border-right: none;
 }
 #sideNav #logOutBtn {
   width: 100%;
-  background-color: #0E121B; /* Dark background */
+  background-color: #0E121B;
   color: #EBF1FF;
   border: 1px solid #525866;
-  padding: 13px 30px; /* Add space around text */
-  font-weight: bold; /* Bold text */
-  font-size: 16px; /* Adjust font size */
-  text-align: center; /* Center text */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: all 0.3s ease; /* Smooth hover effect */
+  padding: 13px 30px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 #sideNav #logOutBtn:hover {
-  background-color: rgb(51, 92, 255); /* Subtle hover effect */
+  background-color: rgb(51, 92, 255);
 }
 #sideNav h3 {
   font-weight: bold;
@@ -816,66 +864,44 @@ hr {
 .controls ul {
   background-color: #3f4458;
   border: none;
+  border-radius: 0 0 8px 8px;
   color: #EBF1FF;
+  padding: 0;
+  width: 135px;
+  --bs-dropdown-min-width: 0px;
+}
+.controls ul li:not(:last-child) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
   padding: 6px 12px 0 12px;
 }
-.controls li {
-  /* Hide the browser's default checkbox */
-  /* Create a custom checkbox */
-  /* On mouse-over, add a grey background color */
-  /* When the checkbox is checked, add a blue background */
-  /* Create the checkmark/indicator (hidden when not checked) */
-  /* Show the checkmark when checked */
-  /* Style the checkmark/indicator */
-}
-.controls li .container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+.controls input[type=checkbox] {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  user-select: none;
 }
-.controls li .container input {
-  position: absolute;
-  opacity: 0;
+.controls input[type=radio] {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
-  height: 0;
-  width: 0;
 }
-.controls li .checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
+.controls #filterButton, .controls #applySorting {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-top: 0.7px solid black;
+  margin-top: 16px;
+  color: #EBF1FF;
+  padding: 4px;
+  background-color: #4c5166;
 }
-.controls li .container:hover input ~ .checkmark {
-  background-color: #ccc;
+.controls ul:last-of-type {
+  width: 250px;
 }
-.controls li .container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-.controls li .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-.controls li .container input:checked ~ .checkmark:after {
-  display: block;
-}
-.controls li .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
+.controls #filterButton:hover, .controls #applySorting:hover {
+  background-color: #5e6379;
 }
 
 .eventsBody {
