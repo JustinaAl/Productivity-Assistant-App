@@ -96,7 +96,8 @@ let getToDos = async() => {
     let userId= sessionStorage.getItem("userId")
     let data = await axios.get("http://localhost:5001/todos", { params: { userId }});
 
-    let lastThree = data.data.reverse().slice(0,3);
+    let removeDone = data.data.filter(toDo => toDo.status !== "done");
+    let lastThree = removeDone.reverse().slice(0,3);
     return lastThree;
 }
 //Print ToDos
