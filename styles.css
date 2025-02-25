@@ -62,7 +62,8 @@
 
 #sideNav {
   height: 100%;
-  width: 300px;
+  min-height: 100vh;
+  min-width: 250px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -70,14 +71,43 @@
   border-right: 1px solid #2B303B;
   padding: 30px;
 }
+#sideNav .activityNav {
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  height: 170px;
+}
 #sideNav .navUl {
   color: #EBF1FF;
   font-size: 0.8rem;
   font-weight: 200;
   padding: 0;
   line-height: 20px;
+  margin: 0px;
   margin-left: 13px;
-  margin-bottom: 50px;
+}
+#sideNav #todosHabitsEvents {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+#sideNav #todosHabitsEvents section {
+  padding: 10px;
+}
+#sideNav #todosHabitsEvents section .navList {
+  padding-bottom: 4px;
+}
+#sideNav #todosHabitsEvents .active {
+  border-radius: 15px;
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+  background: #232530;
+  width: 100%;
+  height: auto;
 }
 #sideNav #todosHabitsEvents #todosNav #imgH3NavTodos {
   display: flex;
@@ -104,19 +134,19 @@
 }
 #sideNav #logOutBtn {
   width: 100%;
-  background-color: #0E121B; /* Dark background */
+  background-color: #0E121B;
   color: #EBF1FF;
   border: 1px solid #525866;
-  padding: 13px 30px; /* Add space around text */
-  font-weight: bold; /* Bold text */
-  font-size: 16px; /* Adjust font size */
-  text-align: center; /* Center text */
-  border-radius: 8px; /* Rounded corners */
-  cursor: pointer; /* Change cursor to pointer */
-  transition: all 0.3s ease; /* Smooth hover effect */
+  padding: 13px 30px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 #sideNav #logOutBtn:hover {
-  background-color: rgb(51, 92, 255); /* Subtle hover effect */
+  background-color: rgb(51, 92, 255);
 }
 
 :root {
@@ -388,6 +418,165 @@
   --Red500: #FB3748;
 }
 
+* {
+  box-sizing: border-box;
+}
+
+.date {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  box-sizing: border-box;
+  border: 1px solid #2B303B;
+  background: transparent;
+  font-size: 1.5rem;
+  padding: 8px;
+  color: #CACFD8;
+  width: 100%;
+}
+.date::-moz-placeholder {
+  color: #717784;
+}
+.date::placeholder {
+  color: #717784;
+}
+.date:active {
+  border: 1px solid #2B303B;
+}
+
+.todosBody {
+  background-color: #0E121B;
+  color: #FFFFFF;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  box-sizing: border-box;
+}
+.todosBody #todosNav {
+  overflow: hidden;
+  display: inline-block;
+  margin: 0;
+  background-color: #232530;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  height: 170px;
+}
+.todosBody h1 {
+  font-weight: bold;
+  color: #EBF1FF;
+  font-size: 3rem;
+}
+.todosBody h2 {
+  font-weight: 100;
+  color: #EBF1FF;
+}
+.todosBody h3 {
+  font-weight: bold;
+  color: #EBF1FF;
+}
+.todosBody h4 {
+  font-weight: 400;
+  font-size: 0.8rem;
+  color: #EBF1FF;
+}
+.todosBody .todosMain {
+  display: flex;
+  width: 100%;
+  /*Button*/
+}
+.todosBody .todosMain #createNewTodo {
+  width: calc(100% - 48px);
+  background-color: #335CFF;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.todosBody .todosMain #createNewTodo:hover {
+  background-color: #3049C8; /* Slightly darker blue on hover */
+}
+.todosBody .todosMain #createNewTodo:active {
+  transform: scale(0.95); /* Subtle press effect */
+}
+.todosBody .todosMain .allTodos {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+  border-right: 1px solid #2B303B;
+}
+.todosBody .todosMain .allTodos #todoForm {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+.todosBody .todosMain .allTodos #todoForm #saveBtn {
+  width: auto;
+  background-color: #335CFF;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+.todosBody .todosMain .allTodos #todoForm #saveBtn:hover {
+  background-color: #3049C8; /* Slightly darker blue on hover */
+}
+.todosBody .todosMain .allTodos #todoForm #saveBtn:active {
+  transform: scale(0.95); /* Subtle press effect */
+}
+.todosBody .todosMain .allTodos #allTodosContainer {
+  background-color: #0E121B;
+}
+.todosBody .todosMain .selectedTodo {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+  border-right: 1px solid #2B303B;
+}
+.todosBody .todosMain .selectedTodo #selectedTodoContainer {
+  background-color: #0E121B;
+}
+
+:root {
+  --BaseWhite: #FFFFFF;
+  --BaseBlack: #0E121B;
+  --Neutral0: #FFFFFF;
+  --Neutral50: #F5F7FA;
+  --Neutral100: #F3F5F8;
+  --Neutral200: #E0E4EA;
+  --Neutral300: #CACFD8;
+  --Neutral400: #99A0AE;
+  --Neutral500: #717784;
+  --Neutral600: #525866;
+  --Neutral700: #2B303B;
+  --Neutral800: #232530;
+  --Neutral900: #191B25;
+  --Neutral950: #0E121B;
+  --Blue50: #EBF1FF;
+  --Blue500: #335CFF;
+  --Blue700: #2547D0;
+  --Green50: #E0FAEC;
+  --Green100: #D1FBE9;
+  --Green500: #21C16B;
+  --Red50: #FFEBEC;
+  --Red100: #FFD5D8;
+  --Red500: #FB3748;
+}
+
 .filters, .sort {
   background-color: transparent;
   border-radius: 4px;
@@ -629,24 +818,31 @@ hr {
   background: #0E121B;
   color: #FFFFFF;
   display: flex;
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  height: auto;
 }
 .eventsBody #sideNav {
-  min-height: 100%;
+  min-height: 100vh;
+  border: none;
+}
+.eventsBody #sideNav .todosHabitsEvents {
+  flex: 1;
+}
+.eventsBody #sideNav .sideNavBtn {
+  position: sticky;
+  bottom: 0;
 }
 .eventsBody .eventsMain {
   display: flex;
   width: 100%;
 }
 .eventsBody .eventsMain section {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 30px;
-  width: 400px;
+  min-width: 415px;
   padding: 0px 40px;
 }
 .eventsBody .eventsMain section h2 {
@@ -656,6 +852,7 @@ hr {
 }
 .eventsBody .eventsMain section.upcomingEvents, .eventsBody .eventsMain section.pastEvents {
   border-right: 1px solid #2B303B;
+  border-left: 1px solid #2B303B;
 }
 .eventsBody .eventsMain section.upcomingEvents .startContainer, .eventsBody .eventsMain section.upcomingEvents .endContainer, .eventsBody .eventsMain section.pastEvents .startContainer, .eventsBody .eventsMain section.pastEvents .endContainer {
   display: flex;
@@ -696,8 +893,24 @@ hr {
 .eventsBody .eventsMain section.upcomingEvents #newNoteContainer .cardContainer h2, .eventsBody .eventsMain section.pastEvents #newNoteContainer .cardContainer h2 {
   padding-top: 30px;
 }
+.eventsBody .eventsMain section.pastEvents {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
 .eventsBody .eventsMain section.pastEvents .pastTitle {
   padding-top: 30px;
+  opacity: 40%;
+}
+.eventsBody .eventsMain section.pastEvents #pastEventsContainer {
+  opacity: 40%;
+  pointer-events: none;
+}
+.eventsBody .eventsMain section.pastEvents #pastEventsContainer .cardBodyContainer:hover {
+  background: transparent;
+}
+.eventsBody .eventsMain section.pastEvents #pastEventsContainer .cardBodyContainer:hover .buttonContainer {
+  display: none;
 }
 .eventsBody .eventsMain section .date {
   -webkit-appearance: none;
@@ -733,7 +946,7 @@ hr {
   font-size: 18px;
 }
 .eventsBody .eventsMain section .events .cardContainer .dateContainer {
-  gap: 4px;
+  gap: 2px;
 }
 .eventsBody .eventsMain section .events .cardContainer .dateContainer input.date {
   border: none;
@@ -771,9 +984,10 @@ hr {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 100%;
 }
 .eventsBody .eventsMain .cardContainer .dateContainer h2 {
-  padding-bottom: 20px;
+  padding-bottom: 5px;
 }
 .eventsBody .eventsMain .cardContainer .dateContainer p {
   width: 45px;
@@ -812,24 +1026,67 @@ hr {
   padding-right: 0px;
   border-radius: 6px;
 }
-.eventsBody .eventsMain .cardContainer .cardBodyContainer:hover {
-  background: #191B25;
-}
-.eventsBody .eventsMain .cardContainer .cardBodyContainer:hover .buttonContainer {
-  display: flex;
-}
 .eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer {
   gap: 0px;
-  display: none;
   flex-direction: row;
   align-self: flex-end;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .saveCancel {
+  display: none;
 }
 .eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .delete, .eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .save {
   padding: 10px;
   padding-bottom: 0px;
 }
-.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .save.hide {
+.eventsBody .eventsMain .cardContainer .cardBodyContainer .buttonContainer .delete {
   display: none;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting {
+  flex-direction: column;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .dateContainer input.date {
+  width: auto;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  cursor: pointer;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .buttonContainer .saveCancel {
+  display: flex;
+  gap: 20px;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .buttonContainer .saveCancel button {
+  width: 70px;
+  padding: 8px 30px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .buttonContainer .saveCancel button:active {
+  transform: scale(0.95);
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .buttonContainer .saveCancel .cancelBtn {
+  background-color: transparent;
+  border: 1px solid #525866;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .buttonContainer .saveCancel .cancelBtn:hover {
+  background-color: rgb(51, 92, 255);
+  border: none;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .buttonContainer .saveCancel .saveBtn:hover {
+  background-color: #1c9b57;
+  border: none;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer.adjusting .buttonContainer .delete {
+  display: flex;
+  padding: 15px;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer:hover {
+  background: #191B25;
+}
+.eventsBody .eventsMain .cardContainer .cardBodyContainer:hover .delete {
+  display: flex;
 }
 
 :root {

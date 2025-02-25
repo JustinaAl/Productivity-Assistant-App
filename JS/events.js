@@ -93,8 +93,11 @@ const createCard = async(event) => {
         instance.setDate(event.startDate); 
       }
       else if (dateStr !== event.startDate) {
-        saveEvent({ startDate: dateStr }, event.id);
+        cardBodyContainer.classList.add("adjusting");
       }
+    },
+    onChange: function(selectedDates, dateStr, instance) {
+      endPicker.set("minDate", dateStr);
     }
   });
 
@@ -115,7 +118,7 @@ const createCard = async(event) => {
         instance.setDate(event.endDate); 
       }
       else if (dateStr !== event.endDate) {
-        saveEvent({ endDate: dateStr }, event.id);
+        cardBodyContainer.classList.add("adjusting");
       }
     }
   });
@@ -124,25 +127,64 @@ const createCard = async(event) => {
   const deleteBtn = document.createElement("button");
   deleteBtn.innerHTML = '<svg class="deleteIcon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#99A0AE"><path d="M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z"/></svg>';
   deleteBtn.classList.add("delete");
+  
+  const save = document.createElement("button");
+  save.innerText ="Save";
+  save.classList.add("saveBtn");
+  
+  const cancel = document.createElement("button");
+  cancel.innerText ="Cancel";
+  cancel.classList.add("cancelBtn");
 
+  const saveCancel = document.createElement("div");
+  saveCancel.classList.add("saveCancel");
+  saveCancel.append(save, cancel);
+
+  
   const buttonContainer = document.createElement("div");
   buttonContainer.classList.add("buttonContainer");
-  buttonContainer.append(deleteBtn);
+  buttonContainer.append(saveCancel, deleteBtn);
+
+  cancel.addEventListener('click', () => {
+    cardBodyContainer.classList.remove("adjusting");
+    title.innerText = event.title;
+
+    startPicker.setDate(event.startDate, true);
+    endPicker.setDate(event.endDate, true);
+  })
 
 
+  save.addEventListener('click', async() => {
+   
+    const newData = {
+      title: title.innerText.trim(),
+      startDate: start.value,
+      endDate: end.value
+    };
+    await saveEvent(newData, event.id);
 
-  deleteBtn.addEventListener("click", async() => {
-    await deleteEvent(event.id)
   });
 
-  // start.addEventListener("blur", () => {
-  //   if (!start.value.trim()) {
-  //     start.value = event.startDate;
-  //   } else if (start.value !== event.startDate){
+  deleteBtn.addEventListener("click", async() => {
 
-  //     saveEvent({startDate: start.value}, event.id);
-  //   }
-  // });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        await deleteEvent(event.id);
+      }
+    });
+    // const isConfirmed = window.confirm(`Are you sure that you want to delete the ${event.title}-post?`);
+
+    // if (isConfirmed) { await deleteEvent(event.id) }
+    
+  });
 
   
   title.addEventListener("blur", () => {
@@ -243,6 +285,8 @@ const createNewCard = async() => {
       errorMsg.innerText = "Please enter a end date"
     }else if(end.value <= start.value){
       errorMsg.innerText = "End time has to be later than start time"
+    }else if(new Date(end.value) <= new Date()){
+      errorMsg.innerText = "Please choose a time later than the current time."
     }else{
 
       const newData = {
@@ -323,17 +367,14 @@ const printEvents = async() => {
   );
 
 
-
   upcomingEvents = upcomingEvents.sort((a, b) => 
     compareAsc(parseISO(a.startDate), parseISO(b.startDate))
   );
 
-  console.log(ongoingEvents);
 
   ongoingEvents = ongoingEvents.sort((a, b) => 
     compareAsc(parseISO(a.startDate), parseISO(b.startDate))
   );
-  console.log(ongoingEvents);
   
   if (ongoingEvents.length > 0){
     const ongoingTitle = document.createElement("h2");
@@ -362,6 +403,8 @@ const printEvents = async() => {
     for (const event of upcomingEvents) {
       upcomingEventsContainer.append(await createCard(event));
     }
+  } else {
+    document.querySelector("#events-texs").innerText= "You got no upcoming events, enjoy your free time!";
   }
 }
 printEvents();

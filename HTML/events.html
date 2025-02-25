@@ -13,6 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/date-fns@4.1.0/cdn.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
     <script src="/JS/sidebar.js" defer></script>
     <script type="module" src="../JS/events.js"></script>
@@ -22,22 +23,23 @@
         <div id="todosHabitsEvents">
             <section id="todosNav">
                 <div class="imgH3Nav" id="imgH3NavTodos">
-                    <img src="/assets/img/todo.png" alt="todo" width="45" height="45">
-                    <h3 class="h3Nav" id="h3toDos">Todos</h3>
+                    <a class="link" href="/HTML/toDos.html">
+                        <img src="/assets/img/todo.png" alt="todo" width="45" height="45">
+                        <h3 class="h3Nav" id="h3toDos">Todos</h3>
+                    </a>
                 </div>
                 <div class="navList" id="navListTodos">
                     <ul class="navUl" id="navUlTodos">
-                        <li>List Item One</li>
-                        <li>List Item Two</li>
-                        <li>List Item Three</li>
                     </ul>
                 </div>
             </section>
 
             <section id="habitsNav">
                 <div class="imgH3Nav" id="imgH3NavHabits">
-                    <img src="/assets/img/habit.png" alt="habit" width="45" height="45">
-                    <h3 class="h3Nav" id="h3Habits">Habits</h3>
+                    <a class="link" href="/HTML/habits.html">
+                        <img src="/assets/img/habit.png" alt="habit" width="45" height="45">
+                        <h3 class="h3Nav" id="h3Habits">Habits</h3>
+                    </a>
                 </div>
                 <div class="navList" id="navListHabits">
                     <ul class="navUl" id="navUlHabits">
@@ -45,10 +47,12 @@
                 </div>
             </section>
 
-            <section id="eventsNav">
+            <section id="eventsNav" class="active">
                 <div class="imgH3Nav" id="imgH3NavEvents">
-                    <img src="/assets/img/event.png" alt="event" width="45" height="45">
-                    <h3 class="h3Nav" id="h3Events">Events</h3>
+                    <a class="link" href="/HTML/events.html">
+                        <img src="/assets/img/event.png" alt="event" width="45" height="45">
+                        <h3 class="h3Nav" id="h3Events">Events</h3>
+                    </a>
                 </div>
                 <div class="navList" id="navListEvents">
                     <ul class="navUl" id="navUlEvents">
@@ -66,7 +70,7 @@
             <button id="createNewEvent">+ Create New Event</button>
             <div class="upcoming events">
                 <h2>Upcoming events</h2>
-                <p>All your upcoming events are stored here</p>
+                <p id="events-texs">All your upcoming events are stored here</p>
                 <div id="upcomingEventsContainer"></div>
             </div>
         </section>
