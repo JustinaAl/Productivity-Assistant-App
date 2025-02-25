@@ -20,23 +20,22 @@
         <div id="todosHabitsEvents">
             <section id="todosNav" class="activityNav">
                 <div class="imgH3Nav" id="imgH3NavTodos">
-                    <a class="link" href="/HTML/toDos.html">
-                        <img src="/assets/img/todo.png" alt="todo" width="45" height="45">
-                        <h3 class="h3Nav" id="h3toDos">Todos</h3>
-                    </a>
+                    <img src="/assets/img/todo.png" alt="todo" width="45" height="45">
+                    <h3 class="h3Nav" id="h3toDos">Todos</h3>
                 </div>
                 <div class="navList" id="navListTodos">
                     <ul class="navUl" id="navUlTodos">
+                        <li>List Item One</li>
+                        <li>List Item Two</li>
+                        <li>List Item Three</li>
                     </ul>
                 </div>
             </section>
 
             <section id="habitsNav" class="activityNav">
                 <div class="imgH3Nav" id="imgH3NavHabits">
-                    <a class="link" href="/HTML/habits.html">
-                        <img src="/assets/img/habit.png" alt="habit" width="45" height="45">
-                        <h3 class="h3Nav" id="h3Habits">Habits</h3>
-                    </a>
+                    <img src="/assets/img/habit.png" alt="habit" width="45" height="45">
+                    <h3 class="h3Nav" id="h3Habits">Habits</h3>
                 </div>
                 <div class="navList" id="navListHabits">
                     <ul class="navUl" id="navUlHabits">
@@ -46,10 +45,8 @@
 
             <section id="eventsNav" class="activityNav">
                 <div class="imgH3Nav" id="imgH3NavEvents">
-                    <a class="link" href="/HTML/events.html">
-                        <img src="/assets/img/event.png" alt="event" width="45" height="45">
-                        <h3 class="h3Nav" id="h3Events">Events</h3>
-                    </a>
+                    <img src="/assets/img/event.png" alt="event" width="45" height="45">
+                    <h3 class="h3Nav" id="h3Events">Events</h3>
                 </div>
                 <div class="navList" id="navListEvents">
                     <ul class="navUl" id="navUlEvents">
@@ -63,7 +60,7 @@
     </aside>
     <main class="todosMain">
         <section class="allTodos">
-            <h2>Current Todos</h2>
+            <h2>Todos</h2>
 
             <form id="todoForm" style="display: none;">
                 <div>
@@ -93,34 +90,11 @@
             </form>
 
             <button id="createNewTodo">+ Create New Todo</button>
-            <div class="filterAndSort">
-                <div class="filterDiv">
-                    <label for="categoryFilter" style="display: none;">Filter:</label>
-                    <select id="categoryFilter">
-                        <option value="" disabled selected>Filter</option>
-                        <option value="all">All</option>
-                        <option value="domestic">Domestic</option>
-                        <option value="work">Work</option>
-                        <option value="leisure">Leisure</option>
-                        <option value="school">School</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <div class="sortDiv">
-                    <label for="sort" style="display: none;">Sort:</label>
-                    <select id="sort">
-                        <option value="" disabled selected>Sort</option>
-                        <option value="deadline">Deadline - closest</option>
-                        <option value="timeEstimateShortest">Time Estimate - shortest</option>
-                        <option value="timeEstimateLongest">Time Estimate - longest</option>
-                    </select>
-                </div>
-            </div>
             <div id="allTodosContainer"></div>
         </section>
-        <section class="doneTodos">
-            <h2>Done Todos</h2>
-            <div id="doneTodosContainer"></div>
+        <section class="selectedTodo">
+            <h2>Selected Todo</h2>
+            <div id="selectedTodoContainer"></div>
         </section>
     </main>
 </body>
