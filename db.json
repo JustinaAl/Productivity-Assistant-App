@@ -102,24 +102,6 @@
       "category": "other",
       "description": "Use procreate and ipad",
       "status": "not done"
-    },
-    {
-      "id": "0a4d",
-      "userId": "0ca8",
-      "title": "Test",
-      "deadline": "2025-02-27",
-      "timeEstimate": "2",
-      "category": "work",
-      "description": "dwed",
-      "status": "not done"
-      "id": "40de",
-      "userId": "0d22",
-      "title": "Done",
-      "deadline": "2025-02-25 14:15",
-      "timeEstimate": "0.5",
-      "category": "leisure",
-      "description": "",
-      "status": "done"
     }
   ],
   "habits": [
