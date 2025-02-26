@@ -81,6 +81,7 @@ const createOrUpdateTodo = async () => {
 
     if (
         titleInput.innerText.trim() === "" ||
+        titleInput.innerText.trim() === "Title" ||
         deadlineInput.value.trim() === "" ||
         timeEstimateInput.value.trim() === "" ||
         categoryInput.value.trim() === "" ||
@@ -313,6 +314,7 @@ saveBtn.addEventListener("click", function (event) {
 
     if (
         titleInput.innerText.trim() === "" ||
+        titleInput.innerText.trim() === "Title" ||
         deadlineInput.value.trim() === "" ||
         timeEstimateInput.value.trim() === "" ||
         categoryInput.value.trim() === "" ||
