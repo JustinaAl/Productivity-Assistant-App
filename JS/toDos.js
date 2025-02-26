@@ -244,6 +244,62 @@ const loadTodos = async () => {
         console.error('Error loading todos:', error);
     }
 };
+
+const filterTodos = () => {
+    const selectedCategory = categoryFilter.value;
+    const allTodoCards = document.querySelectorAll('.todoCard');
+
+    allTodoCards.forEach(todoCard => {
+        const categoryElement = todoCard.querySelector('p:nth-of-type(3)');
+        const category = categoryElement ? categoryElement.innerText.split(': ')[1] : '';
+
+        if (selectedCategory === 'all' || category === selectedCategory) {
+            todoCard.style.display = 'block';
+        } else {
+            todoCard.style.display = 'none';
+        }
+    });
+};
+
+const sortTodos = () => {
+    const sortBy = sortSelect.value;
+    const allTodoCards = Array.from(document.querySelectorAll('.todoCard'));
+
+    if (sortBy === "deadline") {
+        allTodoCards.sort((a, b) => {
+            const dateA = new Date(a.querySelector("p:nth-of-type(1)").innerText.split(": ")[1]);
+            const dateB = new Date(b.querySelector("p:nth-of-type(1)").innerText.split(": ")[1]);
+            return dateA - dateB;
+        });
+    } else if (sortBy === "timeEstimateShortest") {
+        allTodoCards.sort((a, b) => {
+            const timeA = parseFloat(a.querySelector("p:nth-of-type(2)").innerText.split(": ")[1]);
+            const timeB = parseFloat(b.querySelector("p:nth-of-type(2)").innerText.split(": ")[1]);
+            return timeA - timeB;
+        });
+    } else if (sortBy === "timeEstimateLongest") {
+        allTodoCards.sort((a, b) => {
+            const timeA = parseFloat(a.querySelector("p:nth-of-type(2)").innerText.split(": ")[1]);
+            const timeB = parseFloat(b.querySelector("p:nth-of-type(2)").innerText.split(": ")[1]);
+            return timeB - timeA;
+        });
+    }
+
+    const activeTodosContainer = document.querySelector('#allTodosContainer');
+    const doneTodosContainer = document.querySelector('#doneTodosContainer');
+
+    allTodoCards.forEach(todoCard => {
+        if (todoCard.querySelector('.todoCheckbox').checked) {
+            doneTodosContainer.appendChild(todoCard);
+        } else {
+            activeTodosContainer.appendChild(todoCard);
+        }
+    });
+};
+
+categoryFilter.addEventListener('change', filterTodos);
+sortSelect.addEventListener('change', sortTodos);
+
 // Load todos when page loads
 document.addEventListener("DOMContentLoaded", loadTodos);
 
