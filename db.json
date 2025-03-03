@@ -210,27 +210,6 @@
       "priority": "high"
     },
     {
-      "id": "fffe",
-      "userId": null,
-      "title": "Water plants",
-      "reps": "5",
-      "priority": "low"
-    },
-    {
-      "id": "7fba",
-      "userId": null,
-      "title": "jvbl",
-      "reps": "3",
-      "priority": "low"
-    },
-    {
-      "id": "cfa3",
-      "userId": null,
-      "title": "Brush hair",
-      "reps": "2",
-      "priority": "low"
-    },
-    {
       "id": "e6ae",
       "userId": "0ca8",
       "title": "wefw",
@@ -427,6 +406,11 @@
       "id": "7883",
       "username": "victor3",
       "password": "§12123"
+    },
+    {
+      "id": "8ba6",
+      "username": "victor7",
+      "password": "hejsan"
     }
   ]
 }
