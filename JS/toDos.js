@@ -70,7 +70,7 @@ const initFlatPickr = () => {
     });
 };
 
-// Initialize Flatpickr only once when page loads
+// Initialize Flatpickr
 document.addEventListener("DOMContentLoaded", initFlatPickr);
 
 const createOrUpdateTodo = async () => {
@@ -125,6 +125,9 @@ const displayTodo = (todo) => {
     const todoCard = document.createElement('div');
     todoCard.classList.add('todoCard');
 
+    const todoWrapper = document.createElement('div');
+    todoWrapper.classList.add('todoWrapper');
+
     const statusCheckbox = document.createElement('input');
     statusCheckbox.type = "checkbox";
     statusCheckbox.checked = todo.status === 'done';
@@ -142,25 +145,55 @@ const displayTodo = (todo) => {
         }
     });
 
-    const todoContent = document.createElement('div');
-    todoContent.innerHTML = `
-        <h3 class="todoTitle">${todo.title}</h3>
-        <p><strong>Deadline:</strong> ${todo.deadline || 'No deadline'}</p>
-        <p><strong>Time Estimate:</strong> ${todo.timeEstimate} hours</p>
-        <p><strong>Category:</strong> ${todo.category}</p>
-        <p>${todo.description || 'No description'}</p>
-        <button class='deleteTodoBtn' data-id="${todo.id}">Delete</button>
-    `;
+    // const todoContent = document.createElement('div');
+    // todoContent.classList.add('todoContent');
+    // todoContent.innerHTML = `
+    //     <h3 class="todoTitle">${todo.title}</h3>
+    //     <p><strong>Deadline:</strong> ${todo.deadline || 'No deadline'}</p>
+    //     <p><strong>Time Estimate:</strong> ${todo.timeEstimate} hours</p>
+    //     <p><strong>Category:</strong> ${todo.category}</p>
+    //     <p>${todo.description || 'No description'}</p>
+    //     `;
+        // <button class='deleteTodoBtn' data-id="${todo.id}">Delete</button>
+        
+    const buttonWrapper = document.createElement('div');
+    buttonWrapper.classList.add('editDeleteBtnDiv');
+
+    const editBtn = document.createElement('button');
+    editBtn.classList.add('editTodoBtn');
+    editBtn.setAttribute('data-id', todo.id);
+    editBtn.textContent = 'Edit';
+    editBtn.addEventListener('click', () => editTodo(todo))
 
     //deleteBtn
-    const deleteBtn = todoContent.querySelector('.deleteTodoBtn');
+    // const deleteBtn = todoContent.querySelector('.deleteTodoBtn');
+    // deleteBtn.addEventListener('click', async () => {
+    //     await deleteData(`http://localhost:5001/todos/${todo.id}`);
+    //     console.log(`Todo '${todo.title} deleted'`);
+    //     todoCard.remove();
+    // });
+
+    const deleteBtn = document.createElement('button');
+    deleteBtn.classList.add('deleteTodoBtn');
+    deleteBtn.setAttribute('data-id', todo.id);
+    deleteBtn.innerHTML = `<img src="../assets/img/delete-icon.png" alt="Delete" class="delete-icon">`;
     deleteBtn.addEventListener('click', async () => {
-        await deleteData(`http://localhost:5001/todos/${todo.id}`);
-        console.log(`Todo '${todo.title} deleted'`);
-        todoCard.remove();
-    });
-    todoCard.appendChild(statusCheckbox);
-    todoCard.appendChild(todoContent);
+    await deleteData(`http://localhost:5001/todos/${todo.id}`);
+    console.log(`Todo '${todo.title}' deleted`);
+    todoCard.remove();
+});
+    buttonWrapper.appendChild(editBtn);
+    buttonWrapper.appendChild(deleteBtn);
+
+    const todoMainContent = document.createElement('div');
+    todoMainContent.classList.add('todoMainContent');
+    todoMainContent.appendChild(statusCheckbox);
+    todoMainContent.appendChild(todoContent);
+
+
+    todoCard.appendChild(todoMainContent);
+    todoCard.appendChild(buttonWrapper); // Append buttons separately
+
     allTodosContainer.appendChild(todoCard);
 };
 
@@ -192,8 +225,10 @@ const loadTodos = async () => {
                 <p><strong>Time Estimate:</strong> ${todo.timeEstimate} hours</p>
                 <p><strong>Category:</strong> ${todo.category}</p>
                 <p>${todo.description || 'No description'}</p>
-                <button class='deleteTodoBtn' data-id="${todo.id}">Delete</button>
+                <div class="editDeleteBtnDiv">
                 <button class='editTodoBtn' data-id="${todo.id}">Edit</button>
+                    <button class='deleteTodoBtn' data-id="${todo.id}">Delete</button>
+                </div>
             `;
 
             const editTodoBtn = todoContent.querySelector('.editTodoBtn');

@@ -73,7 +73,117 @@
         }   #createNewTodo:active {
             transform: scale(0.95); 
         }
-    
+        
+        .doneTodos {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .allTodos, .doneTodos {
+            width: 100%;
+            min-width: 400px;
+            padding: 20px;
+
+            .editDeleteBtnDiv {
+                width: 100%;
+                // border: 1px solid red;
+                display: flex;
+                justify-content: flex-start; 
+                gap: 10px; 
+                margin-top: 20px; 
+            }
+
+            .todoCard {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                background-color: $Neutral900;
+                padding: 20px;
+                border-radius: 12px;
+                margin-bottom: 20px;
+                width: 350px;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+                gap: 15px;
+
+                &:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+                }
+
+                h3 {
+                    color: $Neutral50;
+                    font-size: 1.2rem;
+                    font-weight: 700;
+                    margin: 0;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 0.9rem;
+                    color: $Neutral300;
+                    margin: 5px 0;
+                }
+                .deleteTodoBtn, .editTodoBtn {
+                    background-color: $Blue500;
+                    color: $BaseWhite;
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 6px 12px;
+                    border: none;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    transition: background-color 0.2s ease, transform 0.1s ease;
+                    margin-top: 10px;
+            
+                    &:hover {
+                        background-color: #3049C8;
+                    }
+            
+                    &:active {
+                        transform: scale(0.95);
+                    }
+                }
+                .deleteTodoBtn {
+                    background-color: $Neutral900;
+                    border: 1px solid $Neutral600;
+                    margin-right: 10px;
+                   
+                    &:hover {
+                        background-color: $Red500;
+                        border: none;
+                    }
+                }
+                .editTodoBtn {
+                    background-color: $Neutral900;
+                    border: 1px solid $Neutral600;
+                    margin-right: 10px;
+                   
+                    &:hover {
+                        background-color: $Blue500;
+                        border: none;
+                        
+                    }
+                }
+            }
+            .todoWrapper {
+                display: flex;
+                align-items: center;
+                width: 100%;
+                gap: 15px;
+            }
+            .todoCheckbox {
+                align-self: flex-start;
+                 width: 20px;
+                height: 20px;
+                accent-color: $Blue500;
+                cursor: pointer;
+            }
+            .todoContent {
+                flex: 1;
+            }
+        }
+
     .allTodos {
         margin:0;
         height: 100%;
@@ -115,8 +225,8 @@
             }
         
             textarea {
-                resize: vertical; // Allows resizing vertically
-                min-height: 80px; // Gives it a starting height
+                resize: vertical; 
+                min-height: 80px; 
             }
 
             label {
@@ -142,9 +252,9 @@
                     cursor: pointer;
                     transition: background-color 0.2s ease, transform 0.1s ease;
         }   #saveBtn:hover {
-            background-color: #3049C8; /* Slightly darker blue on hover */
+            background-color: #3049C8; 
         }   #saveBtn:active {
-            transform: scale(0.95); /* Subtle press effect */
+            transform: scale(0.95); 
         }
             
         }
@@ -153,17 +263,20 @@
             background-color: $BaseBlack;
         }
     }
-    .selectedTodo {
-        width: 400px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 25px;
-        border-right: 1px solid $Neutral700;
-        #selectedTodoContainer {
-            background-color: $BaseBlack;
+    .doneTodos,
+    .doneTodos * {
+        color: rgba(255, 255, 255, 0.248);
+        
+
+        #doneTodosContainer,
+         #doneTodosContainer *{
+            color: rgba(255, 255, 255, 0.248);
         }
+    }
+
+    .doneTodos {
+        display: flex;
+        justify-content: flex-start;
     }
 
    }
