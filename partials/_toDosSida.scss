@@ -5,8 +5,6 @@
     box-sizing: border-box;
 }
 
-
-
 .date{
     appearance: none;
     box-sizing: border-box;
@@ -29,9 +27,20 @@
     background-color: $BaseBlack;
     color: $BaseWhite;
     display: flex;
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     box-sizing: border-box;
+
+    // #todosNav {
+    //     overflow: hidden;
+    //     display: inline-block;
+    //     margin: 0;
+    //     background-color: $Neutral800;
+    //     border-radius: 15px;
+    //     padding: 10px;
+    //     width: 100%;
+    //     height: 170px;
+    // }
 
     h1 {
         font-weight: bold;
@@ -39,7 +48,7 @@
         font-size: 3rem;
     }
     h2 {
-        font-weight:700;
+        font-weight:100;
         color: $Blue50;
     }
     h3 {
@@ -55,10 +64,11 @@
    .todosMain {
         display: flex;
         width: 100%;
-
+        
+        /*Button*/
         #createNewTodo {
                     
-                    width: 100%;
+                    width: calc(100% - 48px);
                     background-color: $Blue500;
                     color: $BaseWhite;
                     font-size: 15px;
@@ -69,9 +79,9 @@
                     cursor: pointer;
                     transition: background-color 0.2s ease, transform 0.1s ease;
         }   #createNewTodo:hover {
-            background-color: #3049C8; 
+            background-color: #3049C8; /* Slightly darker blue on hover */
         }   #createNewTodo:active {
-            transform: scale(0.95); 
+            transform: scale(0.95); /* Subtle press effect */
         }
         
         .doneTodos {
@@ -185,9 +195,6 @@
         }
 
     .allTodos {
-        margin:0;
-        height: 100%;
-        padding: 35px;
         width: 400px;
         display: flex;
         flex-direction: column;
@@ -195,14 +202,10 @@
         justify-content: flex-start;
         gap: 25px;
         border-right: 1px solid $Neutral700;
-        border-left: 1px solid $Neutral700;
 
         #todoForm {
-            margin: 30px auto;
             display: flex;
-            flex-direction: column;
-            gap: 15px;
-            width: 100%;
+            flex-wrap: wrap;
             max-width: 400px;
             padding: 20px;
             border-radius: 15px;
@@ -225,8 +228,8 @@
             }
         
             textarea {
-                resize: vertical; 
-                min-height: 80px; 
+                resize: vertical; // Allows resizing vertically
+                min-height: 80px; // Gives it a starting height
             }
 
             label {
@@ -241,7 +244,7 @@
             }
 
             #saveBtn {
-                width: 100%;
+                width: auto;
                     background-color: $Blue500;
                     color: $BaseWhite;
                     font-size: 15px;
