@@ -668,6 +668,22 @@ hr {
   padding: 30px;
   border-right: none;
 }
+#sideNav #logOutBtn {
+  width: 100%;
+  background-color: #0E121B;
+  color: #EBF1FF;
+  border: 1px solid #525866;
+  padding: 13px 30px;
+  font-weight: bold;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+#sideNav #logOutBtn:hover {
+  background-color: rgb(51, 92, 255);
+}
 #sideNav h3 {
   font-weight: bold;
   font-size: 18.72px;
