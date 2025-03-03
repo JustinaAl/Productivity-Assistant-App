@@ -484,6 +484,7 @@ hr {
   height: -moz-min-content;
   height: min-content;
   background-color: #2B303B;
+  border-radius: 8px;
   width: 400px;
   justify-content: space-between;
 }
@@ -554,6 +555,7 @@ hr {
   height: -moz-min-content;
   height: min-content;
   background-color: #2B303B;
+  border-radius: 8px;
   width: 400px;
   display: flex;
   flex-direction: column;
