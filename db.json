@@ -378,6 +378,13 @@
       "title": "Fejjksn",
       "startDate": "2025-02-27 12:00",
       "endDate": "2025-03-07 12:00"
+    },
+    {
+      "id": "606e",
+      "userId": "0ca8",
+      "title": "Hejjj",
+      "startDate": "2025-03-19 12:00",
+      "endDate": "2025-03-27 12:00"
     }
   ],
   "users": [
@@ -427,6 +434,11 @@
       "id": "7883",
       "username": "victor3",
       "password": "§12123"
+    },
+    {
+      "id": "ac07",
+      "username": "nimbus",
+      "password": "nimbus1"
     }
   ]
 }

@@ -319,7 +319,7 @@
   background-color: #0E121B;
   color: #FFFFFF;
   display: flex;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   box-sizing: border-box;
 }
@@ -329,7 +329,7 @@
   font-size: 3rem;
 }
 .todosBody h2 {
-  font-weight: 100;
+  font-weight: 700;
   color: #EBF1FF;
 }
 .todosBody h3 {
@@ -344,10 +344,9 @@
 .todosBody .todosMain {
   display: flex;
   width: 100%;
-  /*Button*/
 }
 .todosBody .todosMain #createNewTodo {
-  width: calc(100% - 48px);
+  width: 100%;
   background-color: #335CFF;
   color: #FFFFFF;
   font-size: 15px;
@@ -359,12 +358,15 @@
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 .todosBody .todosMain #createNewTodo:hover {
-  background-color: #3049C8; /* Slightly darker blue on hover */
+  background-color: #3049C8;
 }
 .todosBody .todosMain #createNewTodo:active {
-  transform: scale(0.95); /* Subtle press effect */
+  transform: scale(0.95);
 }
 .todosBody .todosMain .allTodos {
+  margin: 0;
+  height: 100%;
+  padding: 35px;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -372,14 +374,47 @@
   justify-content: flex-start;
   gap: 25px;
   border-right: 1px solid #2B303B;
+  border-left: 1px solid #2B303B;
 }
 .todosBody .todosMain .allTodos #todoForm {
+  margin: 30px auto;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
   max-width: 400px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #191B25;
+}
+.todosBody .todosMain .allTodos #todoForm div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.todosBody .todosMain .allTodos #todoForm input, .todosBody .todosMain .allTodos #todoForm select, .todosBody .todosMain .allTodos #todoForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #2B303B;
+  border-radius: 10px;
+  background: transparent;
+  color: #CACFD8;
+  margin-bottom: 15px;
+}
+.todosBody .todosMain .allTodos #todoForm textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+.todosBody .todosMain .allTodos #todoForm label {
+  font-weight: 100px;
+  color: #CACFD8;
+  font-size: 12px;
+}
+.todosBody .todosMain .allTodos #todoForm h2 {
+  font-weight: 500;
 }
 .todosBody .todosMain .allTodos #todoForm #saveBtn {
-  width: auto;
+  width: 100%;
   background-color: #335CFF;
   color: #FFFFFF;
   font-size: 15px;
