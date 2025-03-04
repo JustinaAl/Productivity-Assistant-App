@@ -207,6 +207,7 @@
         justify-content: flex-start;
         gap: 25px;
         border-right: 1px solid $Neutral700;
+        border-left: 1px solid $Neutral700;
 
         #todoForm {
             display: flex;
@@ -233,8 +234,8 @@
             }
         
             textarea {
-                resize: vertical; 
-                min-height: 80px; 
+                resize: vertical; // Allows resizing vertically
+                min-height: 80px; // Gives it a starting height
             }
 
             label {
@@ -271,6 +272,12 @@
             background-color: $BaseBlack;
         }
     }
+    .doneTodos {
+        border-right: 1px solid $Neutral700;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
     .doneTodos,
     .doneTodos * {
         color: rgba(255, 255, 255, 0.248);
@@ -280,11 +287,6 @@
          #doneTodosContainer *{
             color: rgba(255, 255, 255, 0.248);
         }
-    }
-
-    .doneTodos {
-        display: flex;
-        justify-content: flex-start;
     }
 
    }
