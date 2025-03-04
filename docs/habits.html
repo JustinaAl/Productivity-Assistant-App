@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Habits</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Parkinsans&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
@@ -72,18 +72,18 @@
         <p id="infoText">All your current todos are stored here</p>
         <div class="controls">
             <div class="filterBox">
-                <button class="filters" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="filters" type="button" data-bs-toggle="dropdown" >
                   Filter by priority
                 </button>
                 <ul class="dropdown-menu" style="">
-                  <li><label for="highCheckbox">High</label><input type="checkbox" id="highCheckbox" value="high"></li>
+                  <li><label class="container" for="highCheckbox">High</label><input type="checkbox" id="highCheckbox" value="high"></li>
                   <li><label for="mediumCheckbox">Medium</label><input type="checkbox" id="mediumCheckbox" value="medium"></li>
                   <li><label for="lowCheckbox">Low</label><input type="checkbox" id="lowCheckbox" value="low"></li>
                   <li><button id="filterButton">Filter</button></li>
                 </ul>
             </div>
             <div class="sortBox">
-                <button class="sort" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="sort" type="button" data-bs-toggle="dropdown">
                   Sort by
                 </button>
                 <ul class="dropdown-menu" style="">

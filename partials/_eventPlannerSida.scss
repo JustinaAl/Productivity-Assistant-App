@@ -31,7 +31,7 @@
             align-items: flex-start;
             justify-content: flex-start;
             gap: 30px;
-            width: 400px;
+            min-width: 415px;
             padding: 0px 40px;
 
             h2{
@@ -92,6 +92,9 @@
                         h2{
                             padding-top: 30px;
                         }
+                        input{
+                            border-radius: 6px;
+                        }
                     }
                 }
                 
@@ -99,6 +102,7 @@
 
             &.pastEvents{
                 user-select: none;
+                border-left: 0px;
                 .pastTitle{
                     padding-top: 30px;
                     opacity: 40%;

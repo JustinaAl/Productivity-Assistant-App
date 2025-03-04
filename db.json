@@ -14,102 +14,187 @@
       "timeEstimation": "120"
     },
     {
-      "id": "1",
-      "userId": "0ca8",
-      "title": "Test Todo",
-      "deadline": "2025-02-18",
-      "timeEstimate": 2,
+      "id": "3690",
+      "userId": "0d22",
+      "title": "Work",
+      "deadline": "2025-03-19 12:00",
+      "timeEstimate": "2",
       "category": "work",
-      "description": "This is a manually added todo.",
+      "description": "Work",
+      "status": "not done"
+    },
+    {
+      "id": "6569",
+      "userId": "0d22",
+      "title": "Water the plants",
+      "deadline": "2025-03-20 12:00",
+      "timeEstimate": "1",
+      "category": "domestic",
+      "description": "",
+      "status": "not done"
+    },
+    {
+      "id": "a936",
+      "userId": "0d22",
+      "title": "Study",
+      "deadline": "2025-03-27 12:00",
+      "timeEstimate": "4",
+      "category": "school",
+      "description": "",
+      "status": "not done"
+    },
+    {
+      "id": "2bf6",
+      "userId": "0d22",
+      "title": "Feed cats",
+      "deadline": "2025-03-25 12:00",
+      "timeEstimate": "0.5",
+      "category": "other",
+      "description": "",
+      "status": "not done"
+    },
+    {
+      "id": "592a",
+      "userId": "0ca8",
+      "title": "Hoover the apartment",
+      "deadline": "2025-03-24",
+      "timeEstimate": "2",
+      "category": "domestic",
+      "description": "hej",
+      "status": "not done"
+    },
+    {
+      "id": "f90b",
+      "userId": "0ca8",
+      "title": "Knit mom a scarf",
+      "deadline": "2025-04-16",
+      "timeEstimate": "12",
+      "category": "other",
+      "description": "She wants a red scarf",
+      "status": "not done"
+    },
+    {
+      "id": "dd6b",
+      "userId": "0ca8",
+      "title": "Brush teeth",
+      "deadline": "2025-02-26",
+      "timeEstimate": "0.5",
+      "category": "domestic",
+      "description": "Important!",
+      "status": "not done"
+    },
+    {
+      "id": "87a9",
+      "userId": "0ca8",
+      "title": "Draw a portrait of Vesal",
+      "deadline": "2025-03-24",
+      "timeEstimate": "5",
+      "category": "other",
+      "description": "Use procreate and ipad",
+      "status": "not done"
+    },
+    {
+      "id": "6d7c",
+      "userId": "513a",
+      "title": "Fghj",
+      "deadline": "2025-02-28",
+      "timeEstimate": "1.5",
+      "category": "work",
+      "description": "2",
+      "status": "not done"
+    },
+    {
+      "id": "e1b6",
+      "userId": "513a",
+      "title": "Title",
+      "deadline": "2025-02-27",
+      "timeEstimate": "1",
+      "category": "leisure",
+      "description": "23",
+      "status": "not done"
+    },
+    {
+      "id": "d193",
+      "userId": "513a",
+      "title": "Washing",
+      "deadline": "2025-02-26",
+      "timeEstimate": "1.5",
+      "category": "leisure",
+      "description": "wafd",
+      "status": "not done"
+    },
+    {
+      "id": "d1c0",
+      "userId": "513a",
+      "title": "Laundry",
+      "deadline": "2025-02-27",
+      "timeEstimate": "0.5",
+      "category": "leisure",
+      "description": "er",
       "status": "done"
     },
     {
-      "id": "5c69",
-      "title": "Testing",
-      "deadline": "2025-02-22",
+      "id": "5a55",
+      "userId": "513a",
+      "title": "Title",
+      "deadline": "2025-02-27",
+      "timeEstimate": "0.5",
+      "category": "work",
+      "description": "sss",
+      "status": "done"
+    },
+    {
+      "id": "e122",
+      "userId": "513a",
+      "title": "Huik",
+      "deadline": "2025-02-27",
+      "timeEstimate": "1",
+      "category": "domestic",
+      "description": "hu",
+      "status": "done"
+    },
+    {
+      "id": "3647",
+      "userId": "0ca8",
+      "title": "Title",
+      "deadline": "2025-02-27",
       "timeEstimate": "1",
       "category": "work",
-      "description": "this is a description"
+      "description": "wadasd",
+      "status": "done"
     },
     {
-      "id": "d5ea",
-      "user": "0ca8",
-      "title": "Testar med en ny todo",
-      "deadline": "2025-02-23",
+      "id": "69ff",
+      "userId": "0ca8",
+      "title": "Levaaaalivet",
+      "deadline": "2025-03-13",
+      "timeEstimate": "15",
+      "category": "work",
+      "description": "sdfsfwef",
+      "status": "not done"
+    },
+    {
+      "id": "c63a",
+      "userId": "0ca8",
+      "title": "Leekekek",
+      "deadline": "2025-03-27",
       "timeEstimate": "2",
-      "category": "school",
-      "description": "testar en liten beskrivning",
-      "status": "not done"
-    },
-    {
-      "id": "28b3",
-      "userId": "0ca8",
-      "title": "Linas första todo?",
-      "deadline": "2025-02-24 00:00",
-      "timeEstimate": "3",
       "category": "leisure",
-      "description": "hoppas detta fungerar",
+      "description": "sdf",
       "status": "done"
     },
     {
-      "id": "da05",
+      "id": "1f5f",
       "userId": "0ca8",
-      "title": "Hejsanhoppsanlillebror",
-      "deadline": "2025-02-26 12:00",
-      "timeEstimate": "2.5",
-      "category": "other",
-      "description": "sdfsdf",
-      "status": "not done"
-    },
-    {
-      "id": "967a",
-      "userId": "0ca8",
-      "title": "Sdfsdf",
-      "deadline": "2025-02-28 12:00",
-      "timeEstimate": "3",
-      "category": "",
-      "description": "",
-      "status": "done"
-    },
-    {
-      "id": "2cb6",
-      "userId": "0ca8",
-      "title": "Hejjjjjjj",
-      "deadline": "2025-02-24 12:00",
+      "title": "Sfsd",
+      "deadline": "2025-03-07",
       "timeEstimate": "2",
       "category": "work",
-      "description": "dasda",
-      "status": "not done"
-    },
-    {
-      "id": "aab5",
-      "userId": "0ca8",
-      "title": "Linas",
-      "deadline": "2025-02-24 12:00",
-      "timeEstimate": "",
-      "category": "",
-      "description": "",
-      "status": "not done"
-    },
-    {
-      "id": "83fc",
-      "userId": "0ca8",
-      "title": "Testing againnnnnnnn",
-      "deadline": "2025-02-25 12:00",
-      "timeEstimate": "10",
-      "category": "school",
-      "description": "TESTING",
+      "description": "awda",
       "status": "not done"
     }
   ],
   "habits": [
-    {
-      "id": "99bc",
-      "userId": "0d22",
-      "title": "Habit_1",
-      "reps": "2",
-      "priority": "low"
-    },
     {
       "id": "61fb",
       "userId": "0d22",
@@ -125,39 +210,25 @@
       "priority": "high"
     },
     {
-      "id": "8801",
-      "userId": null,
-      "title": "h222",
-      "reps": "1",
-      "priority": "low"
-    },
-    {
-      "id": "fffe",
-      "userId": null,
-      "title": "neee",
-      "reps": "5",
-      "priority": "low"
-    },
-    {
-      "id": "7fba",
-      "userId": null,
-      "title": "jvbl",
-      "reps": 0,
-      "priority": "medium"
-    },
-    {
-      "id": "cfa3",
-      "userId": null,
-      "title": "xghj",
-      "reps": "2",
-      "priority": "high"
-    },
-    {
       "id": "e6ae",
       "userId": "0ca8",
       "title": "wefw",
       "reps": "2",
       "priority": "medium"
+    },
+    {
+      "id": "c28b",
+      "userId": "0d22",
+      "title": "Brush hair",
+      "reps": 0,
+      "priority": "medium"
+    },
+    {
+      "id": "c977",
+      "userId": "513a",
+      "title": "städa",
+      "reps": 0,
+      "priority": "low"
     }
   ],
   "events": [
@@ -251,6 +322,62 @@
       "title": "Craft Fare",
       "startDate": "2025-02-23 12:00",
       "endDate": "2025-02-23 23:00"
+    },
+    {
+      "id": "09a5",
+      "userId": "513a",
+      "title": "Bowling",
+      "startDate": "2025-02-25 12:00",
+      "endDate": "2025-02-26 12:00"
+    },
+    {
+      "id": "5479",
+      "userId": "513a",
+      "title": "Lunch",
+      "startDate": "2025-02-24 12:00",
+      "endDate": "2025-02-24 13:00"
+    },
+    {
+      "id": "be26",
+      "userId": "0d22",
+      "title": "Party",
+      "startDate": "2025-03-26 12:00",
+      "endDate": "2025-03-27 12:00"
+    },
+    {
+      "id": "ce8b",
+      "userId": "0d22",
+      "title": "Lopp",
+      "startDate": "2025-03-30 12:00",
+      "endDate": "2025-03-30 17:00"
+    },
+    {
+      "id": "0df0",
+      "userId": "0d22",
+      "title": "Konsert",
+      "startDate": "2025-03-24 12:00",
+      "endDate": "2025-03-24 17:00"
+    },
+    {
+      "id": "fd6f",
+      "userId": "0ca8",
+      "title": "Fejjksn",
+      "startDate": "2025-02-27 12:00",
+      "endDate": "2025-03-07 12:00"
+    },
+    {
+      "id": "ab53",
+      "userId": "513a",
+      "title": "Soccer",
+      "startDate": "2025-03-04 12:00",
+      "endDate": "2025-03-05 13:00"
+    },
+    {
+      "id": "2b0a",
+      "userId": "513a",
+      "title": "Usa",
+      "startDate": "2025-03-05 08:00",
+      "endDate": "2025-03-10 16:00"
     }
   ],
   "users": [
@@ -300,6 +427,11 @@
       "id": "7883",
       "username": "victor3",
       "password": "§12123"
+    },
+    {
+      "id": "8ba6",
+      "username": "victor7",
+      "password": "hejsan"
     }
   ]
 }
