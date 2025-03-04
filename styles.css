@@ -375,6 +375,13 @@
   min-width: 400px;
   padding: 20px;
 }
+<<<<<<< HEAD
+=======
+.todosBody .todosMain .allTodos h2, .todosBody .todosMain .doneTodos h2 {
+  font-weight: 700;
+  font-size: 2.3rem;
+}
+>>>>>>> e5fc9458af97dd11796524949388d33469fb3366
 .todosBody .todosMain .allTodos .editDeleteBtnDiv, .todosBody .todosMain .doneTodos .editDeleteBtnDiv {
   width: 100%;
   display: flex;

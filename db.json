@@ -131,7 +131,7 @@
       "timeEstimate": "0.5",
       "category": "leisure",
       "description": "er",
-      "status": "not done"
+      "status": "done"
     },
     {
       "id": "5a55",
@@ -141,7 +141,7 @@
       "timeEstimate": "0.5",
       "category": "work",
       "description": "sss",
-      "status": "not done"
+      "status": "done"
     },
     {
       "id": "e122",
@@ -151,7 +151,7 @@
       "timeEstimate": "1",
       "category": "domestic",
       "description": "hu",
-      "status": "not done"
+      "status": "done"
     },
     {
       "id": "3647",
@@ -222,6 +222,13 @@
       "title": "Brush hair",
       "reps": 0,
       "priority": "medium"
+    },
+    {
+      "id": "c977",
+      "userId": "513a",
+      "title": "städa",
+      "reps": 0,
+      "priority": "low"
     }
   ],
   "events": [
@@ -364,6 +371,13 @@
       "title": "Soccer",
       "startDate": "2025-03-04 12:00",
       "endDate": "2025-03-05 13:00"
+    },
+    {
+      "id": "2b0a",
+      "userId": "513a",
+      "title": "Usa",
+      "startDate": "2025-03-05 08:00",
+      "endDate": "2025-03-10 16:00"
     },
     {
       "id": "46b2",
