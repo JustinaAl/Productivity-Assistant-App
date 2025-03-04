@@ -54,24 +54,14 @@
       "status": "not done"
     },
     {
-      "id": "700a",
-      "userId": "0ca8",
-      "title": "Take Nimbus to the vet",
-      "deadline": "2025-03-05 09:00",
-      "timeEstimate": "1",
-      "category": "leisure",
-      "description": "Nimbus need to have his teeth checked post surgery",
-      "status": "not done"
-    },
-    {
       "id": "592a",
       "userId": "0ca8",
       "title": "Hoover the apartment",
-      "deadline": "2025-02-25 19:00",
-      "timeEstimate": "1",
+      "deadline": "2025-03-24",
+      "timeEstimate": "2",
       "category": "domestic",
-      "description": "",
-      "status": "done"
+      "description": "hej",
+      "status": "not done"
     },
     {
       "id": "f90b",
@@ -91,7 +81,7 @@
       "timeEstimate": "0.5",
       "category": "domestic",
       "description": "Important!",
-      "status": "done"
+      "status": "not done"
     },
     {
       "id": "87a9",
@@ -101,16 +91,6 @@
       "timeEstimate": "5",
       "category": "other",
       "description": "Use procreate and ipad",
-      "status": "not done"
-    },
-    {
-      "id": "0a4d",
-      "userId": "0ca8",
-      "title": "Test",
-      "deadline": "2025-02-27",
-      "timeEstimate": "2",
-      "category": "work",
-      "description": "dwed",
       "status": "not done"
     },
     {
@@ -181,16 +161,36 @@
       "timeEstimate": "1",
       "category": "work",
       "description": "wadasd",
-      "status": "not done"
+      "status": "done"
     },
     {
       "id": "69ff",
       "userId": "0ca8",
       "title": "Levaaaalivet",
-      "deadline": "2025-03-31",
+      "deadline": "2025-03-13",
       "timeEstimate": "15",
       "category": "work",
       "description": "sdfsfwef",
+      "status": "not done"
+    },
+    {
+      "id": "c63a",
+      "userId": "0ca8",
+      "title": "Leekekek",
+      "deadline": "2025-03-27",
+      "timeEstimate": "2",
+      "category": "leisure",
+      "description": "sdf",
+      "status": "done"
+    },
+    {
+      "id": "1f5f",
+      "userId": "0ca8",
+      "title": "Sfsd",
+      "deadline": "2025-03-07",
+      "timeEstimate": "2",
+      "category": "work",
+      "description": "awda",
       "status": "not done"
     }
   ],
