@@ -210,27 +210,6 @@
       "priority": "high"
     },
     {
-      "id": "fffe",
-      "userId": null,
-      "title": "Water plants",
-      "reps": "5",
-      "priority": "low"
-    },
-    {
-      "id": "7fba",
-      "userId": null,
-      "title": "jvbl",
-      "reps": "3",
-      "priority": "low"
-    },
-    {
-      "id": "cfa3",
-      "userId": null,
-      "title": "Brush hair",
-      "reps": "2",
-      "priority": "low"
-    },
-    {
       "id": "e6ae",
       "userId": "0ca8",
       "title": "wefw",
@@ -380,18 +359,11 @@
       "endDate": "2025-03-07 12:00"
     },
     {
-      "id": "606e",
-      "userId": "0ca8",
-      "title": "Hejjj",
-      "startDate": "2025-03-19 12:00",
-      "endDate": "2025-03-27 12:00"
-    },
-    {
-      "id": "46b2",
-      "userId": "0ca8",
-      "title": "Live",
-      "startDate": "2025-03-18 12:00",
-      "endDate": "2025-03-26 12:00"
+      "id": "ab53",
+      "userId": "513a",
+      "title": "Soccer",
+      "startDate": "2025-03-04 12:00",
+      "endDate": "2025-03-05 13:00"
     }
   ],
   "users": [
@@ -443,9 +415,9 @@
       "password": "§12123"
     },
     {
-      "id": "ac07",
-      "username": "nimbus",
-      "password": "nimbus1"
+      "id": "8ba6",
+      "username": "victor7",
+      "password": "hejsan"
     }
   ]
 }
