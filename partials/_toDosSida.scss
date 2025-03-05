@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-.date{
+.date {
     appearance: none;
     box-sizing: border-box;
     border: 1px solid $Neutral700;
@@ -14,193 +14,178 @@
     padding: 8px;
     color: $Neutral300;
     width: 100%;
-    &::placeholder{
+
+    &::placeholder {
         color: $Neutral500;
     }
-    &:active{
+
+    &:active {
         border: 1px solid $Neutral700;
     }
-    
 }
 
 .todosBody {
     background-color: $BaseBlack;
     color: $BaseWhite;
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     box-sizing: border-box;
 
-    // #todosNav {
-    //     overflow: hidden;
-    //     display: inline-block;
-    //     margin: 0;
-    //     background-color: $Neutral800;
-    //     border-radius: 15px;
-    //     padding: 10px;
-    //     width: 100%;
-    //     height: 170px;
-    // }
+    h1, h2, h3, h4 {
+        color: $Blue50;
+    }
 
     h1 {
         font-weight: bold;
-        color: $Blue50;
         font-size: 3rem;
     }
+
     h2 {
-        font-weight:100;
-        color: $Blue50;
+        font-weight: 700;
+        font-size: 2.3rem;
     }
+
     h3 {
         font-weight: bold;
-        color: $Blue50;
     }
+
     h4 {
         font-weight: 400;
         font-size: 0.8rem;
-        color: $Blue50;
     }
 
-   .todosMain {
+    .todosMain {
         display: flex;
         width: 100%;
-        
-        /*Button*/
+        flex-grow: 1;
+
         #createNewTodo {
-                    
-                    width: calc(100% - 48px);
-                    background-color: $Blue500;
-                    color: $BaseWhite;
-                    font-size: 15px;
-                    font-weight: 600;
-                    padding: 10px 24px;
-                    border: none;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    transition: background-color 0.2s ease, transform 0.1s ease;
-        }   #createNewTodo:hover {
-            background-color: #3049C8; /* Slightly darker blue on hover */
-        }   #createNewTodo:active {
-            transform: scale(0.95); /* Subtle press effect */
-        }
-        
-        .doneTodos {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+            width: calc(100% - 48px);
+            background-color: $Blue500;
+            color: $BaseWhite;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 10px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.1s ease;
+
+            &:hover {
+                background-color: #3049C8;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
         }
 
-        .allTodos, .doneTodos {
+        .editDeleteBtnDiv {
             width: 100%;
-            min-width: 400px;
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .todoCard {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: $Neutral900;
             padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            width: 350px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            gap: 15px;
 
-            h2 {
+            &:hover {
+                transform: translateY(-3px);
+                box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+            }
+
+            h3 {
+                color: $Neutral50;
+                font-size: 1.2rem;
                 font-weight: 700;
-                font-size: 2.3rem;
+                margin-bottom: 10px;
             }
 
-            .editDeleteBtnDiv {
-                width: 100%;
-                // border: 1px solid red;
-                display: flex;
-                justify-content: flex-start; 
-                gap: 10px; 
-                margin-top: 20px; 
+            p {
+                font-size: 0.9rem;
+                color: $Neutral300;
+                margin: 5px 0;
             }
 
-            .todoCard {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                background-color: $Neutral900;
-                padding: 20px;
-                border-radius: 12px;
-                margin-bottom: 20px;
-                width: 350px;
-                transition: transform 0.2s ease, box-shadow 0.2s ease;
-                gap: 15px;
+            .deleteTodoBtn, .editTodoBtn {
+                background-color: $Blue500;
+                color: $BaseWhite;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 6px 12px;
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: background-color 0.2s ease, transform 0.1s ease;
+                margin-top: 10px;
 
                 &:hover {
-                    transform: translateY(-3px);
-                    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+                    background-color: #3049C8;
                 }
 
-                h3 {
-                    color: $Neutral50;
-                    font-size: 1.2rem;
-                    font-weight: 700;
-                    margin: 0;
-                    margin-bottom: 10px;
+                &:active {
+                    transform: scale(0.95);
                 }
-                p {
-                    font-size: 0.9rem;
-                    color: $Neutral300;
-                    margin: 5px 0;
-                }
-                .deleteTodoBtn, .editTodoBtn {
-                    background-color: $Blue500;
-                    color: $BaseWhite;
-                    font-size: 14px;
-                    font-weight: 600;
-                    padding: 6px 12px;
+            }
+
+            .deleteTodoBtn {
+                background-color: $Neutral900;
+                border: 1px solid $Neutral600;
+                margin-right: 10px;
+
+                &:hover {
+                    background-color: $Red500;
                     border: none;
-                    border-radius: 6px;
-                    cursor: pointer;
-                    transition: background-color 0.2s ease, transform 0.1s ease;
-                    margin-top: 10px;
-            
-                    &:hover {
-                        background-color: #3049C8;
-                    }
-            
-                    &:active {
-                        transform: scale(0.95);
-                    }
-                }
-                .deleteTodoBtn {
-                    background-color: $Neutral900;
-                    border: 1px solid $Neutral600;
-                    margin-right: 10px;
-                   
-                    &:hover {
-                        background-color: $Red500;
-                        border: none;
-                    }
-                }
-                .editTodoBtn {
-                    background-color: $Neutral900;
-                    border: 1px solid $Neutral600;
-                    margin-right: 10px;
-                   
-                    &:hover {
-                        background-color: $Blue500;
-                        border: none;
-                        
-                    }
                 }
             }
-            .todoWrapper {
-                display: flex;
-                align-items: center;
-                width: 100%;
-                gap: 15px;
-            }
-            .todoCheckbox {
-                align-self: flex-start;
-                 width: 20px;
-                height: 20px;
-                accent-color: $Blue500;
-                cursor: pointer;
-            }
-            .todoContent {
-                flex: 1;
+
+            .editTodoBtn {
+                background-color: $Neutral900;
+                border: 1px solid $Neutral600;
+                margin-right: 10px;
+
+                &:hover {
+                    background-color: $Blue500;
+                    border: none;
+                }
             }
         }
+
+        .todoWrapper {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            gap: 15px;
+        }
+
+        .todoCheckbox {
+            align-self: flex-start;
+            width: 20px;
+            height: 20px;
+            accent-color: $Blue500;
+            cursor: pointer;
+        }
+
+        .todoContent {
+            flex: 1;
+        }
+    }
 
     .allTodos {
         width: 400px;
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -218,11 +203,11 @@
             background-color: $Neutral900;
 
             div {
-                width: 100%; 
+                width: 100%;
                 display: flex;
-                flex-direction: column; 
+                flex-direction: column;
             }
-        
+
             input, select, textarea {
                 width: 100%;
                 padding: 8px;
@@ -232,10 +217,10 @@
                 color: $Neutral300;
                 margin-bottom: 15px;
             }
-        
+
             textarea {
-                resize: vertical; // Allows resizing vertically
-                min-height: 80px; // Gives it a starting height
+                resize: vertical;
+                min-height: 80px;
             }
 
             label {
@@ -244,51 +229,110 @@
                 font-size: 12px;
             }
 
-
             h2 {
                 font-weight: 500;
             }
 
             #saveBtn {
                 width: auto;
-                    background-color: $Blue500;
-                    color: $BaseWhite;
-                    font-size: 15px;
-                    font-weight: 600;
-                    padding: 10px 24px;
-                    border: none;
-                    border-radius: 8px;
-                    cursor: pointer;
-                    transition: background-color 0.2s ease, transform 0.1s ease;
-        }   #saveBtn:hover {
-            background-color: #3049C8; 
-        }   #saveBtn:active {
-            transform: scale(0.95); 
-        }
-            
+                background-color: $Blue500;
+                color: $BaseWhite;
+                font-size: 15px;
+                font-weight: 600;
+                padding: 10px 24px;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: background-color 0.2s ease, transform 0.1s ease;
+
+                &:hover {
+                    background-color: #3049C8;
+                }
+
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
         }
 
-        #allTodosContainer{
+        .filterAndSort {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 15px;
+        
+            .filterDiv, .sortDiv {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 160px;
+        
+                label {
+                    font-size: 14px;
+                    color: $Neutral300;
+                    margin-bottom: 5px;
+                }
+        
+                select {
+                    width: 100%;
+                    padding: 10px;
+                    font-size: 14px;
+                    font-weight: 500;
+                    background-color: $Neutral900;
+                    color: $BaseWhite;
+                    border: 1px solid $Neutral700;
+                    border-radius: 8px;
+                    appearance: none; // Removes default arrow
+                    cursor: pointer;
+                    transition: border 0.2s ease, background-color 0.2s ease;
+        
+                    &:hover {
+                        border-color: $Blue500;
+                    }
+        
+                    &:focus {
+                        border-color: $Blue500;
+                        outline: none;
+                        background-color: $Neutral800;
+                    }
+                }
+        
+                &::after {
+                    content: "▼";
+                    position: absolute;
+                    right: 12px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 12px;
+                    color: $Neutral300;
+                    pointer-events: none;
+                }
+            }
+        }
+
+        #allTodosContainer {
             background-color: $BaseBlack;
         }
     }
+
     .doneTodos {
+        min-width: 400px;
         border-right: 1px solid $Neutral700;
         display: flex;
+        flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-    }
-    .doneTodos,
-    .doneTodos * {
-        color: rgba(255, 255, 255, 0.248);
-        
+        padding: 0px 20px 0px 20px;
 
-        #doneTodosContainer,
-         #doneTodosContainer *{
-            color: rgba(255, 255, 255, 0.248);
+        #doneTodosContainer {
+            background-color: $BaseBlack;
+        }
+
+        // Darken text inside doneTodos
+        &, * {
+            color: rgba(255, 255, 255, 0.7) !important;
         }
     }
-
-   }
-
 }

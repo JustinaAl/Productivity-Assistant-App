@@ -81,7 +81,7 @@
       "timeEstimate": "0.5",
       "category": "domestic",
       "description": "Important!",
-      "status": "not done"
+      "status": "done"
     },
     {
       "id": "87a9",
@@ -154,44 +154,24 @@
       "status": "done"
     },
     {
-      "id": "3647",
+      "id": "f770",
       "userId": "0ca8",
-      "title": "Title",
-      "deadline": "2025-02-27",
-      "timeEstimate": "1",
-      "category": "work",
-      "description": "wadasd",
-      "status": "done"
-    },
-    {
-      "id": "69ff",
-      "userId": "0ca8",
-      "title": "Levaaaalivet",
-      "deadline": "2025-03-13",
-      "timeEstimate": "15",
-      "category": "work",
-      "description": "sdfsfwef",
-      "status": "not done"
-    },
-    {
-      "id": "c63a",
-      "userId": "0ca8",
-      "title": "Leekekek",
-      "deadline": "2025-03-27",
-      "timeEstimate": "2",
-      "category": "leisure",
-      "description": "sdf",
-      "status": "done"
-    },
-    {
-      "id": "1f5f",
-      "userId": "0ca8",
-      "title": "Sfsd",
+      "title": "Hold Presentation",
       "deadline": "2025-03-07",
-      "timeEstimate": "2",
-      "category": "work",
-      "description": "awda",
+      "timeEstimate": "0.5",
+      "category": "school",
+      "description": "Hold presentation for FEND 24 with Justina",
       "status": "not done"
+    },
+    {
+      "id": "0b10",
+      "userId": "0ca8",
+      "title": "Draw for client",
+      "deadline": "2025-03-19",
+      "timeEstimate": "1.5",
+      "category": "work",
+      "description": "Dragon",
+      "status": "done"
     }
   ],
   "habits": [
@@ -210,13 +190,6 @@
       "priority": "high"
     },
     {
-      "id": "e6ae",
-      "userId": "0ca8",
-      "title": "wefw",
-      "reps": "2",
-      "priority": "medium"
-    },
-    {
       "id": "c28b",
       "userId": "0d22",
       "title": "Brush hair",
@@ -229,6 +202,20 @@
       "title": "städa",
       "reps": 0,
       "priority": "low"
+    },
+    {
+      "id": "8401",
+      "userId": "0ca8",
+      "title": "Water plants",
+      "reps": "2",
+      "priority": "medium"
+    },
+    {
+      "id": "ccdd",
+      "userId": "0ca8",
+      "title": "Gym",
+      "reps": "6",
+      "priority": "high"
     }
   ],
   "events": [
@@ -359,13 +346,6 @@
       "endDate": "2025-03-24 17:00"
     },
     {
-      "id": "fd6f",
-      "userId": "0ca8",
-      "title": "Fejjksn",
-      "startDate": "2025-02-27 12:00",
-      "endDate": "2025-03-07 12:00"
-    },
-    {
       "id": "ab53",
       "userId": "513a",
       "title": "Soccer",
@@ -380,11 +360,18 @@
       "endDate": "2025-03-10 16:00"
     },
     {
-      "id": "46b2",
+      "id": "acc6",
       "userId": "0ca8",
-      "title": "Live",
-      "startDate": "2025-03-18 12:00",
-      "endDate": "2025-03-26 12:00"
+      "title": "Boardgame night",
+      "startDate": "2025-03-08 12:00",
+      "endDate": "2025-03-08 17:00"
+    },
+    {
+      "id": "3a56",
+      "userId": "0ca8",
+      "title": "Dinner with family",
+      "startDate": "2025-03-07 19:00",
+      "endDate": "2025-03-07 22:00"
     }
   ],
   "users": [
